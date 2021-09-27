@@ -59,9 +59,18 @@ for(x = 0; x < products.length; x++){
 myProductHTML += "</div>"
 document.getElementById("products").innerHTML = myProductHTML;
 
+var dogElements = document.getElementsByClassName('dog');
+var catElements = document.getElementsByClassName('cat');
+
+var productList = document.getElementsByClassName('oneProduct');
+for(x = 0; x < productList.length; x++){
+    productList[x].addEventListener("click", openOverlay);
+  }
+
+var myShoppingCart = document.getElementById("shoppingCart");
+
+
 function filterOutDog(){
-  var dogElements = document.getElementsByClassName('dog');
-  var catElements = document.getElementsByClassName('cat');
   
   for(x = 0; x < dogElements.length; x++){
     dogElements[x].classList.add( "remove" );
@@ -71,8 +80,6 @@ function filterOutDog(){
   }
 }
 function filterOutCat(){
-  var dogElements = document.getElementsByClassName('dog');
-  var catElements = document.getElementsByClassName('cat');
   
   for(x = 0; x < dogElements.length; x++){
     dogElements[x].classList.remove( "remove" );
@@ -82,8 +89,6 @@ function filterOutCat(){
   }
 }
 function filterNone(){
-  var dogElements = document.getElementsByClassName('dog');
-  var catElements = document.getElementsByClassName('cat');
   
   for(x = 0; x < dogElements.length; x++){
     dogElements[x].classList.remove( "remove" );

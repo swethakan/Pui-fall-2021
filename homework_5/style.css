@@ -90,6 +90,7 @@ body{
 	flex: 1;
 	flex-wrap: wrap;
 	max-width: 170px;
+	cursor: pointer;
 }
 .oneProduct:hover{
 	border: solid 1px black;
@@ -103,7 +104,7 @@ body{
 /*Lets take care of the shopping cart overlay*/
 #shoppingOverlay {
   position: fixed;
-  /*display: none;*/
+  display: none;
   width: 100%;
   height: 100%;
   top: 0;
@@ -126,6 +127,13 @@ body{
     display: block;
 
 }
+#shoppingOverlay h3{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	text-align: center;
+	margin-top: -20px;
+	padding-top: 0px;
+}
 
 #shoppingOverlay .productImg{
 	width: 80%;
@@ -140,4 +148,13 @@ body{
 }
 #shoppingOverlay .inner{
 	width: 50%;
+}
+.cross{
+	width: 20px;
+	padding: 10px;
+}
+.closeButton{
+	border: none!important;
+	background: white!important;
+	cursor: pointer;
 }
