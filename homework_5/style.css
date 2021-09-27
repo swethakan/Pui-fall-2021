@@ -1,17 +1,143 @@
-<!doctype html>
-<html>
-	<head>
-		<title>Muddy Paws Adventure Gear</title>
-		<meta name="description" content="Muddy Paws Adventure Gear producs page">
-		<meta name="keywords" content="cat dog hiking gear equipment leash tracker pet">
-	</head>
-	<body>
-		<nav>
-			<ul>
-			  <li><a class="active" href="#home">Products</a></li>
-			  <li><a href="#contact">Contact</a></li>
-			  <li><a href="#about">About</a></li>
-			</ul>
-		</nav>
-	</body>
-</html>
+
+/*Lets take care of navbar here*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  color: white;
+}
+
+li {
+  float: left;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+li a {
+  display: block;
+  padding: 8px;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
+  padding: 0px 50px;
+  padding-top: 7px;
+  text-decoration: none;
+}
+li a:hover{
+	font-weight: bold;
+}
+
+#topStoreIcon{
+	font-size: 50px;
+	line-height: 50px;
+	margin: 0;
+	margin-left: 10px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	color:  #B3B3B3;
+	padding-right: 30px;
+}
+
+nav img{
+	width: 30px;
+	height: auto;
+}
+.cart{
+	margin-right: 0px;
+	right: 10px;
+	top: 10px;
+	position: absolute;
+}
+
+
+/*body styles*/
+body{
+	padding: 0;
+	margin: 0;
+}
+#myContainer{
+	max-width: 650px;
+	width: 100%;
+	display: block;
+	margin: auto;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+}
+
+.allProduct {
+	display: flex;
+}
+.allProduct img{
+	width: 90%;
+	display: block;
+	margin: auto;
+}
+.allProduct h1{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	  font-size: 20px;
+	margin-top: 0px;
+}
+.allProduct p{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	margin-bottom: 0px;
+}
+.oneProduct{
+	padding: 20px;
+	flex: 1;
+	flex-wrap: wrap;
+	max-width: 170px;
+}
+.oneProduct:hover{
+	border: solid 1px black;
+}
+.remove{
+	height: 0;
+	width: 0;
+	display: none;
+}
+
+/*Lets take care of the shopping cart overlay*/
+#shoppingOverlay {
+  position: fixed;
+  /*display: none;*/
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+#shoppingOverlay .content{
+	width: 100%;
+    max-width: 650px;
+    height: 80%;
+    max-height: 450px;
+    top: 10%;
+    background: white;
+    margin: auto;
+    margin-top: 10%;
+    display: block;
+
+}
+
+#shoppingOverlay .productImg{
+	width: 80%;
+	padding-left: 20px;
+}
+
+.flex{
+	display: flex;
+}
+.flex .inner{
+	flex: 1;
+}
+#shoppingOverlay .inner{
+	width: 50%;
+}

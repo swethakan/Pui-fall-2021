@@ -4,15 +4,42 @@
 		<title>Muddy Paws Adventure Gear</title>
 		<meta name="description" content="Muddy Paws Adventure Gear producs page">
 		<meta name="keywords" content="cat dog hiking gear equipment leash tracker pet">
+		<link rel="stylesheet" href="style.css">
+
+		<!-- Transfering in a google font Open Sans, Free for all use -->
+		<link rel="preconnect" href="https://fonts.googleapis.com"> 
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<nav>
 			<ul>
-			  <li><a class="active" href="#home">Products</a></li>
+			  <li><p id = "topStoreIcon">MPGA</p></li>
+			  <li><a class="active nonIcon" href="#home">Products</a></li>
 			  <li><a href="#contact">Contact</a></li>
 			  <li><a href="#about">About</a></li>
-			  <li><a href="#shopping"><img alt = "image of a shopping cart" src="images/icons/shopping-cart-solid.svg"></a></li>
 			</ul>
+			<a class = "cart" href="#shopping"><img alt = "image of a shopping cart" src="images/icons/shopping-cart-solid.svg"></a>
 		</nav>
+		<div id="myContainer">
+			<p><b>Step 1:</b> Which animal are you shopping for?</p>
+			<div class = "buttons"><button class = "checked" onclick="filterNone()">cats & dogs</button><button onclick="filterOutDog()">cats</button><button onclick="filterOutCat()">dogs</button></div>
+			<p><b>Step 2:</b> Choose your product</p>
+			<div id = "products"></div>
+			<p><b>Step 3:</b> Checkout</p>
+		</div>
+		<div id="shoppingOverlay">
+			<div class="content">
+					<img src = "icons/ex.svg">
+					<h3>Name of item</h3>
+					<div class = "flex">
+						<div class = "inner" ><img class = "productImg" src = "images/test.png"></div>
+						<div class = "inner" ><p >Description</p>
+					</div>
+			</div>
+		</div>
 	</body>
+	<footer>
+		<script src="script.js"></script>
+	</footer>
 </html>
