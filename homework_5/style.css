@@ -50,6 +50,55 @@ nav img{
 	top: 10px;
 	position: absolute;
 }
+/* Styles for topper */
+.topper img{
+	width:250px;
+	padding:10px;
+}
+.topper{
+	margin-top:70px;
+	margin-bottom:70px;
+}
+/* styles for step 1 */
+.buttons img{
+	height: 40px;
+	padding:15px 30px;
+}
+.buttons button{
+	margin:20px 40px;
+	background: white;
+	border: solid 1px black;
+	cursor: pointer;
+	border-radius: 10px;
+}
+.buttons button.checked{
+	background: rgb(234, 234, 234);
+	border: none;
+}
+.buttons .dogCat img{
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+/* checkout styles */
+.checkout button{
+	margin-bottom: 50px;
+	width: 230px;
+	padding: 18px;
+	margin-top: 50px;
+	font-size: 20px;
+	background: rgb(252, 223, 148);
+	border: solid 1px black;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.checkout .items{
+	font-size: 15px;
+	text-align: right;
+	border-bottom: solid 1px black;
+}
 
 
 /*body styles*/
@@ -118,9 +167,9 @@ body{
 #shoppingOverlay .content{
 	width: 100%;
     max-width: 650px;
-    height: 80%;
-    max-height: 450px;
-    top: 10%;
+    height: fit-content;
+    
+    top: 50%;
     background: white;
     margin: auto;
     margin-top: 10%;
@@ -139,6 +188,28 @@ body{
 	width: 80%;
 	padding-left: 20px;
 }
+#shoppingOverlay .item{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	margin-bottom: 0px;
+}
+
+#shoppingOverlay .select{
+	font-family: 'Open Sans', sans-serif;
+	border: solid 1px grey;
+	width: fit-content;
+    padding: 6px;
+    margin-top: 0px;
+}
+.select img{
+	width: 10px;
+	padding-left: 20px;
+}
+
+#overlayProductDescription{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+}
 
 .flex{
 	display: flex;
@@ -149,6 +220,11 @@ body{
 #shoppingOverlay .inner{
 	width: 50%;
 }
+.plusMinus{
+	font-size: 20px;
+	padding: 0px 10px;
+}
+
 .cross{
 	width: 20px;
 	padding: 10px;
@@ -157,4 +233,14 @@ body{
 	border: none!important;
 	background: white!important;
 	cursor: pointer;
+}
+#shoppingOverlay .submit{
+	background: rgb(255, 225, 170);
+	border: solid 2px black!important;
+	width: 90%;
+	margin-left: -30px;
+	padding: 10px 10px;
+	font-size: 14px;
+	margin-bottom:50px;
+	cursor:pointer;
 }

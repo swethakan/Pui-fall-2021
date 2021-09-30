@@ -47,7 +47,7 @@ var shoppingOverlay = document.getElementById("shoppingOverlay");
 
 var myProductHTML = "<div class = 'allProduct'>"
 for(x = 0; x < products.length; x++){
-    myProductHTML += "<div class = 'oneProduct "+products[x].remove_on+"'>"
+    myProductHTML += "<div id =product"+x+" class = 'oneProduct "+products[x].remove_on+"'>"
     myProductHTML += "<img src='images/"+products[x].image+"'>";
     myProductHTML += "<p class = 'price'>$"+products[x].Price+"</p>";
     myProductHTML += "<h1>"+products[x].product_name+"</h1>";
@@ -61,6 +61,9 @@ document.getElementById("products").innerHTML = myProductHTML;
 
 var dogElements = document.getElementsByClassName('dog');
 var catElements = document.getElementsByClassName('cat');
+var catDogButton = document.getElementById('dogCatButton');
+var catButton = document.getElementById('catButton');
+var dogButton = document.getElementById('dogButton');
 
 var productList = document.getElementsByClassName('oneProduct');
 for(x = 0; x < productList.length; x++){
@@ -69,9 +72,22 @@ for(x = 0; x < productList.length; x++){
 
 var myShoppingCart = document.getElementById("shoppingCart");
 
+function turnOffCheck(){
+  if(catButton.classList.contains('checked')){
+    catButton.classList.remove("checked");
+  }
+  if(dogButton.classList.contains("checked")){
+    dogButton.classList.remove("checked");
+  }
+
+  if(catDogButton.classList.contains("checked")){
+    catDogButton.classList.remove("checked");
+  }
+}
 
 function filterOutDog(){
-  
+  turnOffCheck();
+  catButton.classList.add ("checked");
   for(x = 0; x < dogElements.length; x++){
     dogElements[x].classList.add( "remove" );
   }
@@ -80,7 +96,8 @@ function filterOutDog(){
   }
 }
 function filterOutCat(){
-  
+  turnOffCheck();
+  dogButton.classList.add ("checked");
   for(x = 0; x < dogElements.length; x++){
     dogElements[x].classList.remove( "remove" );
   }
@@ -89,7 +106,9 @@ function filterOutCat(){
   }
 }
 function filterNone(){
-  
+  turnOffCheck();
+  catDogButton.classList.add ("checked");
+
   for(x = 0; x < dogElements.length; x++){
     dogElements[x].classList.remove( "remove" );
   }
@@ -98,8 +117,19 @@ function filterNone(){
   }
 }
 
+productName = document.getElementById("overlayProductName");
+productPrice = document.getElementById("overlayProductPrice");
+productImage = document.getElementById("overlayProductImage");
+productDescription = document.getElementById("overlayProductDescription");
 
 function openOverlay() {
+  console.log(this);
+  var productNumber = parseInt( this.id[this.id.length -1] );
+  console.log(products[productNumber].product_name);
+  productName.innerHTML = ""+products[productNumber].product_name+""
+  productDescription.innerHTML = ""+products[productNumber].Description+""
+
+
   shoppingOverlay.style.display = "block";
 }
 

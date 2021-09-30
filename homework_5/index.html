@@ -22,19 +22,66 @@
 			<a class = "cart" href="#shopping"><img alt = "image of a shopping cart" src="images/icons/shopping-cart-solid.svg"></a>
 		</nav>
 		<div id="myContainer">
+			<div class= "flex topper">
+				<div class= "flex-inner">
+					 <h1>Muddy Paws Adventure Gear</h1>
+					 <p>Follow our 3-step process to experience the adventure with your furry friend!</p>
+				</div>
+				<div class= "flex-inner">
+					 <img src = "images/HomscreenDog.png">
+				</div>
+			</div>
 			<p><b>Step 1:</b> Which animal are you shopping for?</p>
-			<div class = "buttons"><button class = "checked" onclick="filterNone()">cats & dogs</button><button onclick="filterOutDog()">cats</button><button onclick="filterOutCat()">dogs</button></div>
+			<div class = "buttons">
+				<button id = "dogCatButton" class = "checked dogCat" onclick="filterNone()">
+					<img src = "images/icons/dog-cat.svg" alt = "Illustration of cat and dog">
+				</button>
+				<button id = "catButton" onclick="filterOutDog()">
+					<img src = "images/icons/cat.svg" alt = "Illustration of cat">
+				</button>
+				<button id = "dogButton" onclick="filterOutCat()">
+					<img src = "images/icons/dog.svg" alt = "Illustration of dog">
+				</button>
+			</div>
 			<p><b>Step 2:</b> Choose your product</p>
 			<div id = "products"></div>
 			<p><b>Step 3:</b> Checkout</p>
+			<div class = "checkout">
+				<div class = "items">
+					<item>
+						<p>No items in cart</p>
+					</item>
+				</div>
+				<button>Purchase & Pay</button>
+			</div>
 		</div>
 		<div id="shoppingOverlay">
 			<div class="content">
 					<button class = "closeButton" onclick="closeOverlay()"><img class = "cross" src = "images/icons/cross.svg"></button>
-					<h3>Name of item</h3>
+					<h3 id ="overlayProductName">Name of item</h3>
 					<div class = "flex">
-						<div class = "inner" ><img class = "productImg" src = "images/test.png"></div>
-						<div class = "inner" ><p >Description</p></div>
+						<div class = "inner" ><img id ="overlayProductImage" class = "productImg" src = "images/test.png"></div>
+						<div class = "inner" >
+							<p id ="overlayProductDescription">Description</p>
+							<div class = "flex">
+								<div class = "inner" ><p class ="item">Color</p></div>
+								<div class = "inner" ><p class ="item">size</p></div>
+							</div>
+							<div class = "flex">
+								<div class = "inner" ><p class ="color select">Black<img src = "images/icons/dropdownArrows.svg"></p></div>
+								<div class = "inner" ><p class ="size select">Tiny<img src = "images/icons/dropdownArrows.svg"></p></div>
+							</div>
+
+							<div class = "flex">
+								<div class = "inner" ><p class ="item">Quatity</p></div>
+								<div class = "inner" ><p class ="item"></p></div>
+							</div>
+							<div class = "flex">
+								<div class = "inner" ><p class ="color select"><span class = "plusMinus">-</span> 1 <span class = "plusMinus">+</span></p></div>
+								<div class = "inner" ><button class = "submit" onclick = "closeOverlay()">Add to shopping cart</button></div>
+							</div>
+
+						</div>
 					</div>
 			</div>
 		</div>
