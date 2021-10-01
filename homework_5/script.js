@@ -43,6 +43,10 @@ var products = [
   }
 ];
 
+var itemsInCart = false;
+var currentProduct = "";
+var cartItems = document.getElementById("cartItems");
+
 var shoppingOverlay = document.getElementById("shoppingOverlay");
 
 var myProductHTML = "<div class = 'allProduct'>"
@@ -125,7 +129,7 @@ productDescription = document.getElementById("overlayProductDescription");
 function openOverlay() {
   console.log(this);
   var productNumber = parseInt( this.id[this.id.length -1] );
-  console.log(products[productNumber].product_name);
+  currentProduct = products[productNumber].product_name;
   productName.innerHTML = ""+products[productNumber].product_name+""
   productDescription.innerHTML = ""+products[productNumber].Description+""
 
@@ -135,4 +139,31 @@ function openOverlay() {
 
 function closeOverlay() {
   shoppingOverlay.style.display = "none";
+  currentProduct = "";
+}
+function submit() {
+  addToCart(currentProduct, "Black", "Tiny", 1);
+  closeOverlay();
+}
+
+function addToCart(product, color, size, quantity) {
+  if(itemsInCart == 0){
+    cartItems.innerHTML = "";
+  }
+  itemsInCart +=1; 
+  cartItems.innerHTML += "<div><p><span class ='delete' onclick= 'deleteCartItem(this)'>X</span>\
+                        <span class ='product'>"+product+"</span>\
+                        <span class ='quantity'>Q:<span class='plus'>+</span><span class='input'>"+quantity+"</span><span class='plus'>-</span>\
+                        </span> <span class ='color'>Color: <span class='input '><span class = '"+color+"'></span>"+color+"<img alt='dropdown icon' src = 'images/icons/dropdownArrows.svg'></span></span>\
+                        <span class ='size'>Size: <span class='input'>"+size+"<img alt='dropdown icon' src = 'images/icons/dropdownArrows.svg'></span></span></p></div>";
+}
+
+function deleteCartItem(item) {
+  item.parentNode.remove();
+  itemsInCart -=1;
+
+  if(itemsInCart == 0){
+    cartItems.innerHTML = "<div><p>No items in cart</p></div>";
+  }
+
 }

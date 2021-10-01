@@ -39,6 +39,12 @@ li a:hover{
 	color:  #B3B3B3;
 	padding-right: 30px;
 }
+nav .active{
+	font-weight: bold;
+}
+nav .active:hover{
+	cursor: default;
+}
 
 nav img{
 	width: 30px;
@@ -94,7 +100,7 @@ nav img{
 	margin-right: auto;
 }
 
-.checkout .items{
+.checkout #cartItems{
 	font-size: 15px;
 	text-align: right;
 	border-bottom: solid 1px black;
@@ -245,10 +251,147 @@ body{
 	cursor:pointer;
 }
 
+/* Shopping cart styles */
+
+#cartItems .delete{
+	padding: 0px 7px;
+	padding-bottom: 4px;
+	margin-right: 20px;
+	border: solid 1px black;
+}
+#cartItems .delete{
+	padding: 0px 7px;
+	padding-bottom: 4px;
+	margin-right: 20px;
+	border: solid 1px black;
+}
+#cartItems .product{
+	font-weight: 500;
+	margin-right: 20px;
+}
+#cartItems .quantity{
+	margin-right: 10px;
+}
+#cartItems .color{
+	margin-right: 10px;
+}
+#cartItems .quantity .plus{
+	margin-right: 10px;
+	margin-left: 10px;
+	font-size: 19px;
+	color: rgb(152, 152, 152);
+}
+#cartItems img{
+	width: 8px;
+	padding-left: 7px;
+}
+#cartItems .input{
+	text-decoration: underline;
+}
+#cartItems .color .Black{
+	width: 10px;
+	height: 11px;
+	margin-right: 5px;
+	display: inline-block;
+	background: black;
+}
+
 /* About page unique styling */
 #aboutContainer {
 	height: 100vh;
 	width: 100%;
+	font-family: 'Open Sans', sans-serif;
 	background-image: url("images/about.png");
 	background-size: cover;
+}
+#aboutContainer .about .background{
+	background: rgba(255, 255, 255, 0.654);
+	padding-bottom: 50px;
+}
+#aboutContainer .about p{
+	padding:30px;
+	font-size: 20px;
+}
+#aboutContainer .about {
+	width:auto;
+	max-width:500px;
+	margin:auto;
+	margin-left:50%;
+}
+#aboutContainer .about h1{
+	color:white;
+	font-size: 50px;
+	filter: drop-shadow(0 0 0.75rem black);
+}
+
+#aboutContainer .button{
+	background: rgb(255, 225, 170);
+	font-size: 20px;
+	font-weight: bold;
+	padding:15px;
+	display: block;
+	margin:auto;
+	width:fit-content;
+	border: solid 1px black!important;
+}
+#aboutContainer .button a{
+	text-decoration: none;
+	color:black;
+}
+
+/* Unique styles for the contact page */
+
+#contactContainer{
+	text-decoration: none;
+	color:black;
+	width:100%;
+	max-width: 650px;
+	margin: auto;
+	display: block;
+	margin-top:100px;
+	font-family: 'Open Sans', sans-serif;
+}
+#contactContainer form #comment{
+	display: block;
+	width:100%;
+	min-height: 150px;
+	border: solid 1px rgb(175, 175, 175);
+	margin-top:20px;
+}
+#contactContainer form input{
+	border: solid 1px rgb(175, 175, 175);
+	min-width:200px;
+}
+#contactContainer form{
+	margin-bottom:30px;
+}
+#contactContainer img{
+	width:100%;
+	border: solid 1px rgb(175, 175, 175);
+}
+#contactContainer .address{
+	max-width: 150px;
+	padding: 0px 20px;
+	width: 100%;
+}
+#contactContainer .address p{
+	padding-top:0px;
+	margin-top:0px;
+}
+#contactContainer .button{
+	padding:10px;
+	text-align: center;
+	width: fit-content;
+	min-width: 100px;
+	font-weight: bold;
+	display: block;
+	margin-left: auto;
+	margin-right: 0px;
+	border: solid 1px rgb(175, 175, 175);
+	border-radius: 10px;
+	margin-bottom:50px;
+}
+#contactContainer .button:hover{
+	background: rgb(223, 223, 223);
+	cursor: pointer;
 }
