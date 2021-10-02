@@ -46,13 +46,17 @@ var products = [
 var itemsInCart = false;
 var currentProduct = "";
 var cartItems = document.getElementById("cartItems");
+var checkoutWarning = document.getElementById("checkoutWarning");
 
 var shoppingOverlay = document.getElementById("shoppingOverlay");
+var confirmOverlay = document.getElementById("confirmationOverly");
+
+var checkoutButton = document.getElementById("checkoutButton");
 
 var myProductHTML = "<div class = 'allProduct'>"
 for(x = 0; x < products.length; x++){
-    myProductHTML += "<div id =product"+x+" class = 'oneProduct "+products[x].remove_on+"'>"
-    myProductHTML += "<img src='images/"+products[x].image+"'>";
+    myProductHTML += "<div id =product"+x+" tabindex='0' class = 'oneProduct "+products[x].remove_on+"'>"
+    myProductHTML += "<img alt='pproduct show with color selected' src='images/"+products[x].image+"'>";
     myProductHTML += "<p class = 'price'>$"+products[x].Price+"</p>";
     myProductHTML += "<h1>"+products[x].product_name+"</h1>";
     myProductHTML += "</div>"
@@ -126,28 +130,36 @@ productPrice = document.getElementById("overlayProductPrice");
 productImage = document.getElementById("overlayProductImage");
 productDescription = document.getElementById("overlayProductDescription");
 
+confirmName = document.getElementById("confirmProductName");
+confirmImage = document.getElementById("confirmProductImage");
+
 function openOverlay() {
   console.log(this);
   var productNumber = parseInt( this.id[this.id.length -1] );
   currentProduct = products[productNumber].product_name;
-  productName.innerHTML = ""+products[productNumber].product_name+""
-  productDescription.innerHTML = ""+products[productNumber].Description+""
+  productName.innerHTML = ""+products[productNumber].product_name+"";
+  productDescription.innerHTML = ""+products[productNumber].Description+"";
 
+  confirmName.innerHTML = ""+products[productNumber].product_name+"";
 
   shoppingOverlay.style.display = "block";
+}
+function closeConfirm() {
+  addToCart(currentProduct, "Black", "Tiny", 1);
+  confirmOverlay.style.display = "none";
+  currentProduct = "";
 }
 
 function closeOverlay() {
   shoppingOverlay.style.display = "none";
-  currentProduct = "";
-}
-function submit() {
-  addToCart(currentProduct, "Black", "Tiny", 1);
-  closeOverlay();
+  confirmOverlay.style.display = "block";
+  console.log("visible confirm");
 }
 
 function addToCart(product, color, size, quantity) {
   if(itemsInCart == 0){
+    checkoutButton.disabled = false;
+    checkoutWarning.classList.remove("on");
     cartItems.innerHTML = "";
   }
   itemsInCart +=1; 
@@ -163,6 +175,8 @@ function deleteCartItem(item) {
   itemsInCart -=1;
 
   if(itemsInCart == 0){
+    checkoutButton.disabled = true;
+    checkoutWarning.classList.add("on");
     cartItems.innerHTML = "<div><p>No items in cart</p></div>";
   }
 

@@ -1,9 +1,9 @@
 <!doctype html>
-<html>
+<html lang="en">
 	<head>
 		<title>Muddy Paws Adventure Gear</title>
-		<meta name="description" content="Muddy Paws Adventure Gear producs page">
-		<meta name="keywords" content="cat dog hiking gear equipment leash tracker pet">
+		<meta name="description" content="Muddy Paws Adventure Gear products page">
+		<meta name="keywords" content="cat dog hiking gear equipment leash tracker pet products">
 		<link rel="stylesheet" href="style.css">
 
 		<!-- Transfering in a google font Open Sans, Free for all use -->
@@ -14,75 +14,99 @@
 	<body>
 		<nav>
 			<ul>
-			  <li><p id = "topStoreIcon">MPGA</p></li>
+			  <li><p id="topStoreIcon">MPGA</p></li>
 			  <li><a class="active nonIcon" href="#home">Products</a></li>
 			  <li><a href="contact.html">Contact</a></li>
 			  <li><a href="about.html">About</a></li>
 			</ul>
-			<a class = "cart" href="#shopping"><img alt = "image of a shopping cart" src="images/icons/shopping-cart-solid.svg"></a>
+			<a class = "cart" href="#shopping"><img alt="image of a shopping cart" src="images/icons/shopping-cart-solid.svg"></a>
 		</nav>
 		<div id="myContainer">
-			<div class= "flex topper">
-				<div class= "flex-inner">
+			<div class="flex topper">
+				<div class="flex-inner">
 					 <h1>Muddy Paws Adventure Gear</h1>
 					 <p>Follow our 3-step process to experience the adventure with your furry friend!</p>
 				</div>
-				<div class= "flex-inner">
-					 <img src = "images/HomscreenDog.png">
+				<div class="flex-inner">
+					 <img alt="dog wearing a hiking backpack" src = "images/HomscreenDog.png">
 				</div>
 			</div>
-			<p><b>Step 1:</b> Which animal are you shopping for?</p>
+			<p ><b>Step 1:</b> Which animal are you shopping for?</p>
 			<div class = "buttons">
-				<button id = "dogCatButton" class = "checked dogCat" onclick="filterNone()">
-					<img src = "images/icons/dog-cat.svg" alt = "Illustration of cat and dog">
+				<button id="dogCatButton" class="checked dogCat" onclick="filterNone()">
+					<img src = "images/icons/dog-cat.svg" alt="Illustration of cat and dog">
+					<p>Cat & dog</p>
 				</button>
-				<button id = "catButton" onclick="filterOutDog()">
-					<img src = "images/icons/cat.svg" alt = "Illustration of cat">
+				<button id="catButton" onclick="filterOutDog()">
+					<img src="images/icons/cat.svg" alt="Illustration of cat">
+					<p>Cat</p>
 				</button>
-				<button id = "dogButton" onclick="filterOutCat()">
-					<img src = "images/icons/dog.svg" alt = "Illustration of dog">
+				<button id="dogButton" onclick="filterOutCat()">
+					<img src="images/icons/dog.svg" alt="Illustration of dog">
+					<p>Dog</p>
 				</button>
 			</div>
-			<p><b>Step 2:</b> Choose your product</p>
-			<div id = "products"></div>
-			<p><b>Step 3:</b> Checkout</p>
-			<div class = "checkout">
-				<div id = "cartItems">
+			<p class="step"><b>Step 2:</b> Choose your product</p>
+			<div id="products"></div>
+			<p class="step"><b>Step 3:</b> Checkout when you're happy with your shopping cart</p>
+			<div class="checkout">
+				<div id="cartItems">
 					<div>
 						<p>No items in cart</p>
 					</div>
 				</div>
-				<button>Purchase & Pay</button>
+				<div id="checkoutWarning" class="on">
+					<p>Add something to your cart to checkout</p>
+					<button disabled id="checkoutButton">Checkout</button>
+				</div>
 			</div>
 		</div>
 		<div id="shoppingOverlay">
 			<div class="content">
-					<button class = "closeButton" onclick="closeOverlay()"><img class = "cross" src = "images/icons/cross.svg"></button>
-					<h3 id ="overlayProductName">Name of item</h3>
-					<div class = "flex">
-						<div class = "inner" ><img id ="overlayProductImage" class = "productImg" src = "images/test.png"></div>
-						<div class = "inner" >
-							<p id ="overlayProductDescription">Description</p>
+					<button class="closeButton" onclick="closeOverlay()"><img class="cross" alt = "exit icon" src="images/icons/cross.svg"></button>
+					<h3 id="overlayProductName">Name of item</h3>
+					<div class="flex">
+						<div class="inner" ><img id="overlayProductImage" class="productImg" alt="image of the product" src="images/test.png"></div>
+						<div class="inner" >
+							<p id="overlayProductDescription">Description</p>
 							<div class = "flex">
-								<div class = "inner" ><p class ="item">Color</p></div>
-								<div class = "inner" ><p class ="item">size</p></div>
+								<div class="inner" ><p class="item">Color</p></div>
+								<div class="inner" ><p class="item">size</p></div>
 							</div>
 							<div class = "flex">
-								<div class = "inner" ><p class ="color select">Black<img src = "images/icons/dropdownArrows.svg"></p></div>
-								<div class = "inner" ><p class ="size select">Tiny<img src = "images/icons/dropdownArrows.svg"></p></div>
+								<div class="inner" ><p class="color select">Black<img alt="dropdown arrows" src="images/icons/dropdownArrows.svg"></p></div>
+								<div class="inner" ><p class="size select">Tiny<img alt="dropdown arrows" src="images/icons/dropdownArrows.svg"></p></div>
 							</div>
 
 							<div class = "flex">
-								<div class = "inner" ><p class ="item">Quatity</p></div>
-								<div class = "inner" ><p class ="item"></p></div>
+								<div class="inner" ><p class="item">Quatity</p></div>
+								<div class="inner" ><p class="item"></p></div>
 							</div>
-							<div class = "flex">
-								<div class = "inner" ><p class ="color select"><span class = "plusMinus">-</span> 1 <span class = "plusMinus">+</span></p></div>
-								<div class = "inner" ><button class = "submit" onclick = "submit()">Add to shopping cart</button></div>
+							<div class="flex">
+								<div class="inner" ><p class="color select"><span class="plusMinus">-</span> 1 <span class="plusMinus">+</span></p></div>
+								<div class="inner" ><button class="submit" onclick="closeOverlay()">Add to shopping cart</button></div>
 							</div>
 
 						</div>
 					</div>
+			</div>
+		</div>
+		<div id="confirmationOverly">
+			<div class="content">
+				<h2><img class="check" alt="image of a check" src="images/check.png">Added to your cart</h2>
+				<div id="confirmProduct" class="flex">
+					<div class="inner">
+						<img alt="image of the product" src="images/test.png">
+					</div>
+					<div class="inner description">
+						<h3 id="confirmProductName">TEST</h3>
+						<p>Color: <span class = "box"></span>Black</p>
+						<p>Size: Tiny</p>
+						<p>Quantity: 1</p>
+					</div>
+				</div>
+				<button onclick = "closeConfirm()">Continue shopping</button>
+				<p class="payment">Or <span class="link">proceed to payment<img alt="link icon" src="images/icons/link.svg"></span></p>
 			</div>
 		</div>
 	</body>
