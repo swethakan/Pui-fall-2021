@@ -4,6 +4,7 @@
 		<title>Muddy Paws Adventure Gear</title>
 		<meta name="description" content="Muddy Paws Adventure Gear products page">
 		<meta name="keywords" content="cat dog hiking gear equipment leash tracker pet products">
+		<!-- bringing in the style sheet -->
 		<link rel="stylesheet" href="style.css">
 
 		<!-- Transfering in a google font Open Sans, Free for all use -->
@@ -12,6 +13,8 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 	</head>
 	<body>
+
+		<!-- Navigation at the top of the page which is reflected in all 3 pages -->
 		<nav>
 			<ul>
 			  <li><p id="topStoreIcon">MPGA</p></li>
@@ -19,8 +22,10 @@
 			  <li><a href="contact.html">Contact</a></li>
 			  <li><a href="about.html">About</a></li>
 			</ul>
-			<a class = "cart" href="#shopping"><img alt="image of a shopping cart" src="images/icons/shopping-cart-solid.svg"></a>
+			<a class = "cart" href="#shopping"><img alt="image of a shopping cart" src="images/icons/shopping-cart-solid.svg"><span>0</span></a>
 		</nav>
+
+		<!-- Top-most container on the product page which introduces the company and has some instructions -->
 		<div id="myContainer">
 			<div class="flex topper">
 				<div class="flex-inner">
@@ -31,36 +36,44 @@
 					 <img alt="dog wearing a hiking backpack" src = "images/HomscreenDog.png">
 				</div>
 			</div>
-			<p ><b>Step 1:</b> Which animal are you shopping for?</p>
-			<div class = "buttons">
-				<button id="dogCatButton" class="checked dogCat" onclick="filterNone()">
-					<img src = "images/icons/dog-cat.svg" alt="Illustration of cat and dog">
-					<p>Cat & dog</p>
-				</button>
-				<button id="catButton" onclick="filterOutDog()">
-					<img src="images/icons/cat.svg" alt="Illustration of cat">
-					<p>Cat</p>
-				</button>
-				<button id="dogButton" onclick="filterOutCat()">
-					<img src="images/icons/dog.svg" alt="Illustration of dog">
-					<p>Dog</p>
-				</button>
+
+		
+		<!-- The page is split into 3 steps. this is step 1 -->
+		<p ><b>Step 1:</b> Which animal are you shopping for?</p>
+		<div class = "buttons">
+			<button id="dogCatButton" class="checked dogCat" onclick="filterNone()">
+				<img src = "images/icons/dog-cat.svg" alt="Illustration of cat and dog">
+				<p>Cat & dog</p>
+			</button>
+			<button id="catButton" onclick="filterOutDog()">
+				<img src="images/icons/cat.svg" alt="Illustration of cat">
+				<p>Cat</p>
+			</button>
+			<button id="dogButton" onclick="filterOutCat()">
+				<img src="images/icons/dog.svg" alt="Illustration of dog">
+				<p>Dog</p>
+			</button>
+		</div>
+
+		<!-- Step 2 -->
+		<p class="step" id="shopping"><b>Step 2:</b> Choose your product</p>
+		<div id="products"></div>
+
+		<!-- Step 3. This is where the user will checkout and is the last visible part of the page -->
+		<p class="step"><b>Step 3:</b> Checkout when you're happy with your shopping cart</p>
+		<div class="checkout">
+			<div id="cartItems">
+				<div>
+					<p>No items in cart</p>
+				</div>
 			</div>
-			<p class="step"><b>Step 2:</b> Choose your product</p>
-			<div id="products"></div>
-			<p class="step"><b>Step 3:</b> Checkout when you're happy with your shopping cart</p>
-			<div class="checkout">
-				<div id="cartItems">
-					<div>
-						<p>No items in cart</p>
-					</div>
-				</div>
-				<div id="checkoutWarning" class="on">
-					<p>Add something to your cart to checkout</p>
-					<button disabled id="checkoutButton">Checkout</button>
-				</div>
+			<div id="checkoutWarning" class="on">
+				<p>Add something to your cart to checkout</p>
+				<button disabled id="checkoutButton">Checkout</button>
 			</div>
 		</div>
+
+		<!-- This is the overlay that appears when you click a product. It shows you details and allows your to put it into your cart. Unfortunately the dropdown menus don't work but you can still get an idea of how they look-->
 		<div id="shoppingOverlay">
 			<div class="content">
 					<button class="closeButton" onclick="closeOverlay()"><img class="cross" alt = "exit icon" src="images/icons/cross.svg"></button>
@@ -91,6 +104,8 @@
 					</div>
 			</div>
 		</div>
+
+		<!-- This is the second overlay that confirms a product is put into the cart -->
 		<div id="confirmationOverly">
 			<div class="content">
 				<h2><img class="check" alt="image of a check" src="images/check.png">Added to your cart</h2>
@@ -109,8 +124,11 @@
 				<p class="payment">Or <span class="link">proceed to payment<img alt="link icon" src="images/icons/link.svg"></span></p>
 			</div>
 		</div>
+
+		<!-- End of the page -->
 	</body>
 	<footer>
+		<!-- Now loading in the javascript to add functionality. -->
 		<script src="script.js"></script>
 	</footer>
 </html>
