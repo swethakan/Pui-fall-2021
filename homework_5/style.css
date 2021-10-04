@@ -554,3 +554,11 @@ body{
 	background: rgb(223, 223, 223);
 	cursor: pointer;
 }
+
+/* Credit on the bottom of each page  */
+#bottomCredit{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
