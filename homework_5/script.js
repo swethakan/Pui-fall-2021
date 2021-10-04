@@ -4,7 +4,7 @@ var products = [
     "Price": 100,
     "image": "test.png",
     "Description": "A harness for large and small dogs alike. How harnesses are made with natural materials and are durable enough to weather the elements. It is water resistant, and comfortable for your pets to wear.\nTiny - Good for dogs less than 10 inches high<br>Small - for dogs above 10 inches high<br>Medium - For dogs above 20 inches high<br>Large - For dogs above 30 inches high",
-    "remove_on": ""
+    "remove_on": "",
   },
   {
     "product_name": "Food Storage",
@@ -43,9 +43,15 @@ var products = [
   }
 ];
 
-var itemsInCart = false;
+var itemsInCart = 0;
 var cartNumItems = document.getElementById("cartNumItems");
 var totalPrice = 0;
+var totalPriceDiv = document.getElementById("totalPrice");
+
+let color = "Black"; 
+let size = "Tiny"; 
+let quantity = 1;
+let price = 45;
 
 var currentProduct = "";
 var cartItems = document.getElementById("cartItems");
@@ -140,6 +146,7 @@ function openOverlay() {
   console.log(this);
   var productNumber = parseInt( this.id[this.id.length -1] );
   currentProduct = products[productNumber].product_name;
+  price = products[productNumber].Price;
   productName.innerHTML = ""+products[productNumber].product_name+"";
   productDescription.innerHTML = ""+products[productNumber].Description+"";
 
@@ -148,7 +155,7 @@ function openOverlay() {
   shoppingOverlay.style.display = "block";
 }
 function closeConfirm() {
-  addToCart(currentProduct, "Black", "Tiny", 1);
+  addToCart(currentProduct, color, size, quantity, price);
   confirmOverlay.style.display = "none";
   currentProduct = "";
 }
@@ -159,23 +166,31 @@ function closeOverlay() {
   console.log("visible confirm");
 }
 
-function addToCart(product, color, size, quantity) {
+function addToCart(product, color, size, quantity, price) {
   if(itemsInCart == 0){
     checkoutButton.disabled = false;
     checkoutWarning.classList.remove("on");
     cartItems.innerHTML = "";
   }
-  itemsInCart +=1; 
+  itemsInCart +=1;
+  totalPrice  += parseInt(price); 
+  totalPriceDiv.innerHTML = "$"+ totalPrice +"";
+  cartNumItems.innerHTML = "<span>"+itemsInCart+"</span>";
   cartItems.innerHTML += "<div><p><span class ='delete' onclick= 'deleteCartItem(this)'>X</span>\
                         <span class ='product'>"+product+"</span>\
                         <span class ='quantity'>Q:<span class='plus'>+</span><span class='input'>"+quantity+"</span><span class='plus'>-</span>\
                         </span> <span class ='color'>Color: <span class='input '><span class = '"+color+"'></span>"+color+"<img alt='dropdown icon' src = 'images/icons/dropdownArrows.svg'></span></span>\
-                        <span class ='size'>Size: <span class='input'>"+size+"<img alt='dropdown icon' src = 'images/icons/dropdownArrows.svg'></span></span></p></div>";
+                        <span class ='size'>Size: <span class='input'>"+size+"<img alt='dropdown icon' src = 'images/icons/dropdownArrows.svg'></span></span><span class = 'cartPrice'>Price: <b>$</b><b>"+price+"</b></span></p></div>";
 }
 
 function deleteCartItem(item) {
+  //very complicated way to get the price of what was deleted. This would only work if the price is the last element in the description
+  let takeawayPrice = item.parentNode.lastChild.lastChild.innerText;
   item.parentNode.remove();
   itemsInCart -=1;
+  totalPrice  -= parseInt(takeawayPrice); 
+  totalPriceDiv.innerHTML = "$"+ totalPrice +"";
+  cartNumItems.innerHTML= "<span>"+itemsInCart+"</span>";
 
   if(itemsInCart == 0){
     checkoutButton.disabled = true;

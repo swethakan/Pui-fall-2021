@@ -191,6 +191,9 @@ body{
 
 
 /* Styles for step 4 where the user will checkout their cart */
+.checkout{
+	text-align: right;
+}
 .checkout button{
 	margin-bottom: 50px;
 	width: 230px;
@@ -419,12 +422,11 @@ body{
 	font-weight: 600;
 	margin-right: 20px;
 }
-#cartItems .quantity{
+#cartItems .quantity, #cartItems .color, #cartItems .cartPrice{
 	margin-right: 10px;
+	margin-left: 20px;
 }
-#cartItems .color{
-	margin-right: 10px;
-}
+
 #cartItems .quantity .plus{
 	margin-right: 10px;
 	margin-left: 10px;
