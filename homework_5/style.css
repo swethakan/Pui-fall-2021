@@ -413,6 +413,7 @@ body{
 	padding-bottom: 4px;
 	margin-right: 20px;
 	border: solid 1px black;
+	cursor: pointer;
 }
 #cartItems .product{
 	font-weight: 600;
@@ -458,6 +459,7 @@ body{
 #aboutContainer .about .background{
 	background: rgba(255, 255, 255, 0.654);
 	padding-bottom: 50px;
+	padding-top: 30px;
 }
 #aboutContainer .about p{
 	padding: 0px 30px;

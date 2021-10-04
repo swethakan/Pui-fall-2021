@@ -44,6 +44,9 @@ var products = [
 ];
 
 var itemsInCart = false;
+var cartNumItems = document.getElementById("cartNumItems");
+var totalPrice = 0;
+
 var currentProduct = "";
 var cartItems = document.getElementById("cartItems");
 var checkoutWarning = document.getElementById("checkoutWarning");
