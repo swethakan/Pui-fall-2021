@@ -194,6 +194,11 @@ function closeOverlay() {
   confirmOverlay.style.display = "block";
 }
 
+function closeOverlayNoBuy() {
+  shoppingOverlay.style.display = "none";
+  confirmOverlay.style.display = "none";
+}
+
 //like it says, when a user wants to get rid of an item, this function deletes it from the cart
 function deleteCartItem(item) {
   //very complicated way to get the price of what was deleted. This would only work if the price is the last element in the description
