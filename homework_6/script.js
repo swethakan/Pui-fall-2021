@@ -1,0 +1,273 @@
+window.shoppingCartProducts = [
+];
+
+window.sizeSelection = ["Tiny","Small","Medium","Large"];
+
+window.colorSelection = ["Black","Green","Red","Blue"];
+
+//Json of all our products
+var products = [
+  {
+    "product_name": "GPS tracker",
+    "Price": 100,
+    "image": "test.png",
+    "Description": "A harness for large and small dogs alike. How harnesses are made with natural materials and are durable enough to weather the elements. It is water resistant, and comfortable for your pets to wear.\nTiny - Good for dogs less than 10 inches high<br>Small - for dogs above 10 inches high<br>Medium - For dogs above 20 inches high<br>Large - For dogs above 30 inches high",
+    "remove_on": "",
+  },
+  {
+    "product_name": "Food Storage",
+    "Price": 20,
+    "image": "test.png",
+    "Description": "A harness for large and small dogs alike. How harnesses are made with natural materials and are durable enough to weather the elements. It is water resistant, and comfortable for your pets to wear.\nTiny - Good for dogs less than 10 inches high<br>Small - for dogs above 10 inches high<br>Medium - For dogs above 20 inches high<br>Large - For dogs above 30 inches high",
+    "remove_on": ""
+  },
+  {
+    "product_name": "Water Storage",
+    "Price": 15,
+    "image": "test.png",
+    "Description": "A harness for large and small dogs alike. How harnesses are made with natural materials and are durable enough to weather the elements. It is water resistant, and comfortable for your pets to wear.\nTiny - Good for dogs less than 10 inches high<br>Small - for dogs above 10 inches high<br>Medium - For dogs above 20 inches high<br>Large - For dogs above 30 inches high",
+    "remove_on": ""
+  },
+  {
+    "product_name": "Cat Backpack",
+    "Price": 45,
+    "image": "test.png",
+    "Description": "A harness for large and small dogs alike. How harnesses are made with natural materials and are durable enough to weather the elements. It is water resistant, and comfortable for your pets to wear.\nTiny - Good for dogs less than 10 inches high<br>Small - for dogs above 10 inches high<br>Medium - For dogs above 20 inches high<br>Large - For dogs above 30 inches high",
+    "remove_on": "dog"
+  },
+  {
+    "product_name": "Dog Harness",
+    "Price": 23,
+    "image": "test.png",
+    "Description": "A harness for large and small dogs alike. How harnesses are made with natural materials and are durable enough to weather the elements. It is water resistant, and comfortable for your pets to wear.\nTiny - Good for dogs less than 10 inches high<br>Small - for dogs above 10 inches high<br>Medium - For dogs above 20 inches high<br>Large - For dogs above 30 inches high",
+    "remove_on": "cat"
+  },
+  {
+    "product_name": "Cat Harness",
+    "Price": 23,
+    "image": "test.png",
+    "Description": "A harness for large and small dogs alike. How harnesses are made with natural materials and are durable enough to weather the elements. It is water resistant, and comfortable for your pets to wear.\nTiny - Good for dogs less than 10 inches high<br>Small - for dogs above 10 inches high<br>Medium - For dogs above 20 inches high<br>Large - For dogs above 30 inches high",
+    "remove_on": "dog"
+  }
+];
+
+//Setting up variables that will help the shopping cart functionality
+var itemsInCart = 0;
+var cartNumItems = document.getElementById("cartNumItems");
+var totalPrice = 0;
+var totalPriceDiv = document.getElementById("totalPrice");
+var currentProduct = "";
+var myShoppingCart = document.getElementById("shoppingCart");
+var cartItems = document.getElementById("cartItems");
+var checkoutWarning = document.getElementById("checkoutWarning");
+
+//preferences for each item will be held in these variables
+let color = "Black"; 
+let size = "Tiny"; 
+let quantity = 1;
+let price = 45;
+
+//two overlay scenes
+var shoppingOverlay = document.getElementById("shoppingOverlay");
+var confirmOverlay = document.getElementById("confirmationOverly");
+
+//all our buttons for step 1 and for checkout
+var catDogButton = document.getElementById('dogCatButton');
+var catButton = document.getElementById('catButton');
+var dogButton = document.getElementById('dogButton');
+var checkoutButton = document.getElementById("checkoutButton");
+
+//When we load the page, we want the javascript to auto populate the products section based on the json at the top of this file
+var myProductHTML = "<div class = 'allProduct'>"
+for(x = 0; x < products.length; x++){
+    myProductHTML += "<div id =product"+x+" tabindex='0' class = 'oneProduct "+products[x].remove_on+"'>"
+    myProductHTML += "<img alt='pproduct show with color selected' src='images/"+products[x].image+"'>";
+    myProductHTML += "<p class = 'price'>$"+products[x].Price+"</p>";
+    myProductHTML += "<h1>"+products[x].product_name+"</h1>";
+    myProductHTML += "</div>"
+    if(x == 2){
+      myProductHTML += "</div><div class = 'allProduct'>"
+    }
+  }
+myProductHTML += "</div>"
+document.getElementById("products").innerHTML = myProductHTML;
+
+//Now add an event listener to each product div. This will make them buttons
+var productList = document.getElementsByClassName('oneProduct');
+for(x = 0; x < productList.length; x++){
+    productList[x].addEventListener("click", openOverlay);
+  }
+
+//To help our sorting functionality, get all the elements that should leave on dog filter, and ones that should leave on cat filter
+var dogElements = document.getElementsByClassName('dog');
+var catElements = document.getElementsByClassName('cat');
+
+//This handles the visuals of the sorting functionality in step 1
+function turnOffCheck(){
+  if(catButton.classList.contains('checked')){
+    catButton.classList.remove("checked");
+  }
+  if(dogButton.classList.contains("checked")){
+    dogButton.classList.remove("checked");
+  }
+
+  if(catDogButton.classList.contains("checked")){
+    catDogButton.classList.remove("checked");
+  }
+}
+//This takes out all products that are dog-only
+function filterOutDog(){
+  turnOffCheck();
+  catButton.classList.add ("checked");
+  for(x = 0; x < dogElements.length; x++){
+    dogElements[x].classList.add( "remove" );
+  }
+  for(x = 0; x < catElements.length; x++){
+    catElements[x].classList.remove( "remove" );
+  }
+}
+//This takes out all products that are cat-only
+function filterOutCat(){
+  turnOffCheck();
+  dogButton.classList.add ("checked");
+  for(x = 0; x < dogElements.length; x++){
+    dogElements[x].classList.remove( "remove" );
+  }
+  for(x = 0; x < catElements.length; x++){
+    catElements[x].classList.add( "remove" );
+  }
+}
+//This takes out all products that are for both dogs and cats
+function filterNone(){
+  turnOffCheck();
+  catDogButton.classList.add ("checked");
+
+  for(x = 0; x < dogElements.length; x++){
+    dogElements[x].classList.remove( "remove" );
+  }
+  for(x = 0; x < catElements.length; x++){
+    catElements[x].classList.remove( "remove" );
+  }
+}
+
+//Some more elements that will help us adjust the overlay
+var productName = document.getElementById("overlayProductName");
+var productPrice = document.getElementById("overlayProductPrice");
+var productImage = document.getElementById("overlayProductImage");
+var productDescription = document.getElementById("overlayProductDescription");
+
+var confirmName = document.getElementById("confirmProductName");
+var confirmImage = document.getElementById("confirmProductImage");
+
+
+var colorDefaultOnOverlay = document.getElementById("colorDefault");
+var sizeDefaultOnOverlay = document.getElementById("sizeDefault");
+var quantityDefaultOnOverlay = document.getElementById("quantityDefault");
+
+//opens an overlay once user selects a product
+function openOverlay() {
+  color = "Black";
+  Size = "Tiny";
+  quantity = 1;
+
+  colorDefaultOnOverlay.innerText = color;
+  sizeDefaultOnOverlay.innerText = size;
+  quantityDefaultOnOverlay.innerText = quantity;
+
+  var productNumber = parseInt( this.id[this.id.length -1] );
+  currentProduct = products[productNumber].product_name;
+  price = products[productNumber].Price;
+  productName.innerHTML = ""+products[productNumber].product_name+"";
+  productDescription.innerHTML = ""+products[productNumber].Description+"";
+  productPrice.innerText = price;
+
+  confirmName.innerHTML = ""+products[productNumber].product_name+"";
+
+
+  shoppingOverlay.style.display = "block";
+}
+
+//once you add to cart, this function takes care of the cart and opens a confirmation overlay
+const templateElement = document.getElementById("template-shopping-cart");
+function addToCart(product, color, size, quantity, price) {
+  if(itemsInCart == 0){
+    checkoutButton.disabled = false;
+    checkoutWarning.classList.remove("on");
+    cartItems.innerHTML = "";
+  }
+
+  //this is using adding the new shopping cart element to our global array 
+  let array = [{
+    "product": ""+product+"",
+    "color": ""+color+"",
+    "size": ""+size+"",
+    "quantity": ""+quantity+"",
+    "price": ""+price+"",
+  }];
+  //here's the global array. Just pushing our new value into it
+  window.shoppingCartProducts.push(array);
+  console.log(window.shoppingCartProducts);
+
+  //Here, I use the method we learned in lab to add to the shopping cart
+  const cartElement = templateElement.cloneNode(true);
+  cartElement.id = ""
+  const nameElement = cartElement.getElementsByClassName("product")[0];
+    nameElement.innerHTML = product;
+  const priceElement = cartElement.getElementsByClassName("price")[0];
+    priceElement.innerHTML = (price*quantity);
+  const sizeElement = cartElement.getElementsByClassName("size")[0].getElementsByClassName("change")[0];
+    sizeElement.innerHTML = size;
+  const colorElement = cartElement.getElementsByClassName("color")[0].getElementsByClassName("change")[0];
+    colorElement.innerText = color;
+  const quantityElement = cartElement.getElementsByClassName("quantity")[0].getElementsByClassName("input")[0];
+  quantityElement.innerText = quantity;
+  //now add our edited template item to the cart
+  cartItems.appendChild(cartElement);
+
+  //this takes care of the cart icon at the top of the page
+  itemsInCart +=1;
+  totalPrice  += parseInt(price); 
+  totalPriceDiv.innerHTML = "$"+ totalPrice +"";
+  cartNumItems.innerHTML = "<span>"+itemsInCart+"</span>";
+}
+//closes the overlay that confirms you've added somehting to the cart
+function closeConfirm() {
+  color = 
+  addToCart(currentProduct, color, size, quantity, price);
+  confirmOverlay.style.display = "none";
+  currentProduct = "";
+}
+
+//closes all overlays onscreen
+function closeOverlay() {
+  shoppingOverlay.style.display = "none";
+  confirmOverlay.style.display = "block";
+}
+
+function closeOverlayNoBuy() {
+  shoppingOverlay.style.display = "none";
+  confirmOverlay.style.display = "none";
+}
+
+//like it says, when a user wants to get rid of an item, this function deletes it from the cart
+function deleteCartItem(item) {
+  //very complicated way to get the price of what was deleted. This would only work if the price is the last element in the description
+  let takeawayPrice = item.parentNode.getElementsByClassName('price')[0].innerText;
+  
+  //delete from our global json array
+  let indexOfItemDeleted = Array.prototype.indexOf.call(cartItems.children, item.parentNode.parentNode);
+  window.shoppingCartProducts.splice(indexOfItemDeleted, 1);
+
+  item.parentNode.parentNode.remove();
+  itemsInCart -=1;
+  totalPrice  -= parseInt(takeawayPrice); 
+  totalPriceDiv.innerHTML = "$"+ totalPrice +"";
+  cartNumItems.innerHTML= "<span>"+itemsInCart+"</span>";
+
+  if(itemsInCart == 0){
+    checkoutButton.disabled = true;
+    checkoutWarning.classList.add("on");
+    cartItems.innerHTML = "<div><p>No items in cart</p></div>";
+  }
+
+}

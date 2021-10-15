@@ -1,0 +1,576 @@
+
+/*All this code takes care of the nav bar on all three pages*/
+nav .active{
+	font-weight: bold;
+}
+nav .active:hover{
+	cursor: default;
+}
+nav img{
+	width: 30px;
+	height: auto;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  color: white;
+}
+li {
+  float: left;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+li a {
+  display: block;
+  padding: 8px;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
+  padding: 0px 50px;
+  padding-top: 7px;
+  text-decoration: none;
+}
+li a:hover{
+	font-weight: bold;
+}
+#topStoreIcon{
+	font-size: 50px;
+	line-height: 50px;
+	margin: 0;
+	margin-left: 10px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	color:  #B3B3B3;
+	padding-right: 30px;
+}
+.cart{
+	margin-right: 25px;
+	right: 10px;
+	top: 20px;
+	position: absolute;
+	text-decoration: none;
+}
+.cart span{
+	font-family: 'Open Sans', sans-serif;
+	text-decoration: none;
+	font-weight: bold;
+	background: white;
+	padding: 2px 7px;
+	border-radius: 20px;
+}
+#checkoutWarning{
+	width: fit-content;
+	margin:auto;
+	display: block;
+}
+#checkoutWarning p{
+	padding:0px;
+	margin-top: 50px;
+	text-align:center;
+	font-size: 13px;
+	visibility: hidden;
+}
+.on:hover p{
+	visibility: visible!important;
+}
+
+
+
+
+/*body styles for all pages*/
+body{
+	padding: 0;
+	margin: 0;
+	background-image: url(images/sideBG.jpg);
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+}
+
+
+
+/*flex grid has been useful for all pages*/
+.flex{
+	display: flex;
+}
+.flex .inner{
+	flex: 1;
+}
+
+
+
+/*Styles exclusively for the Product page*/
+.topper img{
+	width:250px;
+	padding:10px;
+}
+.topper{
+	margin-top:70px;
+	margin-bottom:70px;
+}
+.step{
+	padding-top:50px;
+}
+#myContainer{
+	max-width: 650px;
+	width: 100%;
+	display: block;
+	margin: auto;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+}
+
+
+
+
+
+/* styles for step 1 which includes 3 different buttons */
+.buttons img{
+	height: 40px;
+	padding:15px 30px;
+}
+.buttons p{
+	margin-top:0px;
+}
+.buttons button{
+	margin:20px 40px;
+	background: white;
+	border: solid 1px black;
+	cursor: pointer;
+	border-radius: 10px;
+}
+.buttons button.checked{
+	background: rgb(234, 234, 234);
+	border: none;
+}
+.buttons .dogCat img{
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+
+
+/* Styles for step 3 where user looks for products */
+.allProduct {
+	display: flex;
+}
+.allProduct img{
+	width: 90%;
+	display: block;
+	margin: auto;
+}
+.allProduct h1{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	  font-size: 20px;
+	margin-top: 0px;
+}
+.allProduct p{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	margin-bottom: 0px;
+}
+.oneProduct{
+	padding: 20px;
+	flex: 1;
+	flex-wrap: wrap;
+	max-width: 170px;
+	cursor: pointer;
+}
+.oneProduct:hover{
+	border: solid 1px black;
+}
+.remove{
+	height: 0;
+	width: 0;
+	display: none;
+}
+
+
+
+/* Styles for step 4 where the user will checkout their cart */
+.checkout{
+	text-align: right;
+}
+.checkout button{
+	margin-bottom: 50px;
+	width: 230px;
+	padding: 18px;
+	font-size: 20px;
+	background: #FFEEB2;
+	font-weight: 600;
+	border: solid 1px rgb(190, 190, 190)!important;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+}
+.checkout button:disabled{
+	background: rgb(227, 227, 227);
+	color:grey;
+	font-weight: 300;
+	cursor:default;
+}
+.checkout #cartItems{
+	font-size: 15px;
+	text-align: right;
+	border-bottom: solid 1px black;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+
+
+/*For the overlay that allows you to customize and see details about a product*/
+#shoppingOverlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+  font-size: 15px;
+}
+#shoppingOverlay .content{
+	width: 100%;
+    max-width: 650px;
+    height: fit-content;
+    
+    top: 50%;
+    background: white;
+    margin: auto;
+    margin-top: 10%;
+    display: block;
+
+}
+#shoppingOverlay h3{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	text-align: center;
+	margin-top: -20px;
+	padding-top: 0px;
+	font-size: 25px;
+}
+#shoppingOverlay .productImg{
+	width: 80%;
+	padding-left: 20px;
+}
+#shoppingOverlay .item{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	margin-bottom: 0px;
+}
+#shoppingOverlay .select{
+	font-family: 'Open Sans', sans-serif;
+	border: solid 1px rgb(190, 190, 190)!important;
+	width: fit-content;
+    padding: 6px;
+    margin-top: 0px;
+}
+.select img{
+	width: 10px;
+	padding-left: 20px;
+}
+#overlayProductDescription{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	padding-right: 30px;
+}
+#shoppingOverlay .inner{
+	width: 50%;
+}
+.plusMinus{
+	font-size: 20px;
+	padding: 0px 10px;
+}
+.cross{
+	width: 20px;
+	padding: 10px;
+}
+.closeButton{
+	border: none!important;
+	background: white!important;
+	cursor: pointer;
+}
+#shoppingOverlay .submit{
+	background: #FFEEB2;
+	border: solid 1px rgb(190, 190, 190)!important;
+	width: 90%;
+	font-weight: 600;
+	margin-left: -30px;
+	padding: 10px 10px;
+	font-size: 14px;
+	margin-bottom:50px;
+	cursor:pointer;
+}
+
+
+
+/* styles for the overlay that let's users know their item is in the cart*/
+#confirmationOverly{
+	font-size: 15px;
+	font-family: 'Open Sans', sans-serif;
+	position: fixed;
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 2;
+	cursor: pointer;
+}
+#confirmationOverly .content{
+	width: 100%;
+    max-width: 650px;
+    height: fit-content;
+    top: 50%;
+    background: white;
+    margin: auto;
+    margin-top: 10%;
+    display: block;
+}
+#confirmationOverly .check{
+	width: 37px;
+	padding-top: 20px;
+	padding-right: 10px;
+}
+#confirmationOverly h2{
+	font-size: 25px;
+	text-align: center;
+	margin-bottom: 30px;
+	padding-top: 20px;
+}
+#confirmationOverly h3{
+	margin-bottom: 5px;
+}
+#confirmationOverly #confirmProduct img{
+	width:100%;
+	max-width: 200px;
+	margin:auto;
+	display: block;
+}
+#confirmationOverly #confirmProduct p{
+	margin-top:0px;
+	margin-bottom: 4px;
+}
+#confirmationOverly #confirmProduct{
+	width:445px;
+	margin: auto;
+}
+#confirmationOverly #confirmProduct .description{
+	margin-left:40px;
+}
+
+#confirmationOverly .headline img{
+	margin-right:0px;
+	margin-left:auto;
+}
+#confirmationOverly button{
+	background: #FFEEB2;
+	border: solid 1px rgb(190, 190, 190)!important;
+	width: 300px;
+	margin-left: auto;
+	margin-right: 48px;
+	margin-top: 20px;
+	padding: 10px 10px;
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+}
+#confirmationOverly .payment{
+	text-align: right;
+	margin-bottom: 30px;
+	margin-right: 48px;
+	font-size: 13px;
+}
+#confirmationOverly .payment .link{
+	text-decoration: underline;
+}
+#confirmationOverly .payment img{
+	width:15px;
+	padding-left: 10px;
+}
+
+
+
+/* Shopping cart styles */
+#cartItems .delete{
+	padding: 0px 7px;
+	padding-bottom: 4px;
+	margin-right: 20px;
+	border: solid 1px black;
+}
+#cartItems .delete{
+	padding: 0px 7px;
+	padding-bottom: 4px;
+	margin-right: 20px;
+	border: solid 1px black;
+	cursor: pointer;
+}
+#template-shopping-cart{
+	display: none;
+}
+#cartItems .product{
+	font-weight: 700;
+	margin-right: 20px;
+}
+#cartItems .size, #cartItems .color, #cartItems .cartPrice{
+	margin-right: 10px;
+	margin-left: 20px;
+}
+
+#cartItems .quantity .plus{
+	margin-right: 5px;
+	margin-left: 5px;
+	font-size: 19px;
+	color: rgb(152, 152, 152);
+}
+#cartItems img{
+	width: 8px;
+	padding-left: 7px;
+}
+#cartItems .input{
+	text-decoration: underline;
+}
+#cartItems .color .Black{
+	width: 10px;
+	height: 11px;
+	margin-right: 5px;
+	display: inline-block;
+	background: black;
+}
+
+
+
+/* About page unique styling */
+#aboutContainer {
+	height: 100vh;
+	width: 100%;
+	font-family: 'Open Sans', sans-serif;
+	background-image: url("images/about.png");
+	background-size: cover;
+}
+#aboutContainer .about .background{
+	background: rgba(255, 255, 255, 0.654);
+	padding-bottom: 50px;
+	padding-top: 30px;
+}
+#aboutContainer .about p{
+	padding: 0px 30px;
+    padding-top: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 20px;
+}
+#aboutContainer .about {
+	width:auto;
+	max-width:500px;
+	margin:auto;
+	margin-left:50%;
+}
+#aboutContainer .about h1{
+	color:white;
+	font-size: 50px;
+	filter: drop-shadow(0 0 0.75rem black);
+}
+#aboutContainer .button{
+	background: rgb(255, 225, 170);
+	font-size: 20px;
+	font-weight: bold;
+	padding:15px;
+	display: block;
+	margin:auto;
+	margin-top: 40px;
+	width:fit-content;
+	border: solid 1px rgb(190, 190, 190)!important;
+}
+#aboutContainer .button a{
+	text-decoration: none;
+	color:black;
+}
+
+
+
+/* Unique styles for the contact page */
+#contactContainer{
+	text-decoration: none;
+	color:black;
+	width:100%;
+	max-width: 650px;
+	margin: auto;
+	display: block;
+	margin-top:100px;
+	font-family: 'Open Sans', sans-serif;
+}
+#contactContainer form #comment{
+	display: block;
+	width:100%;
+	min-height: 150px;
+	border: solid 1px rgb(175, 175, 175);
+	margin-top:20px;
+}
+#contactContainer form input{
+	border: solid 1px rgb(175, 175, 175);
+	min-width:200px;
+}
+#contactContainer form{
+	margin-bottom:30px;
+}
+#contactContainer img{
+	width:100%;
+	border: solid 1px rgb(175, 175, 175);
+}
+#contactContainer .address{
+	max-width: 150px;
+	padding: 0px 20px;
+	width: 100%;
+}
+#contactContainer .address p{
+	padding-top:0px;
+	margin-top:0px;
+}
+#contactContainer .button{
+	padding:10px;
+	text-align: center;
+	width: fit-content;
+	min-width: 100px;
+	font-weight: bold;
+	display: block;
+	margin-left: auto;
+	margin-right: 0px;
+	border: solid 1px rgb(175, 175, 175);
+	border-radius: 10px;
+	margin-bottom:50px;
+}
+#contactContainer .button:hover{
+	background: rgb(223, 223, 223);
+	cursor: pointer;
+}
+
+/* Credit on the bottom of each page  */
+#bottomCredit{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	position: relative;
+	bottom: 0;
+}
+.aboutFooter{
+	position: absolute!important;
+}
+
+button{
+	cursor: pointer!important;
+}
