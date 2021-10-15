@@ -214,11 +214,13 @@ body{
 	cursor:default;
 }
 .checkout #cartItems{
-	font-size: 15px;
+	font-size: 12px;
 	text-align: right;
 	border-bottom: solid 1px black;
 	padding-top: 20px;
 	padding-bottom: 10px;
+	margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 
@@ -288,7 +290,8 @@ body{
 }
 .plusMinus{
 	font-size: 20px;
-	padding: 0px 10px;
+	padding: 0px 5px;
+	cursor: pointer;
 }
 .cross{
 	width: 20px;
@@ -391,6 +394,7 @@ body{
 #confirmationOverly .payment{
 	text-align: right;
 	margin-bottom: 30px;
+    padding-bottom: 30px;
 	margin-right: 48px;
 	font-size: 13px;
 }
@@ -423,13 +427,17 @@ body{
 }
 #cartItems .product{
 	font-weight: 700;
-	margin-right: 20px;
+	margin-right: 30px;
+	margin-left: 0px;
+	font-size: 18px;
 }
 #cartItems .size, #cartItems .color, #cartItems .cartPrice{
 	margin-right: 10px;
 	margin-left: 20px;
 }
-
+#cartItems .cartPrice b{
+	font-size: 15px;
+}
 #cartItems .quantity .plus{
 	margin-right: 5px;
 	margin-left: 5px;
@@ -442,6 +450,7 @@ body{
 }
 #cartItems .input{
 	text-decoration: underline;
+	font-size: 15px;
 }
 #cartItems .color .Black{
 	width: 10px;

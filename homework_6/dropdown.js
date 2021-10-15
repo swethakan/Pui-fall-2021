@@ -56,11 +56,17 @@ function addQuantity(sign){
 function addQuantityCart(sign){
   let quantityDiv = sign.parentNode;
   let indexOfItemUpdated = Array.prototype.indexOf.call(cartItems.children, quantityDiv.parentNode.parentNode);
-  window.shoppingCartProducts[indexOfItemUpdated][0].quantity = parseInt(window.shoppingCartProducts[indexOfItemUpdated][0].quantity)+1;
 
+  //update quantity in json
+  window.shoppingCartProducts[indexOfItemUpdated][0].quantity = parseInt(window.shoppingCartProducts[indexOfItemUpdated][0].quantity)+1;
+  //update quantity shown for item in cart
+  quantityDiv.getElementsByClassName("input")[0].innerText = window.shoppingCartProducts[indexOfItemUpdated][0].quantity;
+
+  //update total price fot the item element inside the cart
   let itemPrice = quantityDiv.parentNode.parentNode.getElementsByClassName('price')[0];
   itemPrice.innerText = window.shoppingCartProducts[indexOfItemUpdated][0].quantity*window.shoppingCartProducts[indexOfItemUpdated][0].price;
 
+  //update total price at the bottom of the cart
   let newPrice = parseInt( totalPriceDiv.innerText.slice(1, totalPriceDiv.innerText.length))+ parseInt(window.shoppingCartProducts[indexOfItemUpdated][0].price);
   totalPriceDiv.innerText = "$"+newPrice;
 }
@@ -71,11 +77,16 @@ function lowerQuantityCart(sign){
   
   let newQuantity = parseInt(window.shoppingCartProducts[indexOfItemUpdated][0].quantity)-1;
   if(newQuantity >= 1){
+      //update quantity in json
       window.shoppingCartProducts[indexOfItemUpdated][0].quantity = parseInt(window.shoppingCartProducts[indexOfItemUpdated][0].quantity)-1;
+      //update quantity shown for item in cart
+      quantityDiv.getElementsByClassName("input")[0].innerText = window.shoppingCartProducts[indexOfItemUpdated][0].quantity;
 
+      //update total price fot the item element inside the cart
       let itemPrice = quantityDiv.parentNode.parentNode.getElementsByClassName('price')[0];
       itemPrice.innerText = window.shoppingCartProducts[indexOfItemUpdated][0].quantity*window.shoppingCartProducts[indexOfItemUpdated][0].price;
 
+      //update total price at the bottom of the cart
       let newPrice = parseInt( totalPriceDiv.innerText.slice(1, totalPriceDiv.innerText.length))- parseInt(window.shoppingCartProducts[indexOfItemUpdated][0].price);
       totalPriceDiv.innerText = "$"+newPrice;
   }

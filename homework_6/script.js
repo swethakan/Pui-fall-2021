@@ -158,6 +158,9 @@ var productDescription = document.getElementById("overlayProductDescription");
 
 var confirmName = document.getElementById("confirmProductName");
 var confirmImage = document.getElementById("confirmProductImage");
+var confirmColor = document.getElementById("confirmColor");
+var confirmSize = document.getElementById("confirmSize");
+var confirmQuantity = document.getElementById("confirmQuantity");
 
 
 var colorDefaultOnOverlay = document.getElementById("colorDefault");
@@ -204,6 +207,7 @@ function addToCart(product, color, size, quantity, price) {
     "quantity": ""+quantity+"",
     "price": ""+price+"",
   }];
+
   //here's the global array. Just pushing our new value into it
   window.shoppingCartProducts.push(array);
   console.log(window.shoppingCartProducts);
@@ -226,9 +230,11 @@ function addToCart(product, color, size, quantity, price) {
 
   //this takes care of the cart icon at the top of the page
   itemsInCart +=1;
-  totalPrice  += parseInt(price); 
-  totalPriceDiv.innerHTML = "$"+ totalPrice +"";
   cartNumItems.innerHTML = "<span>"+itemsInCart+"</span>";
+
+  //here's where we take care of the total price on the bottom cart
+  totalPrice  += parseInt(price*quantity); 
+  totalPriceDiv.innerHTML = "$"+ totalPrice +"";
 }
 //closes the overlay that confirms you've added somehting to the cart
 function closeConfirm() {
@@ -238,9 +244,14 @@ function closeConfirm() {
   currentProduct = "";
 }
 
-//closes all overlays onscreen
+//closes the first overlay onscreen and opens up the confirm screen
 function closeOverlay() {
   shoppingOverlay.style.display = "none";
+
+  console.log(confirmColor);
+  confirmColor.innerText = color;
+  confirmSize.innerText = size;
+  confirmQuantity.innerText = quantity;
   confirmOverlay.style.display = "block";
 }
 
