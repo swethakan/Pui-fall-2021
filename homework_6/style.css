@@ -178,6 +178,7 @@ body{
 	flex-wrap: wrap;
 	max-width: 170px;
 	cursor: pointer;
+	border: solid 1px white;
 }
 .oneProduct:hover{
 	border: solid 1px black;
