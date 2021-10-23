@@ -93,10 +93,10 @@ body{
 
 /*flex grid has been useful for all pages*/
 .flex{
-	display: flex;
+	display: flex!important;
 }
 .flex .inner{
-	flex: 1;
+	flex: 1!important;
 }
 
 
@@ -215,9 +215,9 @@ body{
 	cursor:default;
 }
 .checkout #cartItems{
-	font-size: 12px;
+	font-size: 20px;
 	text-align: right;
-	border-bottom: solid 1px black;
+	/* border-bottom: solid 1px black; */
 	padding-top: 20px;
 	padding-bottom: 10px;
 	margin-top: 20px;
@@ -277,6 +277,10 @@ body{
     padding: 6px;
     margin-top: 0px;
 }
+#shoppingOverlay .color{
+	border:none!important;
+	margin-top: 9px;
+}
 .select img{
 	width: 10px;
 	padding-left: 20px;
@@ -290,9 +294,9 @@ body{
 	width: 50%;
 }
 .plusMinus{
-	font-size: 20px;
-	padding: 0px 5px;
-	cursor: pointer;
+	padding: 3px 15px;
+    cursor: pointer;
+    border: 1px solid #C1C1C1;
 }
 .cross{
 	width: 20px;
@@ -433,8 +437,16 @@ body{
 	font-size: 18px;
 }
 #cartItems .size, #cartItems .color, #cartItems .cartPrice{
-	margin-right: 10px;
-	margin-left: 20px;
+	margin-right: 13px;
+    margin-left: 25px;
+	border: 1px solid #C1C1C1;
+    padding: 3px;
+}
+#cartItems .quantity{
+	padding:7px;
+}
+#cartItems .cartPrice{
+	border:none;
 }
 #cartItems .cartPrice b{
 	font-size: 15px;
@@ -450,7 +462,7 @@ body{
 	padding-left: 7px;
 }
 #cartItems .input{
-	text-decoration: underline;
+	text-decoration: none;
 	font-size: 15px;
 }
 #cartItems .color .Black{
@@ -583,4 +595,8 @@ body{
 
 button{
 	cursor: pointer!important;
+}
+
+#no-underline{
+	text-decoration: none;
 }

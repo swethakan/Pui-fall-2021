@@ -70,14 +70,14 @@
 				</div>
 				<div id = "template-shopping-cart">
 					<p>
-						<span class ='delete' onclick= 'deleteCartItem(this)'>X</span>
+						<span class ='delete' onclick= 'deleteCartItem(this)'>x</span>
 						<span class ='product'>Product</span>
-						<span class ='quantity'>Q:
+						<span class ='quantity'>
 							<span class="plusMinus" onclick="lowerQuantityCart(this)">-</span>
-							<span class='input'>1</span>
+							<span class='input quantity'>1</span>
 							<span class="plusMinus" onclick="addQuantityCart(this)">+</span>
 						</span>
-						<span class ='color'>Color: 
+						<span class ='color'> 
 							<span class="dropdown input">
 								<a class="dropbtn change">Black</a>
 								<span class="dropdown-content">
@@ -90,7 +90,6 @@
 							</span>
 						</span>
 						<span class ='size'>
-							Size: 
 							<span class="dropdown input">
 								<a class="dropbtn change">Tiny</a>
 								<span class="dropdown-content">
@@ -103,7 +102,7 @@
 							</span>
 						</span>
 						<span class = 'cartPrice'>
-							Price: <b>$<span class = "price">25</span></b>
+							<b>$<span class = "price">25</span></b>
 						</span>
 					</p>
 				</div>
@@ -111,7 +110,7 @@
 			<p class = "checkout">TOTAL: <b id = "totalPrice">$0</b></p>
 			<div id="checkoutWarning" class="on">
 				<p>Add something to your cart to checkout</p>
-				<button disabled id="checkoutButton">Checkout</button>
+				<a href="cart.html" id="no-underline"><button disabled id="checkoutButton" onclick="newPage()">Checkout</button></a>
 			</div>
 		</div>
 

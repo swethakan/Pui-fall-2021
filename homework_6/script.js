@@ -189,3 +189,8 @@ function deleteCartItem(item) {
   }
 
 }
+
+function newPage(){
+  console.log(window.shoppingCartProducts);
+  localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartProducts));
+}

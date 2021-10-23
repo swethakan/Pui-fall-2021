@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Muddy Paws Adventure Gear - checkout</title>
+		<meta name="description" content="Muddy Paws Adventure Gear checkout page">
+		<meta name="keywords" content="checkout cart shipping cat dog hiking gear equipment leash tracker pet">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="checkout.css">
+		<link rel="stylesheet" href="dropdown_style.css">
+
+		<!-- Transfering in a google font Open Sans, Free for all use -->
+		<link rel="preconnect" href="https://fonts.googleapis.com"> 
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+	</head>
+	<body id = "checkout-page">
+
+		<!-- Navigation at the top of the page which is reflected in all 3 pages -->
+		<nav>
+			<ul>
+			  <li><p id = "topStoreIcon">MPAG</p></li>
+			  <li><a class="nonIcon" href="index.html">Products</a></li>
+			  <li><a class="active">Contact</a></li>
+			  <li><a href="about.html">About</a></li>
+			</ul>
+			<a class = "cart" href="contact.html"><img alt = "image of a shopping cart" src="images/icons/shopping-cart-solid.svg"></a>
+		</nav>
+		
+		<div id="myContainer">
+			
+			<div id="shopping-cart">
+				<div class="checkout flex">
+					<div id="cartItems" class = "inner">
+						<h1>Order summary</h1>
+						<div>
+						<div id = "template-shopping-cart" class = "hide flex" >
+							<div class ="inner" style= "max-width:40px;padding-top:35px;opacity:.4;">
+								<span class ='delete' onclick= 'deleteCartItem(this)'>x</span>
+							</div>
+							<div class = 'inner' style= "max-width: 100px;">
+								<img alt="image of the product" src="images/test.png" style = "width:70px;margin-left:0px;margin-right:auto;display:block;">
+							</div>	
+							<div class ="inner" style= "text-align:left;">
+								<div class = "flex">
+									<div class ='product inner' style= "margin-bottom:10px;">Product</div>
+									<div class = 'cartPrice inner' style = "text-align:right;">
+										<b>$<span class = "price">25</span></b>
+									</div>
+								</div>
+								<div class = 'flex'>
+									
+									<div class ='color inner'> 
+											<div class = "cart-label">Color</div>
+											<div class="dropdown input">
+												<a class="dropbtn change">Black</a>
+												<span class="dropdown-content">
+													<a onclick="selectDropdown(this, 'color', false)"> <span class = "box black"></span> Black</a>
+													<a onclick="selectDropdown(this, 'color', false)"> <span class = "box green"></span> Green</a>
+													<a onclick="selectDropdown(this, 'color', false)"> <span class = "box red"></span> Red</a>
+													<a onclick="selectDropdown(this, 'color', false)"> <span class = "box blue"></span> Blue</a>
+												</span>	
+												<img alt="dropdown arrows" src="images/icons/dropdownArrows.svg" onclick="startDropdown(this)">
+											</div>
+									</div>
+									<div class ='size inner'>
+											<div class = "cart-label">Size</div>
+											<div class="dropdown input">
+												<a class="dropbtn change">Tiny</a>
+												<span class="dropdown-content">
+													<a onclick="selectDropdown(this, 'size', false)"> <span class = "box black"></span>Tiny</a>
+													<a onclick="selectDropdown(this, 'size', false)"> <span class = "box green"></span>Small</a>
+													<a onclick="selectDropdown(this, 'size', false)"> <span class = "box red"></span>Medium</a>
+													<a onclick="selectDropdown(this, 'size', false)"> <span class = "box blue"></span>Large</a>
+												</span>	
+												<img alt="dropdown arrows" src="images/icons/dropdownArrows.svg" onclick="startDropdown(this)">
+											</div>
+									</div>
+									<div class ='quantity inner'>
+										<div class = "cart-label" style = "color:white;">Quantity</div>
+										<span class="plusMinus" onclick="lowerQuantityCart(this)">-</span>
+										<span class='input'>1</span>
+										<span class="plusMinus" onclick="addQuantityCart(this)">+</span>
+									</div>
+		
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- <p class = "checkout" style = "margin-right:30px;">TOTAL: <b id = "totalPrice">$0</b></p> -->
+			</div>
+
+
+			<div class ="inner" style = "max-width:400px;">
+				<fieldset>
+					<!-- <legend>Shipping method</legend> -->
+					<ul class ="method">
+					<li class = "half-width"> 
+						<input type="radio" id="store" class = "checkmark" name="delivery" value="store">
+						<label for="store">Pick up at store</label>
+					</li>
+					<li class = "half-width right chosen">
+						<input type="radio" id="ship" class = "checkmark" name="delivery" value="ship" checked>
+						<label for="ship">Ship to you</label>
+					</li>
+					</ul>
+				</fieldset>
+				<div id="show-shipping">
+					<h2>Address</h2>
+					<form action="" method="post">
+					<ul>
+						<li>
+						<label for="name">Street</label>
+						<input type="text" id="name" name="user_name" />
+						</li>
+						<li>
+						<label for="mail">Town/City</label>
+						<input type="email" id="mail" name="user_email" />
+						</li>
+						<br>
+						<li>
+							<label for="name">State</label>
+							<input type="text" id="name" name="user_name" />
+						</li>
+						<li>
+							<label for="mail">Zip Code</label>
+							<input type="email" id="mail" name="user_email" />
+						</li>
+						</ul>
+					</form>
+
+					<h2>Payment</h2>
+					<form action="" method="post">
+					<ul>
+						<div>
+							<li>
+							<label for="name">Credit card number (Ex: 0000 0000 0000 0000)</label>
+							<input type="text" id="name" name="user_name" />
+							</li>
+							<li>
+							<label for="mail">Expiration Date</label>
+							<input type="email" id="mail" name="user_email" />
+							</li>
+						</div>
+						<div>
+							<li>
+								<label for="name">Security Code;</label>
+								<input type="text" id="name" name="user_name" />
+							</li>
+						</div>
+					</ul>
+					</form>
+					
+					<h2>We'll send you a confirmation code</h2>
+					<form action="" method="post">
+						<ul>
+						<li>
+							<label for="name">Email</label>
+							<input type="text" id="name" name="user_name" />
+						</li>
+						</ul>
+					</form>
+				</div>
+			</div>
+		</div>
+		<button disabled id="confirmOrder">Confirm order</button>
+	</body>
+	<footer>
+		<script type="text/javascript" src="checkout.js"></script>
+		<p id ="bottomCredit" class = "aboutFooter">Images from FontAwesome.com and Flickr.com</p>
+	</footer>
+</html>
