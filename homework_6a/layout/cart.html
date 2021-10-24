@@ -23,8 +23,6 @@
 			  <li><a class="active">Contact</a></li>
 			  <li><a href="about.html">About</a></li>
 			</ul>
-			<a class = "cart" href="../index.html#cartItems"><img alt = "image of a shopping cart" src="../images/icons/shopping-cart-solid.svg"><span id = "cartNumItems">0</span></a>
-			<a class = "user" href="profile.html"><img alt="image of a shopping cart" src="../images/icons/user.svg"></a>
 		</nav>
 		
 		<div id="myContainer">
@@ -37,7 +35,8 @@
 						<!-- Here is where we populate our cart with items. Making a template for our script to use -->
 						<div id = "template-shopping-cart" class = "hide flex" >
 							<div class ="inner" style= "max-width:40px;padding-top:35px;opacity:.4;">
-								<span class ='delete' onclick= 'deleteCartItem(this)'>x</span>
+								<!-- <span class ='delete' onclick= 'deleteCartItem(this)'>x</span> -->
+								<span class ='delete'>x</span>
 							</div>
 							<div class = 'inner' style= "max-width: 100px;">
 								<img alt="image of the product" src="../images/test.png" style = "width:82px;margin-left:0px;margin-right:auto;display:block;">
@@ -56,10 +55,10 @@
 											<div class="dropdown input">
 												<a class="dropbtn change">Black</a>
 												<span class="dropdown-content">
-													<a onclick="selectDropdown(this, 'color', false)"> <span class = "box black"></span> Black</a>
-													<a onclick="selectDropdown(this, 'color', false)"> <span class = "box green"></span> Green</a>
-													<a onclick="selectDropdown(this, 'color', false)"> <span class = "box red"></span> Red</a>
-													<a onclick="selectDropdown(this, 'color', false)"> <span class = "box blue"></span> Blue</a>
+													<a > <span class = "box black"></span> Black</a>
+													<a > <span class = "box green"></span> Green</a>
+													<a > <span class = "box red"></span> Red</a>
+													<a > <span class = "box blue"></span> Blue</a>
 												</span>	
 												<img alt="dropdown arrows" src="../images/icons/dropdownArrows.svg" onclick="startDropdown(this)">
 											</div>
@@ -69,19 +68,20 @@
 											<div class="dropdown input">
 												<a class="dropbtn change">Tiny</a>
 												<span class="dropdown-content">
-													<a onclick="selectDropdown(this, 'size', false)"> <span class = "box black"></span>Tiny</a>
-													<a onclick="selectDropdown(this, 'size', false)"> <span class = "box green"></span>Small</a>
-													<a onclick="selectDropdown(this, 'size', false)"> <span class = "box red"></span>Medium</a>
-													<a onclick="selectDropdown(this, 'size', false)"> <span class = "box blue"></span>Large</a>
+													<a > <span class = "box black"></span>Tiny</a>
+													<a > <span class = "box green"></span>Small</a>
+													<a > <span class = "box red"></span>Medium</a>
+													<a > <span class = "box blue"></span>Large</a>
+													<!-- <a onclick="selectDropdown(this, 'size', false)"> <span class = "box blue"></span>Large</a> -->
 												</span>	
 												<img alt="dropdown arrows" src="../images/icons/dropdownArrows.svg" onclick="startDropdown(this)">
 											</div>
 									</div>
 									<div class ='quantity inner'>
 										<div class = "cart-label" style = "color:white;">Quantity</div>
-										<span class="plusMinus" onclick="lowerQuantityCart(this)">-</span>
+										<span class="plusMinus" >-</span>
 										<span class='input'>1</span>
-										<span class="plusMinus" onclick="addQuantityCart(this)">+</span>
+										<span class="plusMinus" >+</span>
 									</div>
 		
 								</div>
@@ -133,7 +133,6 @@
 		</div>
 	</body>
 	<footer>
-		<script type="text/javascript" src="../scripts/updateCart.js"></script>
 		<script type="text/javascript" src="../scripts/checkout.js"></script>
 		<p id ="bottomCredit" class = "aboutFooter">Images from FontAwesome.com and Flickr.com</p>
 	</footer>
