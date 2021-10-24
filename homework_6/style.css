@@ -46,14 +46,21 @@ li a:hover{
 	color:  #B3B3B3;
 	padding-right: 30px;
 }
-.cart{
+.user{
 	margin-right: 25px;
 	right: 10px;
 	top: 20px;
 	position: absolute;
 	text-decoration: none;
 }
-.cart span{
+.cart{
+	margin-right: 25px;
+	right: 100px;
+	top: 20px;
+	position: absolute;
+	text-decoration: none;
+}
+.cart span, .user span{
 	font-family: 'Open Sans', sans-serif;
 	text-decoration: none;
 	font-weight: bold;
@@ -114,7 +121,7 @@ body{
 	padding-top:50px;
 }
 #myContainer{
-	max-width: 650px;
+	max-width: 700px;
 	width: 100%;
 	display: block;
 	margin: auto;
@@ -440,7 +447,7 @@ body{
 }
 #cartItems .size, #cartItems .color, #cartItems .cartPrice{
 	margin-right: 13px;
-    margin-left: 25px;
+    margin-left: 15px;
 	border: 1px solid #C1C1C1;
     padding: 3px;
 }
