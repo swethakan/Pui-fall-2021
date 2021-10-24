@@ -91,7 +91,7 @@ li a:hover{
 body{
 	padding: 0;
 	margin: 0;
-	background-image: url(images/sideBG.jpg);
+	background-image: url(../images/sideBG.jpg);
     background-size: 100% auto;
     background-repeat: repeat-y;
 }
@@ -492,7 +492,7 @@ body{
 	height: 100vh;
 	width: 100%;
 	font-family: 'Open Sans', sans-serif;
-	background-image: url("images/about.png");
+	background-image: url("../images/about.png");
 	background-size: cover;
 }
 #aboutContainer .about .background{

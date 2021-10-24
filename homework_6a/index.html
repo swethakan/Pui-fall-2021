@@ -5,8 +5,8 @@
 		<meta name="description" content="Muddy Paws Adventure Gear products page">
 		<meta name="keywords" content="cat dog hiking gear equipment leash tracker pet products">
 		<!-- bringing in the style sheet -->
-		<link rel="stylesheet" href="style.css">
-		<link rel="stylesheet" href="dropdown_style.css">
+		<link rel="stylesheet" href="styles/style.css">
+		<link rel="stylesheet" href="styles/dropdown_style.css">
 
 		<!-- Transfering in a google font Open Sans, Free for all use -->
 		<link rel="preconnect" href="https://fonts.googleapis.com"> 
@@ -21,11 +21,11 @@
 			  <!-- Using icon images from Fontawesome.com for this page -->
 			  <li><p id="topStoreIcon">MPAG</p></li>
 			  <li><a class="active nonIcon" href="#home">Products</a></li>
-			  <li><a href="contact.html">Contact</a></li>
-			  <li><a href="about.html">About</a></li>
+			  <li><a href="layout/contact.html">Contact</a></li>
+			  <li><a href="layout/about.html">About</a></li>
 			</ul>
-			<a class = "cart" href="#cartItems"><img alt="image of a shopping cart" src="images/icons/shopping-cart-solid.svg"><span id = "cartNumItems">0</span></a>
-			<a class = "user" href="profile.html"><img alt="image of a shopping cart" src="images/icons/user.svg"></a>
+			<a class = "cart" href="../index.html#cartItems"><img alt="image of a shopping cart" src="images/icons/shopping-cart-solid.svg"><span id = "cartNumItems">0</span></a>
+			<a class = "user" href="layout/profile.html"><img alt="image of a shopping cart" src="images/icons/user.svg"></a>
 		</nav>
 
 	<div id="myContainer">
@@ -111,7 +111,7 @@
 			<p class = "checkout">TOTAL: <b id = "totalPrice">$0</b></p>
 			<div id="checkoutWarning" class="on">
 				<p>Add something to your cart to checkout</p>
-				<a href="cart.html" id="no-underline"><button disabled id="checkoutButton" onclick="newPage()">Checkout</button></a>
+				<a href="layout/cart.html" id="no-underline"><button disabled id="checkoutButton" onclick="newPage()">Checkout</button></a>
 			</div>
 		</div>
 
@@ -195,10 +195,10 @@
 	</body>
 	<footer>
 		<!-- Now loading in the javascript to add functionality. -->
-		<script type="text/javascript" src="updateCart.js"></script>
-		<script type="text/javascript" src="variables.js"></script>
-		<script type="text/javascript" src="script.js"></script>
-		<script type="text/javascript" src="dropdown.js"></script>
+		<script type="text/javascript" src="scripts/updateCart.js"></script>
+		<script type="text/javascript" src="scripts/variables.js"></script>
+		<script type="text/javascript" src="scripts/script.js"></script>
+		<script type="text/javascript" src="scripts/dropdown.js"></script>
 		<p id ="bottomCredit">Images from FontAwesome.com and Flickr.com</p>
 	</footer>
 </html>
