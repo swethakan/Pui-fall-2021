@@ -19,12 +19,16 @@ fieldset{
     padding: 0px;
 }
 .half-width{
-	width:calc(50% - 2px);;
-	border:1px solid black;
+	width:calc(50% - 2px);
+	border:1px solid #BFBFBF;
+	background: #E9E9E9;
+	color: #aba9a9;;
 }
 
 .method .chosen{
 	border-bottom:none;
+	background: white;
+	color: black;
 }
 
 fieldset {
@@ -41,10 +45,35 @@ input[type="radio" i] {
 	text-align: left;
 }
 #show-shipping{
-	border:1px solid black;
+	border:1px solid #BFBFBF;
 	border-top:none;
-	padding:30px;
+	padding:35px;
 	margin-top:-1px;
+	text-align: left;
+}
+#show-shipping p{
+	width:50%;
+	margin:5px 0px;
+	display: inline-block;
+}
+
+#show-shipping .title{
+	font-weight: bold;
+	text-align: center;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #BFBFBF;
+	margin-bottom: 20px;
+}
+#show-shipping .title p{
+	font-size: 15px;
+}
+
+#show-shipping .total{
+	margin-top:30px;
+}
+
+#show-shipping .right{
+	text-align: right;
 }
 #show-shipping label{
 	display:block;
@@ -64,14 +93,15 @@ input[type="radio" i] {
 	padding: 0px 5px;
 	background-color: white;
 }
+
 h2{
 	font-size:15px;
 }
 #confirmOrder{
-		background: rgb(255, 225, 170);
-		font-size: 20px;
+		background: white;
+		font-size: 15px;
 		font-weight: bold;
-		padding:15px;
+		padding:15px 30px;
 		display: block;
 		margin:auto;
 		margin-top: 40px;
@@ -101,6 +131,7 @@ h2{
 
 #myContainer {
     max-width: 1050px;
+	margin-top:100px;
 }
 
 #cartItems .input{
@@ -150,4 +181,20 @@ h2{
 #cartItems{
 	padding: 10px;
     padding-right: 45px;
+}
+.steps{
+	border: 1px solid #BFBFBF;
+	text-align:left;
+	font-weight: normal;
+    padding: 5px 35px;
+	margin-top:15px;
+}
+.steps p{
+	width:50%;
+	display: inline-block;
+}
+.steps .right{
+	text-align: right;
+	font-size: 23px;
+	line-height: 0px;
 }

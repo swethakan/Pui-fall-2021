@@ -38,9 +38,9 @@
 								<span class ='delete' onclick= 'deleteCartItem(this)'>x</span>
 							</div>
 							<div class = 'inner' style= "max-width: 100px;">
-								<img alt="image of the product" src="images/test.png" style = "width:70px;margin-left:0px;margin-right:auto;display:block;">
+								<img alt="image of the product" src="images/test.png" style = "width:82px;margin-left:0px;margin-right:auto;display:block;">
 							</div>	
-							<div class ="inner" style= "text-align:left;">
+							<div class ="inner" style= "text-align:left;padding-left: 20px;">
 								<div class = "flex">
 									<div class ='product inner' style= "margin-bottom:10px;">Product</div>
 									<div class = 'cartPrice inner' style = "text-align:right;">
@@ -85,6 +85,7 @@
 								</div>
 							</div>
 						</div>
+
 					</div>
 					<!-- <p class = "checkout" style = "margin-right:30px;">TOTAL: <b id = "totalPrice">$0</b></p> -->
 			</div>
@@ -105,64 +106,29 @@
 					</ul>
 				</fieldset>
 				<div id="show-shipping">
-					<h2>Address</h2>
-					<form action="" method="post">
-					<ul>
-						<li>
-						<label for="name">Street</label>
-						<input type="text" id="name" name="user_name" />
-						</li>
-						<li>
-						<label for="mail">Town/City</label>
-						<input type="email" id="mail" name="user_email" />
-						</li>
-						<br>
-						<li>
-							<label for="name">State</label>
-							<input type="text" id="name" name="user_name" />
-						</li>
-						<li>
-							<label for="mail">Zip Code</label>
-							<input type="email" id="mail" name="user_email" />
-						</li>
-						</ul>
-					</form>
-
-					<h2>Payment</h2>
-					<form action="" method="post">
-					<ul>
-						<div>
-							<li>
-							<label for="name">Credit card number (Ex: 0000 0000 0000 0000)</label>
-							<input type="text" id="name" name="user_name" />
-							</li>
-							<li>
-							<label for="mail">Expiration Date</label>
-							<input type="email" id="mail" name="user_email" />
-							</li>
-						</div>
-						<div>
-							<li>
-								<label for="name">Security Code;</label>
-								<input type="text" id="name" name="user_name" />
-							</li>
-						</div>
-					</ul>
-					</form>
-					
-					<h2>We'll send you a confirmation code</h2>
-					<form action="" method="post">
-						<ul>
-						<li>
-							<label for="name">Email</label>
-							<input type="text" id="name" name="user_name" />
-						</li>
-						</ul>
-					</form>
+					<div class ="title"><p>Order Summary</p></div>
+					<div>
+						<p>Total</p><p id = "quantity-side" class = "right">$45.00</p>
+					</div>
+					<div>
+						<p>Tax</p><p class = "right">$3.45</p>
+					</div>
+					<div>
+						<p>Extimated shipping</p><p class = "right">$5.45</p>
+					</div>
+					<div class = "total">
+						<p>TOTAL</p><b><p class = "right">$5.45</p>
+					</div>
+					<button id="confirmOrder">Proceed</button>
+				</div>
+				<div class = "steps">
+					<p>Calculate Shipping</p><p class = "right">+</p>
+				</div>
+				<div class = "steps">
+					<p>Payment Details</p><p class = "right">+</p>
 				</div>
 			</div>
 		</div>
-		<button disabled id="confirmOrder">Confirm order</button>
 	</body>
 	<footer>
 		<script type="text/javascript" src="checkout.js"></script>

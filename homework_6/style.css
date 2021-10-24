@@ -588,6 +588,7 @@ body{
 	margin-bottom: 10px;
 	position: relative;
 	bottom: 0;
+	font-weight: normal;
 }
 .aboutFooter{
 	position: absolute!important;
