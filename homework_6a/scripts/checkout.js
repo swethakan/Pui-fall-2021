@@ -3,6 +3,7 @@ var cartItems = document.getElementById("cartItems");
 
 var userItems = JSON.parse(localStorage.getItem("shoppingCart"));
 
+//this function takes our template and populates our cart
 function populateCart(){
     for(let i = 0; i < userItems.length; i++){ 
         const cartElement = templateElement.cloneNode(true);
