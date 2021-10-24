@@ -278,8 +278,10 @@ body{
     margin-top: 0px;
 }
 #shoppingOverlay .color{
+}
+#shoppingOverlay .quantity{
 	border:none!important;
-	margin-top: 9px;
+	margin-top:10px;
 }
 .select img{
 	width: 10px;
@@ -471,6 +473,9 @@ body{
 	margin-right: 5px;
 	display: inline-block;
 	background: black;
+}
+#cartItems{
+	border-bottom: 1px solid #B3B3B3;
 }
 
 

@@ -1,4 +1,7 @@
 /* Code for the dropdown */
+#shoppingOverlay .size .dropbtn{
+	background:white;
+}
 .dropbtn {
 	padding: 5px;
 	font-size: 16px;
@@ -37,3 +40,7 @@
   /* .dropdown:hover .dropbtn {
 	background-color: grey;
   } */
+
+  #cartItems{
+	border-bottom: none;
+}
