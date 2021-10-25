@@ -85,8 +85,6 @@ li a:hover{
 }
 
 
-
-
 /*body styles for all pages*/
 body{
 	padding: 0;
@@ -598,7 +596,7 @@ body{
 	font-size: 12px;
 	margin-left: 10px;
 	margin-bottom: 10px;
-	position: relative;
+	position: relative!important;
 	bottom: 0;
 	font-weight: normal;
 }
