@@ -1,0 +1,133 @@
+#myContainer{
+	max-width:1050px;
+	font-family: 'Open Sans', sans-serif;
+	margin-top:30px;
+	font-size: 18px;
+}
+.left-box{
+	max-width:350px;
+	margin-right:40px;
+}
+.left-box h1{
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 20px;
+}
+.left-box .border{
+	border: 1px solid #BFBFBF;
+	padding:10px 20px;
+}
+.left-box .bottom{
+	margin-top:-1px;
+	padding:40px;
+}
+.left-box div span{
+	width:50%;
+	padding: 10px 0px;
+	display:inline-block;
+}
+.title{
+	margin-top:20px;
+}
+.title .image{
+	position:relative;
+	max-width: fit-content;
+}
+.title span{
+	width:100%!important;
+	text-align: right;
+}
+.title img{
+	width: 26px;
+    border: 1px solid grey;
+    padding: 5px;
+    margin-top: 4px;
+    opacity: .4;
+    position: absolute;
+    right: 0px;
+}
+.right{
+	text-align: right;
+}
+.small-text{
+	font-size: 12px;
+}
+.right-box h1{
+	text-align: center;
+	font-size: 18px;
+}
+.right-box img, .right-box .image{
+	max-width:80px;
+}
+.right-box .item{
+	width:80%;
+	margin:auto;
+	display: block;
+	border-bottom: 1px solid #BFBFBF;
+	padding-bottom:20px;
+	margin-top: 25px;
+}
+.right-box .price{
+	max-width:fit-content;
+	font-weight: bold;
+}
+.right-box .product{
+	padding-left:30px;
+}
+.right-box h2{
+	font-size: 15px;
+}
+
+.right-box .product p{
+	padding:0px 0px;
+	margin:5px 0px;
+}
+
+.timeline .box{
+	padding:10px;
+	border: 1px solid #BFBFBF;
+}
+.line-div{
+	height: 30px;
+    width: 0px;
+    text-align: center;
+    margin: auto;
+    border-right: 1px dashed #BFBFBF;
+}
+.tracker{
+	padding:0px 40px;
+}
+.timeline .right{
+	max-width: fit-content;
+}
+.startEnd{
+	background:  #FBF8F8;
+}
+
+.shipping{
+	margin-top:40px;
+}
+a{
+	text-decoration: underline;
+}
+.shipping h1{
+	text-align: left;
+	padding: 0px 40px;
+}
+.shipping p{
+	margin-top: 0px;
+	margin-bottom:5px;
+}
+button {
+	margin-top: 50px;
+    margin-bottom: 50px;
+    width: 230px;
+    padding: 11px;
+    font-size: 20px;
+    background: #FFEEB2;
+    font-weight: 600;
+    border: solid 1px rgb(190, 190, 190)!important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

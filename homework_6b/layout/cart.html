@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Muddy Paws Adventure Gear - checkout</title>
+		<meta name="description" content="Muddy Paws Adventure Gear checkout page">
+		<meta name="keywords" content="checkout cart shipping cat dog hiking gear equipment leash tracker pet">
+		<link rel="stylesheet" href="../styles/style.css">
+		<link rel="stylesheet" href="../styles/checkout.css">
+		<link rel="stylesheet" href="../styles/dropdown_style.css">
+
+		<!-- Transfering in a google font Open Sans, Free for all use -->
+		<link rel="preconnect" href="https://fonts.googleapis.com"> 
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+	</head>
+	<body id = "checkout-page">
+
+		<!-- Navigation at the top of the page which is reflected in all 3 pages -->
+		<nav>
+			<ul>
+			  <li><p id = "topStoreIcon">MPAG</p></li>
+			  <li><a class="nonIcon" href="../index.html">Products</a></li>
+			  <li><a href="contact.html">Contact</a></li>
+			  <li><a href="about.html">About</a></li>
+			</ul>
+		</nav>
+		
+		<div id="myContainer">
+			
+			<div id="shopping-cart">
+				<div class="checkout flex">
+					<div id="cartItems" class = "inner">
+						<h1>Order summary</h1>
+						<div>
+						<!-- Here is where we populate our cart with items. Making a template for our script to use -->
+						<div id = "template-shopping-cart" class = "hide flex" >
+							<div class ="inner" style= "max-width:40px;padding-top:35px;opacity:.4;">
+								<span class ='delete'>x</span>
+							</div>
+							<div class = 'inner' style= "max-width: 100px;">
+								<img alt="image of the product" src="../images/test.png" style = "width:82px;margin-left:0px;margin-right:auto;display:block;">
+							</div>	
+							<div class ="inner" style= "text-align:left;padding-left: 20px;">
+								<div class = "flex">
+									<div class ='product inner' style= "margin-bottom:10px;">Product</div>
+									<div class = 'cartPrice inner' style = "text-align:right;">
+										<b>$<span class = "price">25</span></b>
+									</div>
+								</div>
+								<div class = 'flex'>
+									
+									<div class ='color inner'> 
+											<div class = "cart-label">Color</div>
+											<div class="dropdown input">
+												<a class="dropbtn change">Black</a>
+												<span class="dropdown-content">
+													<a > <span class = "box black"></span> Black</a>
+													<a > <span class = "box green"></span> Green</a>
+													<a > <span class = "box red"></span> Red</a>
+													<a > <span class = "box blue"></span> Blue</a>
+												</span>	
+												<img alt="dropdown arrows" src="../images/icons/dropdownArrows.svg" onclick="startDropdown(this)">
+											</div>
+									</div>
+									<div class ='size inner'>
+											<div class = "cart-label">Size</div>
+											<div class="dropdown input">
+												<a class="dropbtn change">Tiny</a>
+												<span class="dropdown-content">
+													<a > <span class = "box black"></span>Tiny</a>
+													<a > <span class = "box green"></span>Small</a>
+													<a > <span class = "box red"></span>Medium</a>
+													<a > <span class = "box blue"></span>Large</a>
+												</span>	
+												<img alt="dropdown arrows" src="../images/icons/dropdownArrows.svg" onclick="startDropdown(this)">
+											</div>
+									</div>
+									<div class ='quantity inner'>
+										<div class = "cart-label" style = "color:white;">Quantity</div>
+										<span class="plusMinus" >-</span>
+										<span class='input'>1</span>
+										<span class="plusMinus" >+</span>
+									</div>
+		
+								</div>
+							</div>
+						</div>
+
+					</div>
+					
+			</div>
+
+			<!-- This is the right side menu -->
+			<div class ="inner" style = "max-width:400px;">
+				<fieldset>
+					<!-- <legend>Shipping method</legend> -->
+					<ul class ="method">
+					<li class = "half-width"> 
+						<input type="radio" id="store" class = "checkmark" name="delivery" value="store">
+						<label for="store">Pick up at store</label>
+					</li>
+					<li class = "half-width right chosen">
+						<input type="radio" id="ship" class = "checkmark" name="delivery" value="ship" checked>
+						<label for="ship">Ship to you</label>
+					</li>
+					</ul>
+				</fieldset>
+				<div id="show-shipping">
+					<div class ="title"><p>Order Summary</p></div>
+					<div>
+						<p>Total</p><p id = "quantity-side" class = "right">$45.00</p>
+					</div>
+					<div>
+						<p>Tax</p><p class = "right">$3.45</p>
+					</div>
+					<div>
+						<p>Extimated shipping</p><p class = "right">$5.45</p>
+					</div>
+					<div class = "total">
+						<p>TOTAL</p><b><p class = "right">$5.45</p>
+					</div>
+					<button id="confirmOrder">Proceed</button>
+				</div>
+				<div class = "steps">
+					<p>Calculate Shipping</p><p class = "right">+</p>
+				</div>
+				<div class = "steps">
+					<p>Payment Details</p><p class = "right">+</p>
+				</div>
+			</div>
+		</div>
+	</body>
+	<footer>
+		<script type="text/javascript" src="../scripts/checkout.js"></script>
+		<p id ="bottomCredit" class = "aboutFooter" style = "position: absolute!important;">Images from FontAwesome.com and Flickr.com</p>
+	</footer>
+</html>

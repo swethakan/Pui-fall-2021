@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Muddy Paws Adventure Gear</title>
+		<meta name="description" content="Muddy Paws Adventure Gear products page">
+		<meta name="keywords" content="cat dog hiking gear equipment leash tracker pet products">
+		<!-- bringing in the style sheet -->
+		<link rel="stylesheet" href="styles/style.css">
+		<link rel="stylesheet" href="styles/dropdown_style.css">
+
+		<!-- Transfering in a google font Open Sans, Free for all use -->
+		<link rel="preconnect" href="https://fonts.googleapis.com"> 
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+
+		<!-- Navigation at the top of the page which is reflected in all 3 pages -->
+		<nav>
+			<ul>
+			  <!-- Using icon images from Fontawesome.com for this page -->
+			  <li><p id="topStoreIcon">MPAG</p></li>
+			  <li><a class="active nonIcon" href="#home">Products</a></li>
+			  <li><a href="layout/contact.html">Contact</a></li>
+			  <li><a href="layout/about.html">About</a></li>
+			</ul>
+			<a class = "cart" href="../index.html#cartItems"><img alt="image of a shopping cart" src="images/icons/shopping-cart-solid.svg"><span id = "cartNumItems">0</span></a>
+			<a class = "user" href="layout/profile.html"><img alt="image of a shopping cart" src="images/icons/user.svg"></a>
+		</nav>
+
+	<div id="myContainer">
+		<!-- Top-most container on the product page which introduces the company and has some instructions -->
+			<div class="flex topper">
+				<div class="flex-inner">
+					 <h1>Muddy Paws Adventure Gear</h1>
+					 <p>Follow our 3-step process to experience the adventure with your furry friend!</p>
+				</div>
+				<div class="flex-inner">
+					 <img alt="dog wearing a hiking backpack" src = "images/homscreenDog.jpg">
+				</div>
+			</div>
+
+		
+		<!-- The page is split into 3 steps. this is step 1 -->
+		<p ><b>Step 1:</b> Which animal are you shopping for?</p>
+		<div class = "buttons">
+			<button id="dogCatButton" class="checked dogCat" onclick="filterNone()">
+				<img src = "images/icons/dog-cat.svg" alt="Illustration of cat and dog">
+				<p>Cat & dog</p>
+			</button>
+			<button id="catButton" onclick="filterOutDog()">
+				<img src="images/icons/cat.svg" alt="Illustration of cat">
+				<p>Cat</p>
+			</button>
+			<button id="dogButton" onclick="filterOutCat()">
+				<img src="images/icons/dog.svg" alt="Illustration of dog">
+				<p>Dog</p>
+			</button>
+		</div>
+
+		<!-- Step 2 -->
+		<p class="step" id="shopping"><b>Step 2:</b> Choose your product</p>
+		<div id="products"></div>
+
+		<!-- Step 3. This is where the user will checkout and is the last visible part of the page -->
+		<p class="step"><b>Step 3:</b> Checkout when you're happy with your shopping cart</p>
+		<div class="checkout">
+			<div id="cartItems">
+				<div>
+					<p>No items in cart</p>
+				</div>
+				<div id = "template-shopping-cart">
+					<p>
+						<span class ='delete' onclick= 'deleteCartItem(this)'>x</span>
+						<span class ='product'>Product</span>
+						<span class ='quantity'>
+							<span class="plusMinus" onclick="lowerQuantityCart(this)">-</span>
+							<span class='input quantity'>1</span>
+							<span class="plusMinus" onclick="addQuantityCart(this)">+</span>
+						</span>
+						<span class ='color'> 
+							<span class="dropdown input">
+								<a class="dropbtn change">Black</a>
+								<span class="dropdown-content">
+									<a onclick="selectDropdown(this, 'color', false)"> <span class = "box black"></span> Black</a>
+									<a onclick="selectDropdown(this, 'color', false)"> <span class = "box green"></span> Green</a>
+									<a onclick="selectDropdown(this, 'color', false)"> <span class = "box red"></span> Red</a>
+									<a onclick="selectDropdown(this, 'color', false)"> <span class = "box blue"></span> Blue</a>
+								</span>	
+								<img alt="dropdown arrows" src="images/icons/dropdownArrows.svg" onclick="startDropdown(this)">
+							</span>
+						</span>
+						<span class ='size'>
+							<span class="dropdown input">
+								<a class="dropbtn change">Tiny</a>
+								<span class="dropdown-content">
+									<a onclick="selectDropdown(this, 'size', false)"> <span class = "box black"></span>Tiny</a>
+									<a onclick="selectDropdown(this, 'size', false)"> <span class = "box green"></span>Small</a>
+									<a onclick="selectDropdown(this, 'size', false)"> <span class = "box red"></span>Medium</a>
+									<a onclick="selectDropdown(this, 'size', false)"> <span class = "box blue"></span>Large</a>
+								</span>	
+								<img alt="dropdown arrows" src="images/icons/dropdownArrows.svg" onclick="startDropdown(this)">
+							</span>
+						</span>
+						<span class = 'cartPrice'>
+							<b>$<span class = "price">25</span></b>
+						</span>
+					</p>
+				</div>
+			</div>
+			<p class = "checkout">TOTAL: <b id = "totalPrice">$0</b></p>
+			<div id="checkoutWarning" class="on">
+				<p>Add something to your cart to checkout</p>
+				<a href="layout/cart.html" id="no-underline"><button disabled id="checkoutButton" onclick="newPage()">Checkout</button></a>
+			</div>
+		</div>
+
+		<!-- This is the overlay that appears when you click a product. It shows you details and allows your to put it into your cart. Unfortunately the dropdown menus don't work but you can still get an idea of how they look-->
+		<div id="shoppingOverlay">
+			<div class="content">
+					<button class="closeButton" onclick="closeOverlayNoBuy()"><img class="cross" alt = "exit icon" src="images/icons/cross.svg"></button>
+					<h3 id="overlayProductName">Name of item</h3>
+					<div class="flex">
+						<div class="inner" ><img id="overlayProductImage" class="productImg" alt="image of the product" src="images/test.png"></div>
+						<div class="inner" >
+							<p id="overlayProductDescription">Description</p>
+							<div class = "flex">
+								<div class="inner" ><p class="item">Color</p></div>
+								<div class="inner" ><p class="item">size</p></div>
+							</div>
+							<div class = "flex">
+								<div class="inner" ><p class="color select">
+									<span class="dropdown">
+										<a class="dropbtn" id="colorDefault">Black</a>
+										<span class="dropdown-content">
+											<a onclick="selectDropdown(this, 'color', true)"> <span class = "box black"></span> Black</a>
+											<a onclick="selectDropdown(this, 'color', true)"> <span class = "box green"></span> Green</a>
+											<a onclick="selectDropdown(this, 'color', true)"> <span class = "box red"></span> Red</a>
+											<a onclick="selectDropdown(this, 'color', true)"> <span class = "box blue"></span> Blue</a>
+										</span>	
+										<img alt="dropdown arrows" src="images/icons/dropdownArrows.svg" onclick="startDropdown(this)">
+									</span>
+								</p></div>
+								<div class="inner" ><p class="size select">
+									<span class="dropdown">
+										<button class="dropbtn" onclick="startDropdown(this)" value = "Tiny" id="sizeDefault">Tiny</button>
+										<span class="dropdown-content">
+											<a onclick="selectDropdown(this, 'size', true)">Tiny</a>
+											<a onclick="selectDropdown(this, 'size', true)">Small</a>
+											<a onclick="selectDropdown(this, 'size', true)">Medium</a>
+											<a onclick="selectDropdown(this, 'size', true)">Large</a>
+										</span>
+										<img alt="dropdown arrows" src="images/icons/dropdownArrows.svg">
+									</span>
+								</p></div>
+							</div>
+
+							<div class = "flex">
+								<div class="inner" ><p class="item">Quatity</p></div>
+								<div class="inner" ><p class="item">Price: $<span id ="overlayProductPrice">0</span></p></div>
+							</div>
+							<div class="flex">
+								<div class="inner" ><p class="quantity select"><span class="plusMinus" onclick="lowerQuantity(this)">-</span> <span class = "quantity" id="quantityDefault">1</span> <span class="plusMinus" onclick="addQuantity(this)">+</span></p></div>
+								<div class="inner" ><button class="submit" onclick="closeOverlay()">Add to shopping cart</button></div>
+							</div>
+
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+
+		<!-- This is the second overlay that confirms a product is put into the cart -->
+		<div id="confirmationOverly">
+			<div class="content">
+				<h2><img class="check" alt="image of a check" src="images/check.png">Added to your cart</h2>
+				<div id="confirmProduct" class="flex">
+					<div class="inner">
+						<img alt="image of the product" src="images/test.png">
+					</div>
+					<div class="inner description">
+						<h3 id="confirmProductName">TEST</h3>
+						<p>Color: 
+							<span class = "box"><span id = "confirmColor">Black</span></p>
+						<p>Size: <span id = "confirmSize">Tiny</span></p>
+						<p>Quantity: <span id = "confirmQuantity">1</span></p>
+					</div>
+				</div>
+				<button onclick = "closeConfirm()">Continue shopping</button>
+				<p class="payment">Or <span class="link">proceed to payment<img alt="link icon" src="images/icons/link.svg"></span></p>
+			</div>
+		</div>
+
+		<!-- End of the page -->
+	</body>
+	<footer>
+		<!-- Now loading in the javascript to add functionality. -->
+		<script type="text/javascript" src="scripts/updateCart.js"></script>
+		<script type="text/javascript" src="scripts/variables.js"></script>
+		<script type="text/javascript" src="scripts/script.js"></script>
+		<script type="text/javascript" src="scripts/dropdown.js"></script>
+		<p id ="bottomCredit">Images from FontAwesome.com and Flickr.com</p>
+	</footer>
+</html>

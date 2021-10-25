@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Muddy Paws Adventure Gear</title>
+		<meta name="description" content="Muddy Paws Adventure Gear contact page">
+		<meta name="keywords" content="contact cat dog hiking gear equipment leash tracker pet">
+		<link rel="stylesheet" href="../styles/style.css">
+
+		<!-- Transfering in a google font Open Sans, Free for all use -->
+		<link rel="preconnect" href="https://fonts.googleapis.com"> 
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+
+		<!-- Navigation at the top of the page which is reflected in all 3 pages -->
+		<nav>
+			<ul>
+			  <li><p id = "topStoreIcon">MPAG</p></li>
+			  <li><a class="nonIcon" href="../index.html">Products</a></li>
+			  <li><a class="active">Contact</a></li>
+			  <li><a href="about.html">About</a></li>
+			</ul>
+			<a class = "cart" href="../index.html#cartItems"><img alt = "image of a shopping cart" src="../images/icons/shopping-cart-solid.svg"><span id = "cartNumItems">0</span></a>
+			<a class = "user" href="profile.html"><img alt="image of a shopping cart" src="../images/icons/user.svg"></a>
+		</nav>
+
+		<div id="contactContainer">
+			<h1>Contact</h1>
+			<!-- Here is the top-most form -->
+			<form>
+				<label for="comment">For questions please use our form:</label>
+    			<input type="text" id="comment">
+				<label for="email">email</label>
+    			<input type="text" id="email">
+				<div class = "button" role = "button">Submit</div>
+			</form>
+			<!-- Finally, give users a map and address -->
+			<div class="flex">
+				<div class = "inner">
+					<img alt = "map showing location of the service" src = "../images/map.png">
+				</div>
+				<div class = "inner address">
+					<p><b>Address</b></p>
+					<p>5000 Forbes Ave <br>
+						Pittsburgh, PA <br>
+						15213</p>
+				</div>
+			</div>
+
+		</div>
+	</body>
+	<footer>
+		<script type="text/javascript" src="../scripts/updateCart.js"></script>
+		<p id ="bottomCredit" class = "aboutFooter" style = "position: absolute!important;">Images from FontAwesome.com and Flickr.com</p>
+	</footer>
+</html>
