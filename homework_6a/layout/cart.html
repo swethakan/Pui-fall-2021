@@ -20,7 +20,7 @@
 			<ul>
 			  <li><p id = "topStoreIcon">MPAG</p></li>
 			  <li><a class="nonIcon" href="../index.html">Products</a></li>
-			  <li><a class="active">Contact</a></li>
+			  <li><a href="contact.html">Contact</a></li>
 			  <li><a href="about.html">About</a></li>
 			</ul>
 		</nav>
@@ -35,7 +35,6 @@
 						<!-- Here is where we populate our cart with items. Making a template for our script to use -->
 						<div id = "template-shopping-cart" class = "hide flex" >
 							<div class ="inner" style= "max-width:40px;padding-top:35px;opacity:.4;">
-								<!-- <span class ='delete' onclick= 'deleteCartItem(this)'>x</span> -->
 								<span class ='delete'>x</span>
 							</div>
 							<div class = 'inner' style= "max-width: 100px;">
@@ -72,7 +71,6 @@
 													<a > <span class = "box green"></span>Small</a>
 													<a > <span class = "box red"></span>Medium</a>
 													<a > <span class = "box blue"></span>Large</a>
-													<!-- <a onclick="selectDropdown(this, 'size', false)"> <span class = "box blue"></span>Large</a> -->
 												</span>	
 												<img alt="dropdown arrows" src="../images/icons/dropdownArrows.svg" onclick="startDropdown(this)">
 											</div>
@@ -89,7 +87,7 @@
 						</div>
 
 					</div>
-					<!-- <p class = "checkout" style = "margin-right:30px;">TOTAL: <b id = "totalPrice">$0</b></p> -->
+					
 			</div>
 
 			<!-- This is the right side menu -->
@@ -134,6 +132,6 @@
 	</body>
 	<footer>
 		<script type="text/javascript" src="../scripts/checkout.js"></script>
-		<p id ="bottomCredit" class = "aboutFooter">Images from FontAwesome.com and Flickr.com</p>
+		<p id ="bottomCredit" class = "aboutFooter" style = "position: absolute!important;">Images from FontAwesome.com and Flickr.com</p>
 	</footer>
 </html>

@@ -38,10 +38,13 @@
 	text-align: right;
 }
 .title img{
-	width:30px;
-	opacity:.4;
-	position:absolute;
-	right:20px;
+	width: 26px;
+    border: 1px solid grey;
+    padding: 5px;
+    margin-top: 4px;
+    opacity: .4;
+    position: absolute;
+    right: 0px;
 }
 .right{
 	text-align: right;

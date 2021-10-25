@@ -591,6 +591,9 @@ body{
 }
 
 /* Credit on the bottom of each page  */
+.aboutFooter{
+	position: absolute!important;
+}
 #bottomCredit{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
@@ -600,9 +603,7 @@ body{
 	bottom: 0;
 	font-weight: normal;
 }
-.aboutFooter{
-	position: absolute!important;
-}
+
 
 button{
 	cursor: pointer!important;
