@@ -29,63 +29,64 @@
 			
 			<div id="shopping-cart">
 				<div class="checkout flex">
-					<div id="cartItems" class = "inner">
+					<div  class = "inner">
 						<h1>Order summary</h1>
-						<div>
-						<!-- Here is where we populate our cart with items. Making a template for our script to use -->
-						<div id = "template-shopping-cart" class = "hide flex" >
-							<div class ="inner" style= "max-width:40px;padding-top:35px;opacity:.4;">
-								<span class ='delete'>x</span>
-							</div>
-							<div class = 'inner' style= "max-width: 100px;">
-								<img alt="image of the product" src="../images/test.png" style = "width:82px;margin-left:0px;margin-right:auto;display:block;">
-							</div>	
-							<div class ="inner" style= "text-align:left;padding-left: 20px;">
-								<div class = "flex">
-									<div class ='product inner' style= "margin-bottom:10px;">Product</div>
-									<div class = 'cartPrice inner' style = "text-align:right;">
-										<b>$<span class = "price">25</span></b>
-									</div>
-								</div>
-								<div class = 'flex'>
-									
-									<div class ='color inner'> 
-											<div class = "cart-label">Color</div>
-											<div class="dropdown input">
-												<a class="dropbtn change">Black</a>
-												<span class="dropdown-content">
-													<a > <span class = "box black"></span> Black</a>
-													<a > <span class = "box green"></span> Green</a>
-													<a > <span class = "box red"></span> Red</a>
-													<a > <span class = "box blue"></span> Blue</a>
-												</span>	
-												<img alt="dropdown arrows" src="../images/icons/dropdownArrows.svg" onclick="startDropdown(this)">
-											</div>
-									</div>
-									<div class ='size inner'>
-											<div class = "cart-label">Size</div>
-											<div class="dropdown input">
-												<a class="dropbtn change">Tiny</a>
-												<span class="dropdown-content">
-													<a > <span class = "box black"></span>Tiny</a>
-													<a > <span class = "box green"></span>Small</a>
-													<a > <span class = "box red"></span>Medium</a>
-													<a > <span class = "box blue"></span>Large</a>
-												</span>	
-												<img alt="dropdown arrows" src="../images/icons/dropdownArrows.svg" onclick="startDropdown(this)">
-											</div>
-									</div>
-									<div class ='quantity inner'>
-										<div class = "cart-label" style = "color:white;">Quantity</div>
-										<span class="plusMinus" >-</span>
-										<span class='input'>1</span>
-										<span class="plusMinus" >+</span>
-									</div>
-		
-								</div>
-							</div>
-						</div>
 
+						<div id="cartItems">
+							<!-- Here is where we populate our cart with items. Making a template for our script to use -->
+							<div id = "template-shopping-cart" class = "hide flex" >
+								<div class ="inner" style= "max-width:40px;padding-top:35px;opacity:.4;">
+									<span class ='delete' onclick= 'deleteCartItem(this)'>x</span>
+								</div>
+								<div class = 'inner' style= "max-width: 100px;">
+									<img alt="image of the product" src="../images/test.png" style = "width:82px;margin-left:0px;margin-right:auto;display:block;">
+								</div>	
+								<div class ="inner" style= "text-align:left;padding-left: 20px;">
+									<div class = "flex">
+										<div class ='product inner' style= "margin-bottom:10px;">Product</div>
+										<div class = 'cartPrice inner' style = "text-align:right;">
+											<b>$<span class = "price">25</span></b>
+										</div>
+									</div>
+									<div class = 'flex'>
+										
+										<div class ='color inner'> 
+												<div class = "cart-label">Color</div>
+												<div class="dropdown input">
+													<a class="dropbtn change">Black</a>
+													<span class="dropdown-content">
+														<a onclick="selectDropdown(this, 'color', true)"> <span class = "box black"></span> Black</a>
+														<a onclick="selectDropdown(this, 'color', true)"> <span class = "box green"></span> Green</a>
+														<a onclick="selectDropdown(this, 'color', true)"> <span class = "box red"></span> Red</a>
+														<a onclick="selectDropdown(this, 'color', true)"> <span class = "box blue"></span> Blue</a>
+													</span>	
+													<img alt="dropdown arrows" src="../images/icons/dropdownArrows.svg" onclick="startDropdown(this)">
+												</div>
+										</div>
+										<div class ='size inner'>
+												<div class = "cart-label">Size</div>
+												<div class="dropdown input">
+													<a class="dropbtn change">Tiny</a>
+													<span class="dropdown-content">
+														<a onclick="selectDropdown(this, 'size', true)"> <span class = "box black"></span>Tiny</a>
+														<a onclick="selectDropdown(this, 'size', true)"> <span class = "box green"></span>Small</a>
+														<a onclick="selectDropdown(this, 'size', true)"> <span class = "box red"></span>Medium</a>
+														<a onclick="selectDropdown(this, 'size', true)"> <span class = "box blue"></span>Large</a>
+													</span>	
+													<img alt="dropdown arrows" src="../images/icons/dropdownArrows.svg" onclick="startDropdown(this)">
+												</div>
+										</div>
+										<div class ='quantity inner'>
+											<div class = "cart-label" style = "color:white;">Quantity</div>
+											<span class="plusMinus" onclick="lowerQuantity(this)">-</span>
+											<span class='input'>1</span>
+											<span class="plusMinus" onclick="addQuantity(this)">+</span>
+										</div>
+			
+									</div>
+								</div>
+							</div>
+								
 					</div>
 					
 			</div>
@@ -108,7 +109,7 @@
 				<div id="show-shipping">
 					<div class ="title"><p>Order Summary</p></div>
 					<div>
-						<p>Total</p><p id = "quantity-side" class = "right">$45.00</p>
+						<p>Total</p><p id = "quantity-side" class = "right">$<span id = "totalPrice">45.00</span></p>
 					</div>
 					<div>
 						<p>Tax</p><p class = "right">$3.45</p>
@@ -117,7 +118,7 @@
 						<p>Extimated shipping</p><p class = "right">$5.45</p>
 					</div>
 					<div class = "total">
-						<p>TOTAL</p><b><p class = "right">$5.45</p>
+						<p>TOTAL</p><b><p class = "right">$<span id = "totalPriceTax">5.45</span></p>
 					</div>
 					<button id="confirmOrder">Proceed</button>
 				</div>
@@ -132,6 +133,7 @@
 	</body>
 	<footer>
 		<script type="text/javascript" src="../scripts/checkout.js"></script>
+		<!-- <script type="text/javascript" src="../scripts/dropdown.js"></script> -->
 		<p id ="bottomCredit" class = "aboutFooter" style = "position: absolute!important;">Images from FontAwesome.com and Flickr.com</p>
 	</footer>
 </html>
