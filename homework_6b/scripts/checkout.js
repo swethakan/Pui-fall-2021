@@ -18,7 +18,6 @@ function populateCart(){
     for(let i = 0; i < userItems.length; i++){ 
         const cartElement = templateElement.cloneNode(true);
         cartElement.classList.remove("hide");
-        console.log (userItems[i]);
         
         const nameElement = cartElement.getElementsByClassName("product")[0];
         nameElement.innerHTML = userItems[i][0].product;
@@ -61,7 +60,6 @@ function selectDropdown(selection, item, isNewItem){
   updateCartItem(item, newValue, isNewItem, selection);
 
   displayedSelection.innerText = newValue;
-  console.log(userItems);
   // selection.innerText = value;
 }
 
@@ -72,7 +70,6 @@ function updateCartItem(item, newValue, isNewItem, selection){
 
   if(item == "color"){
       color = newValue;
-      console.log(indexOfItemUpdated);
       userItems[indexOfItemUpdated ][0].color = newValue;
   }
   if(item == "size"){
@@ -94,6 +91,7 @@ function lowerQuantity(sign){
   if(newQuantity >=1){
     quantityDiv.innerText = newQuantity;
     userItems[indexOfItemUpdated][0].quantity = parseInt(userItems[indexOfItemUpdated][0].quantity)-1;
+    adjustPrice();
   }
   
 }
@@ -110,28 +108,18 @@ function addQuantity(sign){
 
   quantityDiv.innerText = newQuantity;
   userItems[indexOfItemUpdated][0].quantity = parseInt(userItems[indexOfItemUpdated][0].quantity)+1;
-  console.log(userItems);
-  updateTotals(index);
+  adjustPrice();
 }
 
 //like it says, when a user wants to get rid of an item, this function deletes it from the cart
 function deleteCartItem(item) {  
   //delete from our global json array
   let indexOfItemDeleted = Array.prototype.indexOf.call(item.parentNode.parentNode.parentNode.children, item.parentNode.parentNode)-1;
-  console.log(userItems[indexOfItemDeleted][0]);
   let takeawayPrice = userItems[indexOfItemDeleted][0].price *userItems[indexOfItemDeleted][0].quantity
   userItems.splice(indexOfItemDeleted, 1);
 
   item.parentNode.parentNode.remove();
 
-  totalPrice -= parseInt(takeawayPrice);
-  totalPriceDiv.innerText = totalPrice.toFixed(2);
+  adjustPrice();
 
-  totalPriceWithTax -= parseInt(takeawayPrice);
-  totalPriceWithTaxDiv.innerText = document.getElementById("totalPriceTax");
-
-}
-
-function updateTotals(){
-  
 }
