@@ -78,12 +78,14 @@ function openOverlay() {
   color = "Black";
   Size = "Tiny";
   quantity = 1;
+  var productNumber = parseInt( this.id[this.id.length -1] );
+  image = products[productNumber].image;
 
   colorDefaultOnOverlay.innerText = color;
   sizeDefaultOnOverlay.innerText = size;
   quantityDefaultOnOverlay.innerText = quantity;
+  imageDefaultOnOverlay.src = "images/"+image;
 
-  var productNumber = parseInt( this.id[this.id.length -1] );
   currentProduct = products[productNumber].product_name;
   price = products[productNumber].Price;
   productName.innerHTML = ""+products[productNumber].product_name+"";
@@ -99,7 +101,7 @@ function openOverlay() {
 //once you add to cart, this function takes care of the cart and opens a confirmation overlay
 const templateElement = document.getElementById("template-shopping-cart");
 function addToCart(product, color, size, quantity, price) {
-  if(itemsInCart == 0){
+  if( window.shoppingCartProducts.length == 0){
     checkoutButton.disabled = false;
     checkoutWarning.classList.remove("on");
     cartItems.innerHTML = "";
@@ -112,11 +114,11 @@ function addToCart(product, color, size, quantity, price) {
     "size": ""+size+"",
     "quantity": ""+quantity+"",
     "price": ""+price+"",
+    "image": ""+image+"",
   }];
 
   //here's the global array. Just pushing our new value into it
   window.shoppingCartProducts.push(array);
-  console.log(window.shoppingCartProducts);
 
   //Here, I use the method we learned in lab to add to the shopping cart
   const cartElement = templateElement.cloneNode(true);
@@ -154,10 +156,10 @@ function closeConfirm() {
 function closeOverlay() {
   shoppingOverlay.style.display = "none";
 
-  console.log(confirmColor);
   confirmColor.innerText = color;
   confirmSize.innerText = size;
   confirmQuantity.innerText = quantity;
+  confirmImage.src = "images/"+image;
   confirmOverlay.style.display = "block";
 }
 
@@ -174,6 +176,7 @@ function deleteCartItem(item) {
   
   //delete from our global json array
   let indexOfItemDeleted = Array.prototype.indexOf.call(cartItems.children, item.parentNode.parentNode);
+
   window.shoppingCartProducts.splice(indexOfItemDeleted, 1);
 
   item.parentNode.parentNode.remove();
@@ -191,6 +194,5 @@ function deleteCartItem(item) {
 }
 
 function newPage(){
-  console.log(window.shoppingCartProducts);
   localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartProducts));
 }

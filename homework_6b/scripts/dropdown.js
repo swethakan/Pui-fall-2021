@@ -1,6 +1,5 @@
 //This handles selections when you interact with the dropdown
 function selectDropdown(selection, item, isNewItem){
-  console.log("DROPDOWN");
   let displayedSelection = selection.parentNode.parentNode.querySelector('.dropbtn');
   let value = displayedSelection.innerText;
   let newValue = selection.innerText;
@@ -8,7 +7,6 @@ function selectDropdown(selection, item, isNewItem){
   updateCartItem(item, newValue, isNewItem, selection);
 
   displayedSelection.innerText = newValue;
-  console.log(window.shoppingCartProducts);
   // selection.innerText = value;
 }
 
@@ -19,7 +17,7 @@ function updateCartItem(item, newValue, isNewItem, selection){
     }
     else{
       let indexOfItemUpdated = Array.prototype.indexOf.call(cartItems.children, selection.parentNode.parentNode.parentNode.parentNode.parentNode);
-      window.shoppingCartProducts[indexOfItemUpdated ][0].color = newValue;
+      window.shoppingCartProducts[indexOfItemUpdated][0].color = newValue;
     }
   }
   if(item == "size"){

@@ -5,44 +5,44 @@ var products = [
   {
     "product_name": "GPS tracker",
     "Price": 100,
-    "image": "test.png",
-    "Description": "A harness for large and small dogs alike. How harnesses are made with natural materials and are durable enough to weather the elements. It is water resistant, and comfortable for your pets to wear.\nTiny - Good for dogs less than 10 inches high<br>Small - for dogs above 10 inches high<br>Medium - For dogs above 20 inches high<br>Large - For dogs above 30 inches high",
+    "image": "products/gpsTracker.jpg",
+    "Description": "A harness for large and small dogs alike. How harnesses are made with natural materials and are durable enough to weather the elements. It is water resistant, and comfortable for your pets to wear.",
     "remove_on": "",
   },
   {
     "product_name": "Food Storage",
     "Price": 20,
-    "image": "test.png",
-    "Description": "A harness for large and small dogs alike. How harnesses are made with natural materials and are durable enough to weather the elements. It is water resistant, and comfortable for your pets to wear.\nTiny - Good for dogs less than 10 inches high<br>Small - for dogs above 10 inches high<br>Medium - For dogs above 20 inches high<br>Large - For dogs above 30 inches high",
+    "image": "products/foodStorage.jpg",
+    "Description": "A cute box to hold your pet's food. Leak-proof and insulated! Dry food will stay fresh in here. The cover of the bottle doubles as a eating dish!",
     "remove_on": ""
   },
   {
     "product_name": "Water Storage",
     "Price": 15,
-    "image": "test.png",
-    "Description": "A harness for large and small dogs alike. How harnesses are made with natural materials and are durable enough to weather the elements. It is water resistant, and comfortable for your pets to wear.\nTiny - Good for dogs less than 10 inches high<br>Small - for dogs above 10 inches high<br>Medium - For dogs above 20 inches high<br>Large - For dogs above 30 inches high",
+    "image": "products/waterStorage.jpg",
+    "Description": "A water bottle to store water for your furry pal! The top doubles as a bowl for your friend to drink from.",
     "remove_on": ""
   },
   {
     "product_name": "Cat Backpack",
     "Price": 45,
-    "image": "test.png",
-    "Description": "A harness for large and small dogs alike. How harnesses are made with natural materials and are durable enough to weather the elements. It is water resistant, and comfortable for your pets to wear.\nTiny - Good for dogs less than 10 inches high<br>Small - for dogs above 10 inches high<br>Medium - For dogs above 20 inches high<br>Large - For dogs above 30 inches high",
-    "remove_on": "dog"
+    "image": "products/catBackpack.jpg",
+    "Description": "A back designed to carry your cat. Designed with safety in mind and available in a variety of colors!",
+    "remove_on": "cat"
   },
   {
     "product_name": "Dog Harness",
     "Price": 23,
-    "image": "test.png",
-    "Description": "A harness for large and small dogs alike. How harnesses are made with natural materials and are durable enough to weather the elements. It is water resistant, and comfortable for your pets to wear.\nTiny - Good for dogs less than 10 inches high<br>Small - for dogs above 10 inches high<br>Medium - For dogs above 20 inches high<br>Large - For dogs above 30 inches high",
-    "remove_on": "cat"
+    "image": "products/dogHarness.jpg",
+    "Description": "A harness for large and small dogs alike. How harnesses are made with natural materials and are durable enough to weather the elements. It is water resistant, and comfortable for your pets to wear.",
+    "remove_on": "dog"
   },
   {
     "product_name": "Cat Harness",
     "Price": 23,
-    "image": "test.png",
-    "Description": "A harness for large and small dogs alike. How harnesses are made with natural materials and are durable enough to weather the elements. It is water resistant, and comfortable for your pets to wear.\nTiny - Good for dogs less than 10 inches high<br>Small - for dogs above 10 inches high<br>Medium - For dogs above 20 inches high<br>Large - For dogs above 30 inches high",
-    "remove_on": "dog"
+    "image": "products/catHarness.jpg",
+    "Description": "A harness that is adjustable for all types of cats. We design with safety as the highest priority! Who said kitties can't use leashes too?",
+    "remove_on": "cat"
   }
 ];
 
@@ -61,6 +61,7 @@ let color = "Black";
 let size = "Tiny"; 
 let quantity = 1;
 let price = 45;
+let image = "products/catBackpack.jpg";
 
 //two overlay scenes
 var shoppingOverlay = document.getElementById("shoppingOverlay");
@@ -93,3 +94,9 @@ var confirmQuantity = document.getElementById("confirmQuantity");
 var colorDefaultOnOverlay = document.getElementById("colorDefault");
 var sizeDefaultOnOverlay = document.getElementById("sizeDefault");
 var quantityDefaultOnOverlay = document.getElementById("quantityDefault");
+var imageDefaultOnOverlay = document.getElementById("overlayProductImage");
+
+var userItems = JSON.parse(localStorage.getItem("shoppingCart"));
+
+console.log(userItems);
+window.shoppingCartProducts = userItems;

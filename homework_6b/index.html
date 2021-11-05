@@ -70,7 +70,7 @@
 					<p>No items in cart</p>
 				</div>
 				<div id = "template-shopping-cart">
-					<p>
+					<p class ="cartItem">
 						<span class ='delete' onclick= 'deleteCartItem(this)'>x</span>
 						<span class ='product'>Product</span>
 						<span class ='quantity'>
@@ -80,7 +80,7 @@
 						</span>
 						<span class ='color'> 
 							<span class="dropdown input">
-								<a class="dropbtn change">Black</a>
+								<a class="dropbtn change"><span class = "box black"></span> Black</a>
 								<span class="dropdown-content">
 									<a onclick="selectDropdown(this, 'color', false)"> <span class = "box black"></span> Black</a>
 									<a onclick="selectDropdown(this, 'color', false)"> <span class = "box green"></span> Green</a>
@@ -131,12 +131,12 @@
 							<div class = "flex">
 								<div class="inner" ><p class="color select">
 									<span class="dropdown">
-										<a class="dropbtn" id="colorDefault">Black</a>
+										<a class="dropbtn"><span id="colorDefault"> Black</span></a>
 										<span class="dropdown-content">
-											<a onclick="selectDropdown(this, 'color', true)"> <span class = "box black"></span> Black</a>
-											<a onclick="selectDropdown(this, 'color', true)"> <span class = "box green"></span> Green</a>
-											<a onclick="selectDropdown(this, 'color', true)"> <span class = "box red"></span> Red</a>
-											<a onclick="selectDropdown(this, 'color', true)"> <span class = "box blue"></span> Blue</a>
+											<a onclick="selectDropdown(this, 'color', true)" class = "colorCircle black"> Black</a>
+											<a onclick="selectDropdown(this, 'color', true)" class = "colorCircle green">Green</a>
+											<a onclick="selectDropdown(this, 'color', true)" class = "colorCircle red">Red</a>
+											<a onclick="selectDropdown(this, 'color', true)" class = "colorCircle blue">Blue</a>
 										</span>	
 										<img alt="dropdown arrows" src="images/icons/dropdownArrows.svg" onclick="startDropdown(this)">
 									</span>
@@ -176,7 +176,7 @@
 				<h2><img class="check" alt="image of a check" src="images/check.png">Added to your cart</h2>
 				<div id="confirmProduct" class="flex">
 					<div class="inner">
-						<img alt="image of the product" src="images/test.png">
+						<img id ="confirmProductImage" alt="image of the product" src="images/test.png">
 					</div>
 					<div class="inner description">
 						<h3 id="confirmProductName">TEST</h3>
@@ -195,9 +195,9 @@
 	</body>
 	<footer>
 		<!-- Now loading in the javascript to add functionality. -->
-		<script type="text/javascript" src="scripts/updateCart.js"></script>
 		<script type="text/javascript" src="scripts/variables.js"></script>
 		<script type="text/javascript" src="scripts/script.js"></script>
+		<script type="text/javascript" src="scripts/updateCart.js"></script>
 		<script type="text/javascript" src="scripts/dropdown.js"></script>
 		<p id ="bottomCredit">Images from FontAwesome.com and Flickr.com</p>
 	</footer>

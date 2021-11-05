@@ -19,6 +19,10 @@ function populateCart(){
         const cartElement = templateElement.cloneNode(true);
         cartElement.classList.remove("hide");
         
+        const imageElement = cartElement.getElementsByClassName("image")[0];
+        imageElement.src = "../images/"+userItems[i][0].image;
+        console.log(imageElement);
+
         const nameElement = cartElement.getElementsByClassName("product")[0];
         nameElement.innerHTML = userItems[i][0].product;
         

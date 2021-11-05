@@ -228,7 +228,9 @@ body{
 	margin-top: 20px;
     margin-bottom: 20px;
 }
-
+.checkout #cartItems .cartItem{
+	padding:10px 0px;
+}
 
 
 /*For the overlay that allows you to customize and see details about a product*/

@@ -44,3 +44,26 @@
   #cartItems{
 	border-bottom: none;
 }
+
+.color .colorCircle::before{
+	width:10px;
+	height: 10px;
+	margin-right:5px;
+	border-radius:10px;
+	display: inline-block;
+	content: "";
+}
+
+.color .black::before{
+	background: black;
+}
+
+.color .green::before{
+	background: green;
+}
+.color .red::before{
+	background: red;
+}
+.color .blue::before{
+	background: blue;
+}
