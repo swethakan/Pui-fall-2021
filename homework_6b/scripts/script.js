@@ -187,6 +187,7 @@ function deleteCartItem(item) {
   totalPriceDiv.innerHTML = "$"+ totalPrice +"";
   cartNumItems.innerHTML= "<span>"+itemsInCart+"</span>";
 
+  console.log("itemsInCart = "+itemsInCart);
   if(itemsInCart == 0){
     checkoutButton.disabled = true;
     checkoutWarning.classList.add("on");

@@ -99,4 +99,6 @@ var imageDefaultOnOverlay = document.getElementById("overlayProductImage");
 var userItems = JSON.parse(localStorage.getItem("shoppingCart"));
 
 console.log(userItems);
-window.shoppingCartProducts = userItems;
+if(userItems != null){  
+  window.shoppingCartProducts = userItems;
+}
