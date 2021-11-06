@@ -1,12 +1,12 @@
 //This handles selections when you interact with the dropdown
 function selectDropdown(selection, item, isNewItem){
   let displayedSelection = selection.parentNode.parentNode.querySelector('.dropbtn');
-  let value = displayedSelection.innerText;
-  let newValue = selection.innerText;
+  let value = displayedSelection.innerHTML;
+  let newValue = selection.innerHTML;
 
   updateCartItem(item, newValue, isNewItem, selection);
 
-  displayedSelection.innerText = newValue;
+  displayedSelection.innerHTML = newValue;
   // selection.innerText = value;
 }
 

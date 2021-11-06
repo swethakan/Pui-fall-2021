@@ -173,7 +173,8 @@ function closeOverlayNoBuy() {
 function deleteCartItem(item) {
   //very complicated way to get the price of what was deleted. This would only work if the price is the last element in the description
   let takeawayPrice = item.parentNode.getElementsByClassName('price')[0].innerText;
-  
+  console.log("takeawayPrice = " + takeawayPrice);
+  console.log("totalPrice = " + totalPrice);
   //delete from our global json array
   let indexOfItemDeleted = Array.prototype.indexOf.call(cartItems.children, item.parentNode.parentNode);
 
@@ -181,6 +182,7 @@ function deleteCartItem(item) {
 
   item.parentNode.parentNode.remove();
   itemsInCart -=1;
+
   totalPrice  -= parseInt(takeawayPrice); 
   totalPriceDiv.innerHTML = "$"+ totalPrice +"";
   cartNumItems.innerHTML= "<span>"+itemsInCart+"</span>";
@@ -196,3 +198,5 @@ function deleteCartItem(item) {
 function newPage(){
   localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartProducts));
 }
+
+console.log("totalPrice = " + totalPrice);

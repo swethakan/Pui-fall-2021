@@ -20,9 +20,9 @@
 			<ul>
 			  <!-- Using icon images from Fontawesome.com for this page -->
 			  <li><p id="topStoreIcon">MPAG</p></li>
-			  <li><a class="active nonIcon" href="#home">Products</a></li>
-			  <li><a href="layout/contact.html">Contact</a></li>
-			  <li><a href="layout/about.html">About</a></li>
+			  <li><a class="active nonIcon" href="#home" >Products</a></li>
+			  <li><a href="layout/contact.html" onclick="newPage()">Contact</a></li>
+			  <li><a href="layout/about.html" onclick="newPage()">About</a></li>
 			</ul>
 			<a class = "cart" href="../index.html#cartItems"><img alt="image of a shopping cart" src="images/icons/shopping-cart-solid.svg"><span id = "cartNumItems">0</span></a>
 			<a class = "user" href="layout/profile.html"><img alt="image of a shopping cart" src="images/icons/user.svg"></a>
@@ -80,12 +80,12 @@
 						</span>
 						<span class ='color'> 
 							<span class="dropdown input">
-								<a class="dropbtn change"><span class = "box black"></span> Black</a>
+								<a class="dropbtn change">Black</a>
 								<span class="dropdown-content">
-									<a onclick="selectDropdown(this, 'color', false)"> <span class = "box black"></span> Black</a>
-									<a onclick="selectDropdown(this, 'color', false)"> <span class = "box green"></span> Green</a>
-									<a onclick="selectDropdown(this, 'color', false)"> <span class = "box red"></span> Red</a>
-									<a onclick="selectDropdown(this, 'color', false)"> <span class = "box blue"></span> Blue</a>
+									<a onclick="selectDropdown(this, 'color', false)" class = "colorCircle black">Black</a>
+									<a onclick="selectDropdown(this, 'color', false)" class = "colorCircle green">Green</a>
+									<a onclick="selectDropdown(this, 'color', false)" class = "colorCircle red">Red</a>
+									<a onclick="selectDropdown(this, 'color', false)" class = "colorCircle blue">Blue</a>
 								</span>	
 								<img alt="dropdown arrows" src="images/icons/dropdownArrows.svg" onclick="startDropdown(this)">
 							</span>
@@ -94,10 +94,10 @@
 							<span class="dropdown input">
 								<a class="dropbtn change">Tiny</a>
 								<span class="dropdown-content">
-									<a onclick="selectDropdown(this, 'size', false)"> <span class = "box black"></span>Tiny</a>
-									<a onclick="selectDropdown(this, 'size', false)"> <span class = "box green"></span>Small</a>
-									<a onclick="selectDropdown(this, 'size', false)"> <span class = "box red"></span>Medium</a>
-									<a onclick="selectDropdown(this, 'size', false)"> <span class = "box blue"></span>Large</a>
+									<a onclick="selectDropdown(this, 'size', false)">Tiny</a>
+									<a onclick="selectDropdown(this, 'size', false)">Small</a>
+									<a onclick="selectDropdown(this, 'size', false)">Medium</a>
+									<a onclick="selectDropdown(this, 'size', false)">Large</a>
 								</span>	
 								<img alt="dropdown arrows" src="images/icons/dropdownArrows.svg" onclick="startDropdown(this)">
 							</span>
