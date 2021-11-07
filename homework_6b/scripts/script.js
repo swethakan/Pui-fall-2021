@@ -88,7 +88,7 @@ function openOverlay() {
   color = "Black";
   Size = "Tiny";
   quantity = 1;
-  console.log(this);
+ 
   var productNumber = parseInt( this.id[this.id.length -1] );
   image = products[productNumber].image;
 
@@ -184,8 +184,7 @@ function closeOverlayNoBuy() {
 function deleteCartItem(item) {
   //very complicated way to get the price of what was deleted. This would only work if the price is the last element in the description
   let takeawayPrice = item.parentNode.getElementsByClassName('price')[0].innerText;
-  console.log("takeawayPrice = " + takeawayPrice);
-  console.log("totalPrice = " + totalPrice);
+  
   //delete from our global json array
   let indexOfItemDeleted = Array.prototype.indexOf.call(cartItems.children, item.parentNode.parentNode);
 
@@ -198,7 +197,7 @@ function deleteCartItem(item) {
   totalPriceDiv.innerHTML = "$"+ totalPrice +"";
   cartNumItems.innerHTML= "<span>"+itemsInCart+"</span>";
 
-  console.log("itemsInCart = "+itemsInCart);
+
   if(itemsInCart == 0){
     checkoutButton.disabled = true;
     checkoutWarning.classList.add("on");
@@ -211,7 +210,6 @@ function newPage(){
   localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartProducts));
 }
 
-console.log("totalPrice = " + totalPrice);
 
 // HERE ARE CARAUSAL CONTROLS
 

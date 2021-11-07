@@ -19,9 +19,9 @@
 		<nav>
 			<ul>
 			  <li><p id = "topStoreIcon">MPAG</p></li>
-			  <li><a class="nonIcon" href="../index.html">Products</a></li>
-			  <li><a href="contact.html">Contact</a></li>
-			  <li><a href="about.html">About</a></li>
+			  <li><a class="nonIcon" href="../index.html" onclick="newPage()">Products</a></li>
+			  <li><a href="contact.html" onclick="newPage()">Contact</a></li>
+			  <li><a href="about.html" onclick="newPage()">About</a></li>
 			</ul>
 		</nav>
 		
@@ -55,10 +55,10 @@
 												<div class="dropdown input">
 													<a class="dropbtn change"><span class = "box black"></span> Black</a>
 													<span class="dropdown-content">
-														<a onclick="selectDropdown(this, 'color', true)"> <span class = "box black"></span> Black</a>
-														<a onclick="selectDropdown(this, 'color', true)"> <span class = "box green"></span> Green</a>
-														<a onclick="selectDropdown(this, 'color', true)"> <span class = "box red"></span> Red</a>
-														<a onclick="selectDropdown(this, 'color', true)"> <span class = "box blue"></span> Blue</a>
+														<a onclick="selectDropdown(this, 'color', true)" class = "colorCircle black">Black</a>
+														<a onclick="selectDropdown(this, 'color', true)" class = "colorCircle green">Green</a>
+														<a onclick="selectDropdown(this, 'color', true)" class = "colorCircle red">Red</a>
+														<a onclick="selectDropdown(this, 'color', true)" class = "colorCircle blue">Blue</a>
 													</span>	
 													<img alt="dropdown arrows" src="../images/icons/dropdownArrows.svg" onclick="startDropdown(this)">
 												</div>
@@ -68,10 +68,10 @@
 												<div class="dropdown input">
 													<a class="dropbtn change">Tiny</a>
 													<span class="dropdown-content">
-														<a onclick="selectDropdown(this, 'size', true)"> <span class = "box black"></span>Tiny</a>
-														<a onclick="selectDropdown(this, 'size', true)"> <span class = "box green"></span>Small</a>
-														<a onclick="selectDropdown(this, 'size', true)"> <span class = "box red"></span>Medium</a>
-														<a onclick="selectDropdown(this, 'size', true)"> <span class = "box blue"></span>Large</a>
+														<a onclick="selectDropdown(this, 'size', true)"> Tiny</a>
+														<a onclick="selectDropdown(this, 'size', true)"> Small</a>
+														<a onclick="selectDropdown(this, 'size', true)"> Medium</a>
+														<a onclick="selectDropdown(this, 'size', true)"> Large</a>
 													</span>	
 													<img alt="dropdown arrows" src="../images/icons/dropdownArrows.svg" onclick="startDropdown(this)">
 												</div>
@@ -134,6 +134,6 @@
 	<footer>
 		<script type="text/javascript" src="../scripts/checkout.js"></script>
 		<!-- <script type="text/javascript" src="../scripts/dropdown.js"></script> -->
-		<p id ="bottomCredit" class = "aboutFooter" style = "position: absolute!important;">Images from FontAwesome.com and Flickr.com</p>
+		<!-- <p id ="bottomCredit" class = "aboutFooter" style = "position: absolute!important;">Images from FontAwesome.com and Flickr.com</p> -->
 	</footer>
 </html>

@@ -22,7 +22,7 @@ function updateCart(){
           let priceElement = cartElement.getElementsByClassName("price")[0];
             let currPrice = parseInt(shoppingCartNumItems[i][0].price)*parseInt(shoppingCartNumItems[i][0].quantity)
             totalPrice += currPrice
-            console.log("currprice = " + currPrice)
+            
             priceElement.innerHTML = currPrice;
           let sizeElement = cartElement.getElementsByClassName("size")[0].getElementsByClassName("change")[0];
             sizeElement.innerHTML = shoppingCartNumItems[i][0].size;
