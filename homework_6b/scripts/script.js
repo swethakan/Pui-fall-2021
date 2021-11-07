@@ -1,3 +1,6 @@
+var isPaused = false;
+setInterval(function () { if(!isPaused){changeCarousel("right");} }, 2200);
+
 //When we load the page, we want the javascript to auto populate the products section based on the json at the top of this file
 var myProductHTML = "<div class = 'allProduct'>"
 for(x = 0; x < products.length; x++){
@@ -18,7 +21,10 @@ var productList = document.getElementsByClassName('oneProduct');
 for(x = 0; x < productList.length; x++){
     productList[x].addEventListener("click", openOverlay);
   }
-
+var slidesCarousel = document.getElementsByClassName('mySlides');
+for(x = 0; x < slidesCarousel.length; x++){
+    slidesCarousel[x].addEventListener("click", openOverlay);
+  }
 //This handles the visuals of the sorting functionality in step 1
 function turnOffCheck(){
   if(catButton.classList.contains('checked')){
@@ -75,9 +81,14 @@ function filterNone(){
 
 //opens an overlay once user selects a product
 function openOverlay() {
+  changeCarousel('right');
+  isPaused = false;
+
+
   color = "Black";
   Size = "Tiny";
   quantity = 1;
+  console.log(this);
   var productNumber = parseInt( this.id[this.id.length -1] );
   image = products[productNumber].image;
 
@@ -201,3 +212,41 @@ function newPage(){
 }
 
 console.log("totalPrice = " + totalPrice);
+
+// HERE ARE CARAUSAL CONTROLS
+
+function clickedCarousel(direction){
+  isPaused = true;
+  changeCarousel(direction);
+}
+function changeCarousel(direction){
+  var allSlides = document.getElementsByClassName("mySlides");
+  let prevElement = null;
+  let nextElement = null;
+  let foundVisible = false;
+  let x = 0;
+  while(foundVisible == false){
+    if(allSlides[x].classList.contains('visible')){
+      foundVisible = true;
+      
+      allSlides[x].classList.remove('visible');
+      nextElement = allSlides[x + 1];
+      prevElement = allSlides[x - 1];
+
+      if(x == allSlides.length-1){
+        nextElement = allSlides[0];
+      }
+      if(x == 0){
+        prevElement = allSlides[allSlides.length-1];
+      }
+    }
+    x += 1;
+  }
+  if(direction == "right"){
+    nextElement.classList.add("visible");
+  }
+  if(direction == "left"){
+    prevElement.classList.add("visible");
+  }
+
+}
