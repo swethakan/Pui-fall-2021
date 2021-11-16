@@ -1,4 +1,9 @@
 
+$gold: #FFB84D;
+$ocean: #202830;
+$foods: #000;
+$coronavirus: #08445C;
+$star_wars: #14151B;
 // These are all styles for my main index page. They fill also form the basis of other page styles
 body{
     font-family: 'Open Sans', sans-serif;
@@ -59,7 +64,7 @@ body{
         align-items: center;
     }
     #about{
-        max-width: 1200px;
+        max-width: 1300px;
         margin:auto;
         width: 100%;
         vertical-align: middle;
@@ -80,6 +85,9 @@ body{
             font-size: 17px;
             line-height: 25px;
             color: #000000;
+            text-align: left;
+        }
+        p.hi{
             text-align: center;
         }
         a{
@@ -121,6 +129,7 @@ body{
         .template-Project{
             width:400px;
             padding: 5px;
+            margin-bottom: 50px;
           
           img{
             width:100%;
@@ -151,7 +160,7 @@ body{
     }
 
     #contact{
-        margin-top:200px;
+        margin-top:100px;
         text-align: center;
         color: black;
         h2{
@@ -188,6 +197,11 @@ body{
             margin: 10px 20px 5px 20px;
         }
     }
+
+    .contain{
+        max-width:1300px;
+        margin: auto;
+    }
     
 }
 
@@ -195,5 +209,75 @@ body{
     display: flex;
     .inner{
 
+    }
+}
+
+.topper{
+    height: calc(100vh - 63px); //the 63px takes care of the height of the nav menu up top
+    width:100%;
+    h1{
+        font-size: 50px;
+    }
+    h1.center{
+       padding-top:30vh;
+       margin-top: 0px;
+        width: 100%;
+        text-align: center;
+    }
+}
+.high-level-summary{
+    width: fit-content;
+    margin: auto;
+    margin-top:80px;
+    margin-bottom:80px;
+
+    h2{
+        text-align: center;
+    }
+    img{
+        max-width:200px;
+    }
+    ul{
+        margin-left:70px;
+        list-style-type:none;
+        line-height: 23px;
+        label{
+            font-weight: bold;
+            display: block;
+            margin-top:20px;
+        }
+    }
+}
+.the-deets{
+    background: black;
+    .flex{
+        padding: 50px 0px;
+        max-width: 1300px;
+        margin: auto;
+        justify-content: space-evenly;
+    }
+    .inner{
+        width:300px;
+    }
+    h2{
+        color:$gold;
+        font-size: 15px;
+    }
+    h3{
+        color:white;
+        font-size: 23px;
+    }
+    p{
+        color:white;
+        font-size: 15px;
+    }
+}
+
+.ocean_game{
+    .topper{
+        background-image: url('../images/projects/beaches/topper/desktop.jpg');
+        border-bottom: 1px solid grey;
+        background-size: cover;
+        background-position: bottom;
     }
 }

@@ -54,7 +54,7 @@ body #about.flex {
   align-items: center;
 }
 body #about {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: auto;
   width: 100%;
   vertical-align: middle;
@@ -73,6 +73,9 @@ body #about p {
   font-size: 17px;
   line-height: 25px;
   color: #000000;
+  text-align: left;
+}
+body #about p.hi {
   text-align: center;
 }
 body #about a {
@@ -111,6 +114,7 @@ body #portfolio ul {
 body #portfolio .template-Project {
   width: 400px;
   padding: 5px;
+  margin-bottom: 50px;
 }
 body #portfolio .template-Project img {
   width: 100%;
@@ -136,7 +140,7 @@ body #portfolio .flex .inner {
   flex-direction: row;
 }
 body #contact {
-  margin-top: 200px;
+  margin-top: 100px;
   text-align: center;
   color: black;
 }
@@ -173,9 +177,81 @@ body #contact .icon {
   height: 40px;
   margin: 10px 20px 5px 20px;
 }
+body .contain {
+  max-width: 1300px;
+  margin: auto;
+}
 
 .flex {
   display: flex;
+}
+.topper {
+  height: calc(100vh - 63px);
+  width: 100%;
+}
+.topper h1 {
+  font-size: 50px;
+}
+.topper h1.center {
+  padding-top: 30vh;
+  margin-top: 0px;
+  width: 100%;
+  text-align: center;
+}
+
+.high-level-summary {
+  width: fit-content;
+  margin: auto;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+.high-level-summary h2 {
+  text-align: center;
+}
+.high-level-summary img {
+  max-width: 200px;
+}
+.high-level-summary ul {
+  margin-left: 70px;
+  list-style-type: none;
+  line-height: 23px;
+}
+.high-level-summary ul label {
+  font-weight: bold;
+  display: block;
+  margin-top: 20px;
+}
+
+.the-deets {
+  background: black;
+}
+.the-deets .flex {
+  padding: 50px 0px;
+  max-width: 1300px;
+  margin: auto;
+  justify-content: space-evenly;
+}
+.the-deets .inner {
+  width: 300px;
+}
+.the-deets h2 {
+  color: #FFB84D;
+  font-size: 15px;
+}
+.the-deets h3 {
+  color: white;
+  font-size: 23px;
+}
+.the-deets p {
+  color: white;
+  font-size: 15px;
+}
+
+.ocean_game .topper {
+  background-image: url("../images/projects/beaches/topper/desktop.jpg");
+  border-bottom: 1px solid grey;
+  background-size: cover;
+  background-position: bottom;
 }
 
 /*# sourceMappingURL=style.css.map */
