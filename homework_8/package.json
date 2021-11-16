@@ -1,0 +1,21 @@
+{
+  "name": "homework_8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "sass": "sass --watch scss/style.scss:styles/style.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "aos": "^3.0.0-beta.6",
+    "sass": "^1.43.4",
+    "vite": "^2.5.2"
+  }
+}

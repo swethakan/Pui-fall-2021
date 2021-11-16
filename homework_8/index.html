@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Swetha Kannan's portfolio</title>
+		<meta name="description" content="Swetha Kannan UX UI Designer Portfolio">
+		<meta name="keywords" content="UX UI Designer Portfolio indian woman user experience human-computer interaction">
+		<!-- bringing in the style sheet -->
+		<link rel="stylesheet" href="styles/style.css">
+
+		<!-- Transfering in a google font Open Sans, Free for all use -->
+		<link rel="preconnect" href="https://fonts.googleapis.com"> 
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+		
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="HandheldFriendly" content="true">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+	<!-- Navigation at the top of the page which is reflected in all pages. Tutorial used: https://www.w3schools.com/howto/howto_js_topnav.asp -->
+		<nav class = "topNav">
+			<a class = "left">Swetha Kannan<span class = "title">UX/UI Designer</span></a>
+			<a href="#contact">Connect</a>
+			<a href="#portfolio">Projects</a>
+			<a class="active" href="#about">About</a>
+		</nav>
+
+		<!-- Here is the top of my page with my picture and where I introduce myself -->
+		<div class = "flex mybox topper" id = "about" data-aos="fade-up">
+			<div class = "inner image">
+					<img src = "images/pose.jpg" alt = "Swetha Kannan posing with an orange dress and yellow backdrop">
+			</div>
+			<div class = "text inner">
+					<p class = "hi">Hi! I'm</p>
+					<h1>Swetha Kannan</h1>
+					<p class = "pronounce">(Shh-way-tha Can-non)</p>
+					<p>A grad student at Carnegie Mellon’s Human Computer Interaction program. Previously designed graphics and data visualizations at the Los Angeles Times.</p>
+					<p>I am interested in user-centered design for web applications. Pleased to meet you!</p>
+					<div class="links">
+							<a href="resume.pdf">Resume</a><span>•</span>
+							<a href="mailto:swethakan0@gmail.com">Email</a><span>•</span>
+							<a href="mailto:swethakan0@gmail.com">LinkedIn</a>
+					</div>
+			</div>
+		</div>
+
+		<!-- Container indicates how wide all elements on page can go -->
+		<div id = 'container'>
+
+			<div id="portfolio">
+				<h2>Work</h2>
+					<ul class = "flex">
+						<li id= "template-Project" data-aos="fade-up" class = "inner template-Project">
+							<a href = "layout/ocean_game.html">
+							<img class = "image" src="images/projects/beaches/homepage.jpg" alt="Cartoon of the California coast">
+							<h3><a href = "https://www.latimes.com/projects/la-me-climate-change-ocean-game/">Sea Levels are rising. Can you save L.A.'s coastal cities?</a></h3>
+							<p>UX Design  |  UX Research  |  Development</p>
+							</a>
+						</li>
+						<li class = "inner template-Project" data-aos="fade-up">
+							<img class = "image" src="images/projects/beaches/homepage.jpg" alt="Cartoon of the California coast">
+							<h3><a href = "https://www.latimes.com/projects/la-me-climate-change-ocean-game/">Sea Levels are rising. Can you save L.A.'s coastal cities?</a></h3>
+							<p>UX Design  |  UX Research  |  Development</p>
+						</li>
+						<li class = "inner template-Project" data-aos="fade-up">
+							<img class = "image" src="images/projects/beaches/homepage.jpg" alt="Cartoon of the California coast">
+							<h3><a href = "https://www.latimes.com/projects/la-me-climate-change-ocean-game/">Sea Levels are rising. Can you save L.A.'s coastal cities?</a></h3>
+							<p>UX Design  |  UX Research  |  Development</p>
+						</li>
+						<li class = "inner template-Project" data-aos="fade-up">
+							<img class = "image" src="images/projects/beaches/homepage.jpg" alt="Cartoon of the California coast">
+							<h3><a href = "https://www.latimes.com/projects/la-me-climate-change-ocean-game/">Sea Levels are rising. Can you save L.A.'s coastal cities?</a></h3>
+							<p>UX Design  |  UX Research  |  Development</p>
+						</li>
+
+					</ul>
+			</div>
+
+
+			<div id="contact" class = "imageSet">
+				<h2>What do I do for fun?</h2>
+				<p>Follow me on social media</p>
+				<nav class = "flex">
+					<a class = "inner" alt = 'Link to my instagram' href="https://www.instagram.com/limedumplr/"><img class="icon" src="images/icons/instagram.svg" alt = "instagram icon" ><p>Instagram</p></a>
+					<a class = "inner" alt = 'Link to my github' href="https://github.com/swethakan"><img class="icon" src="images/icons/github.svg" alt = "github icon" ><p>Github</p></a>
+					<a class = "inner" alt = 'Link to my twitter' href="https://twitter.com/swetha_kan"><img class="icon" src="images/icons/twitter.svg" alt = "twitter icon" ><p>Twitter</p></a>
+					<a class = "inner" alt = 'Link to my linkedin' href="https://www.linkedin.com/in/swetha-kannan-b5a14791/"><img class="icon" src="images/icons/linkedin.svg" alt = "linkedIn icon" ><p>Linkedin</p></a>
+				</nav>
+			</div>
+		</div>	
+	</body>
+	<footer>
+		<!-- Now loading in the javascript to add functionality. -->
+		<script type="text/javascript" src="scripts/script.js"></script>
+	</footer>
+</html>
