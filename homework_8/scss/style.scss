@@ -5,10 +5,12 @@ $foods: #000;
 $coronavirus: #08445C;
 $star_wars: #14151B;
 // These are all styles for my main index page. They fill also form the basis of other page styles
+
 body{
     font-family: 'Open Sans', sans-serif;
     margin: 0px;
     padding: 0px;
+    overflow-x: hidden;
 
     .topper{
         height: calc(100vh - 63px); //the 63px takes care of the height of the nav menu up top
@@ -25,6 +27,7 @@ body{
         color: white;
         overflow: hidden;
         position: sticky;
+        z-index: 10;
         top: 0;
         a {
             float: right;
@@ -165,6 +168,9 @@ body{
         padding-top: 100px;
         color: white;
         padding-bottom: 100px;
+        p{
+            color: #c1c1c1;
+        }
     }
 
     #contact{
@@ -221,10 +227,21 @@ body{
             border-radius: 50px;
             position: absolute;
             margin-left: -56px;
+            @media only screen and (max-width: 700px) {
+                display: none;
+            }
         }
         .text .first{
             margin-top:0px;
             padding-top:0px;
+            @media only screen and (max-width: 700px) {
+                margin-top:20px;
+            }
+        }
+        @media only screen and (max-width: 700px) {
+            border:none;
+            padding-right:20px;
+            padding-left:20px;
         }
     }
 
@@ -238,8 +255,13 @@ body{
 
 .flex{
     display: flex;
-    .inner{
 
+    @media only screen and (max-width: 700px) {
+        display: block;
+        .inner{
+            margin:auto;
+            width: 100%;
+        }
     }
 }
 
@@ -277,6 +299,9 @@ body{
             display: block;
             margin-top:20px;
         }
+        @media only screen and (max-width: 700px) {
+            margin-left:0px;
+        }
     }
 }
 .the-deets{
@@ -288,6 +313,11 @@ body{
     }
     .inner{
         width:300px;
+        padding: 0px 10px;
+        @media only screen and (max-width: 700px) {
+            padding-top:30px;
+        }
+        
     }
     h2{
         color:$gold;
@@ -296,6 +326,9 @@ body{
     h3{
         color:white;
         font-size: 23px;
+        @media only screen and (max-width: 700px) {
+            margin:5px 0px;
+        }
     }
     p{
         color:white;
@@ -315,9 +348,15 @@ body{
     }
     .inner{
         width:50%;
+        @media only screen and (max-width: 700px) {
+            width:100%;
+        }
     }
     .text{
         padding-left:100px;
+        @media only screen and (max-width: 700px) {
+            padding-left:0px;
+        }
     }
 }
 
@@ -350,7 +389,59 @@ body{
         width: 100%;
         padding-left:40px;
         border-left: 1px solid grey;
+        @media only screen and (max-width: 700px) {
+            border:none;
+        }
     }
+}
+
+.awards{
+    margin:none;
+    padding:30px 0px;
+    .all{
+        width: fit-content;
+        margin: auto;
+    }
+    h2{
+        text-align: center;
+        font-weight: bold;
+        font-size: 20px;
+        margin-top: 0px;
+        letter-spacing: 1px;
+    }
+    img{
+        width: 20px;
+        margin: 8px 0px;
+        padding-right:10px;
+    }
+    p{
+        margin:10px 0px;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    p b{
+        color: black;
+        font-weight: normal;
+        background-color: $gold;
+    }
+    .text{
+        max-width:400px;
+    }
+    @media only screen and (max-width: 700px) {
+        .flex{
+            display: flex;
+            .inner{
+                width: fit-content;
+            }
+            .inner.text{
+                max-width:300px;
+                width: 100%;
+            }
+        }
+    }
+    
 }
 
 .ocean_game{
@@ -369,5 +460,24 @@ body{
     .darkBG{
         background-color: $ocean;
         color: white;
+    }
+}
+
+.mobile-only{
+    display: none;
+    height: 0px;
+    @media only screen and (max-width: 700px) {
+        display: initial;
+        height:auto;
+    }
+}
+
+.desktop-only{
+    display: initial;
+    height:auto;
+
+    @media only screen and (max-width: 700px) {
+        display: none;
+        height: 0px;
     }
 }

@@ -2,6 +2,7 @@ body {
   font-family: "Open Sans", sans-serif;
   margin: 0px;
   padding: 0px;
+  overflow-x: hidden;
 }
 body .topper {
   height: calc(100vh - 63px);
@@ -16,6 +17,7 @@ body .topNav {
   color: white;
   overflow: hidden;
   position: sticky;
+  z-index: 10;
   top: 0;
 }
 body .topNav a {
@@ -147,6 +149,9 @@ body #contact.darkBG {
   color: white;
   padding-bottom: 100px;
 }
+body #contact.darkBG p {
+  color: #c1c1c1;
+}
 body #contact {
   margin-top: 100px;
   text-align: center;
@@ -202,9 +207,26 @@ body .contain h2::before {
   position: absolute;
   margin-left: -56px;
 }
+@media only screen and (max-width: 700px) {
+  body .contain h2::before {
+    display: none;
+  }
+}
 body .contain .text .first {
   margin-top: 0px;
   padding-top: 0px;
+}
+@media only screen and (max-width: 700px) {
+  body .contain .text .first {
+    margin-top: 20px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  body .contain {
+    border: none;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
 }
 body .image-caption {
   font-size: 12px;
@@ -215,6 +237,16 @@ body .image-caption {
 .flex {
   display: flex;
 }
+@media only screen and (max-width: 700px) {
+  .flex {
+    display: block;
+  }
+  .flex .inner {
+    margin: auto;
+    width: 100%;
+  }
+}
+
 .topper {
   height: calc(100vh - 63px);
   width: 100%;
@@ -251,6 +283,11 @@ body .image-caption {
   display: block;
   margin-top: 20px;
 }
+@media only screen and (max-width: 700px) {
+  .high-level-summary ul {
+    margin-left: 0px;
+  }
+}
 
 .the-deets .flex {
   padding: 50px 0px;
@@ -260,6 +297,12 @@ body .image-caption {
 }
 .the-deets .inner {
   width: 300px;
+  padding: 0px 10px;
+}
+@media only screen and (max-width: 700px) {
+  .the-deets .inner {
+    padding-top: 30px;
+  }
 }
 .the-deets h2 {
   color: #FFB84D;
@@ -268,6 +311,11 @@ body .image-caption {
 .the-deets h3 {
   color: white;
   font-size: 23px;
+}
+@media only screen and (max-width: 700px) {
+  .the-deets h3 {
+    margin: 5px 0px;
+  }
 }
 .the-deets p {
   color: white;
@@ -288,8 +336,18 @@ body .image-caption {
 .understand-problem-space .inner, .the-process .inner, .the-results .inner {
   width: 50%;
 }
+@media only screen and (max-width: 700px) {
+  .understand-problem-space .inner, .the-process .inner, .the-results .inner {
+    width: 100%;
+  }
+}
 .understand-problem-space .text, .the-process .text, .the-results .text {
   padding-left: 100px;
+}
+@media only screen and (max-width: 700px) {
+  .understand-problem-space .text, .the-process .text, .the-results .text {
+    padding-left: 0px;
+  }
 }
 
 .goals {
@@ -325,6 +383,59 @@ body .image-caption {
   padding-left: 40px;
   border-left: 1px solid grey;
 }
+@media only screen and (max-width: 700px) {
+  .the-results .line {
+    border: none;
+  }
+}
+
+.awards {
+  margin: none;
+  padding: 30px 0px;
+}
+.awards .all {
+  width: fit-content;
+  margin: auto;
+}
+.awards h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 0px;
+  letter-spacing: 1px;
+}
+.awards img {
+  width: 20px;
+  margin: 8px 0px;
+  padding-right: 10px;
+}
+.awards p {
+  margin: 10px 0px;
+}
+.awards a {
+  text-decoration: none;
+  color: white;
+}
+.awards p b {
+  color: black;
+  font-weight: normal;
+  background-color: #FFB84D;
+}
+.awards .text {
+  max-width: 400px;
+}
+@media only screen and (max-width: 700px) {
+  .awards .flex {
+    display: flex;
+  }
+  .awards .flex .inner {
+    width: fit-content;
+  }
+  .awards .flex .inner.text {
+    max-width: 300px;
+    width: 100%;
+  }
+}
 
 .ocean_game .topper {
   background-image: url("../images/projects/beaches/topper/desktop.jpg");
@@ -340,6 +451,28 @@ body .image-caption {
 .ocean_game .darkBG {
   background-color: #202830;
   color: white;
+}
+
+.mobile-only {
+  display: none;
+  height: 0px;
+}
+@media only screen and (max-width: 700px) {
+  .mobile-only {
+    display: initial;
+    height: auto;
+  }
+}
+
+.desktop-only {
+  display: initial;
+  height: auto;
+}
+@media only screen and (max-width: 700px) {
+  .desktop-only {
+    display: none;
+    height: 0px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

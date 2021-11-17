@@ -22,10 +22,10 @@
 	<body class = "ocean_game">
 	<!-- Navigation at the top of the page which is reflected in all pages. Tutorial used: https://www.w3schools.com/howto/howto_js_topnav.asp -->
 		<nav class = "topNav">
-			<a class = "left">Swetha Kannan<span class = "title">UX/UI Designer</span></a>
-			<a href="../index.html#contact">Connect</a>
+			<a class = "left desktop-only">Swetha Kannan<span class = "title">UX/UI Designer</span></a>
+			<a href="#contact">Connect</a>
 			<a href="../index.html#portfolio">Projects</a>
-			<a href="../index.html#about">About</a>
+			<a href="../index.html">About</a>
 		</nav>
 		<!-- This is our 'heroic' topper -->
 		<div class = "topper">
@@ -36,7 +36,7 @@
 			<div class = "high-level-summary">
 					<h2 data-aos="fade">Overview</h2>
 					<div class = "flex">
-						<div data-aos="fade-right" class = "inner image">
+						<div data-aos="fade-right" class = "inner image desktop-only">
 							<img al = "view of the webpage on mobile." src = "../images/projects/beaches/mobile/mobile1.jpg">
 						</div>
 						<div data-aos="fade-left" class = "inner text">
@@ -105,14 +105,15 @@
 					<h2 data-aos="fade-right">The process</h2>
 					<div class = "flex">
 						<div data-aos="fade-right" class = "image inner">
-							<img alt = "image of post it notes" src = "../images/projects/beaches/image2.jpg">
-							<p class = "image-caption">Diagrams show initial mockups of how game could progress (Swetha Kannan, Rosanna Xia / Los Angeles Times)</p>
+							<img alt = "image of post it notes" src = "../images/projects/beaches/image3.jpg">
+							<p class = "image-caption">Mid-fi mockup (Swetha Kannan / Los Angeles Times)</p>
 						</div>
 						<div data-aos="fade-left" class = "text inner">
-							<p class = "first">Rosanna Xia, a reporter at the Los Angeles Times, was introduced to this problem space through her beat as an environmental reporter. Rosanna interviewed a variety of environmentalists, beach-goers, homeowners who had beachside properties and more. </p>
-							<p>One goal we had in this project was to intorduce different sides of the argument agains and for deserting our coastline. To figure out how to best do this, we held various brainstorming sessions to write down our thoughts and synthesize solutions.</p>
-							<p>Terry Castleman and I also assessed the state of newsgames at the time. We did a light market analysis of games and picked out what worked and what did not from each game.</p>
-							<p>In the end, we were able to make a tree diagram of how we expected our game to progress. Rosanna started the process with the Editor of the story, Ben Muessig, by using sticky notes to map out the process. Afterwards, we made a more sophisticated mock-up using Twine.js.</p>
+							<p class = "first">After exploring the problem space, we made several mockups to present to stakeholders in the newsroom. I initially started with a city-scape in a mockup which was wuickly shot down by experts - we instead changed the final landscape to flat land with roads and villas, more typical of the Southern California coast.</p>
+							<p>We playtested the game with several users and, once we were happy with the text, we began transferring the game to our in-house CMS system. To do this, I used Cinema 4D to make all the 3D elements you see in the game and then used After Effects to create all the animations.</p>
+							<p>We exported these animations into Javascript animations by using the the Bodymovin library.</p>
+							<p>Some of the biggest elements of the game that we continuously iterated upon was the characters we included that were meant to visualize the stakeholders in the problem space. These characters would occasionally offer commentry on what the user was doing.</p>
+							<p>Another big element was the buyback system where users would be able to offer financial incentive. We tried to model these scenerios after real ones we encountered in our interviews to make it as realistic as possible.</p>
 						</div>
 					</div>
 				</div>
@@ -125,21 +126,36 @@
 					<h2 data-aos="fade-right">The results</h2>
 					<div class = "flex">
 						<div data-aos="fade-right" class = "image inner">
-							<img alt = "image of post it notes" src = "../images/projects/beaches/image2.jpg">
-							<p class = "image-caption">Diagrams show initial mockups of how game could progress (Swetha Kannan, Rosanna Xia / Los Angeles Times)</p>
+							<img alt = "image of post it notes" src = "../images/projects/beaches/image4.jpg">
 						</div>
 						<div data-aos="fade-left" class = "text inner">
-							<p class = "first">Rosanna Xia, a reporter at the Los Angeles Times, was introduced to this problem space through her beat as an environmental reporter. Rosanna interviewed a variety of environmentalists, beach-goers, homeowners who had beachside properties and more. </p>
-							<p>One goal we had in this project was to intorduce different sides of the argument agains and for deserting our coastline. To figure out how to best do this, we held various brainstorming sessions to write down our thoughts and synthesize solutions.</p>
-							<p>Terry Castleman and I also assessed the state of newsgames at the time. We did a light market analysis of games and picked out what worked and what did not from each game.</p>
-							<p>In the end, we were able to make a tree diagram of how we expected our game to progress. Rosanna started the process with the Editor of the story, Ben Muessig, by using sticky notes to map out the process. Afterwards, we made a more sophisticated mock-up using Twine.js.</p>
+							<p class = "first">The story published alongside it’s written version on July 7th, 2019.</p>
+							<p>The page published to great success. It was met with steady and increasing traffic for a week, a time frame almost unheard of in a fast-paced news cycle, and was one of our top viewed project pages of the year. Beyond the initial publishing week, the game has been used by professionals to teach students about the complexities of our beaches and to train local city officials before they began their duties assisting the development of beachside neighborhoods.</p>
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- All my awards! So proud -->
-			<div class = "awards darkBG" data-aos="fade">
-
+			<div class = "awards darkBG">
+				<h2 data-aos="fade">Awards</h2>
+				<div class = "all">
+					<div data-aos="fade-up" class="award flex pulitzer">
+						<div class = "inner"><img alt="award icon" src="../images/icons/award-gold.svg"></div>
+						<div class = "inner text"><p><a href="https://www.pulitzer.org/finalists/rosanna-xia-swetha-kannan-and-terry-castleman-los-angeles-times" alt="This link will take you to the 2019 Pulitzer Prize page">2020 <b>Pulitzer Prize, finalist</b> for explanatory reporting</a></p></div>
+					</div>
+					<div data-aos="fade-up" class="award flex">
+						<div class = "inner"><img alt="award icon" src="../images/icons/award-gold.svg"></div>
+						<div class = "inner text"><p>2020 Online Journalism Award, Finalist</p></div>
+					</div>
+					<div data-aos="fade-up" class="award flex">
+						<div class = "inner"><img alt="award icon" src="../images/icons/award-gold.svg"></div>
+							<div class = "inner text"><p>2019 California Online Journalism Awards, 3rd place in Public Service Journalism</p></div>
+					</div>
+					<div data-aos="fade-up" class="award flex">
+						<div class = "inner"><img alt="award icon" src="../images/icons/award-gold.svg"></div>
+						<div class = "inner text"><p>2019 California Online Journalism Awards, 2nd place in In-depth reporting</p></div>
+					</div>
+				</div>
 
 			</div>
 
