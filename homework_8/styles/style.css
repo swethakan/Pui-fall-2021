@@ -15,6 +15,8 @@ body .topNav {
   background: black;
   color: white;
   overflow: hidden;
+  position: sticky;
+  top: 0;
 }
 body .topNav a {
   float: right;
@@ -54,7 +56,7 @@ body #about.flex {
   align-items: center;
 }
 body #about {
-  max-width: 1300px;
+  max-width: 1200px;
   margin: auto;
   width: 100%;
   vertical-align: middle;
@@ -139,6 +141,12 @@ body #portfolio .flex {
 body #portfolio .flex .inner {
   flex-direction: row;
 }
+body #contact.darkBG {
+  margin-top: 0px;
+  padding-top: 100px;
+  color: white;
+  padding-bottom: 100px;
+}
 body #contact {
   margin-top: 100px;
   text-align: center;
@@ -178,8 +186,30 @@ body #contact .icon {
   margin: 10px 20px 5px 20px;
 }
 body .contain {
-  max-width: 1300px;
+  max-width: 1200px;
   margin: auto;
+  border-left: 1px solid grey;
+  padding-left: 40px;
+  padding-bottom: 80px;
+}
+body .contain h2::before {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background-color: #FFB84D;
+  content: "";
+  border-radius: 50px;
+  position: absolute;
+  margin-left: -56px;
+}
+body .contain .text .first {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+body .image-caption {
+  font-size: 12px;
+  color: grey;
+  margin-top: 0px;
 }
 
 .flex {
@@ -192,7 +222,7 @@ body .contain {
 .topper h1 {
   font-size: 50px;
 }
-.topper h1.center {
+.topper .center {
   padding-top: 20vh;
   margin-top: 0px;
   width: 100%;
@@ -203,7 +233,7 @@ body .contain {
   width: fit-content;
   margin: auto;
   margin-top: 80px;
-  margin-bottom: 80px;
+  margin-bottom: 100px;
 }
 .high-level-summary h2 {
   text-align: center;
@@ -222,14 +252,11 @@ body .contain {
   margin-top: 20px;
 }
 
-.the-deets {
-  background: black;
-}
 .the-deets .flex {
   padding: 50px 0px;
-  max-width: 1300px;
+  max-width: 1200px;
   margin: auto;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .the-deets .inner {
   width: 300px;
@@ -247,11 +274,72 @@ body .contain {
   font-size: 15px;
 }
 
+.understand-problem-space, .the-process, .the-results {
+  margin-top: 80px;
+  margin-bottom: 0px;
+}
+.understand-problem-space h2, .the-process h2, .the-results h2 {
+  font-size: 25px;
+  text-transform: uppercase;
+}
+.understand-problem-space img, .the-process img, .the-results img {
+  width: 100%;
+}
+.understand-problem-space .inner, .the-process .inner, .the-results .inner {
+  width: 50%;
+}
+.understand-problem-space .text, .the-process .text, .the-results .text {
+  padding-left: 100px;
+}
+
+.goals {
+  padding: 0px;
+  margin-top: -20px;
+}
+.goals h2 {
+  color: white;
+  padding-top: 80px;
+}
+
+.the-process {
+  padding: 0px;
+  margin-top: -20px;
+}
+.the-process h2 {
+  padding-top: 80px;
+}
+
+.the-results {
+  padding: 0px;
+  margin-top: -20px;
+}
+.the-results .contain {
+  border: none;
+  margin-top: -20px;
+}
+.the-results .line {
+  height: 80px;
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+  padding-left: 40px;
+  border-left: 1px solid grey;
+}
+
 .ocean_game .topper {
   background-image: url("../images/projects/beaches/topper/desktop.jpg");
-  border-bottom: 1px solid grey;
   background-size: cover;
   background-position: bottom;
+}
+.ocean_game .topper h1 {
+  background-color: rgba(255, 255, 255, 0.724);
+  width: fit-content;
+  margin: auto;
+  padding: 20px;
+}
+.ocean_game .darkBG {
+  background-color: #202830;
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */
