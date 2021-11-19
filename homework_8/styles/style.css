@@ -1,3 +1,8 @@
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   margin: 0px;
@@ -6,6 +11,11 @@ body {
 }
 body .topper {
   height: calc(100vh - 63px);
+}
+@media only screen and (max-width: 700px) {
+  body .topper {
+    height: auto;
+  }
 }
 body #container {
   max-width: 900px;
@@ -53,7 +63,6 @@ body .topNav a.active {
   color: white;
 }
 body #about.flex {
-  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
 }
@@ -94,6 +103,14 @@ body #about .hi {
 body #about .links {
   text-align: center;
 }
+@media only screen and (max-width: 700px) {
+  body #about .links {
+    width: 100%;
+    margin: auto;
+    display: block;
+    margin-top: 30px;
+  }
+}
 body #about .pronounce {
   font-weight: normal;
   font-size: 20px;
@@ -104,13 +121,23 @@ body #about .pronounce {
 }
 body #about .image {
   padding: 30px;
-  width: 500px;
+  height: auto;
 }
 body #about .image img {
   width: 100%;
+  max-width: 500px;
+}
+@media only screen and (max-width: 700px) {
+  body #about .image {
+    padding: 0px;
+    width: 90%;
+    margin-top: 20px;
+    height: calc(100vh - 63px);
+  }
 }
 body #about .text {
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
 }
 body #portfolio ul {
   list-style-type: none;
@@ -139,6 +166,7 @@ body #portfolio .flex {
   -webkit-flex-wrap: wrap;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 body #portfolio .flex .inner {
   flex-direction: row;
@@ -253,6 +281,11 @@ body .image-caption {
 }
 .topper h1 {
   font-size: 50px;
+}
+@media only screen and (max-width: 700px) {
+  .topper h1 {
+    font-size: 30px;
+  }
 }
 .topper .center {
   padding-top: 20vh;
@@ -442,6 +475,12 @@ body .image-caption {
   background-size: cover;
   background-position: bottom;
 }
+@media only screen and (max-width: 700px) {
+  .ocean_game .topper {
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
 .ocean_game .topper h1 {
   background-color: rgba(255, 255, 255, 0.724);
   width: fit-content;
@@ -472,6 +511,16 @@ body .image-caption {
   .desktop-only {
     display: none;
     height: 0px;
+  }
+}
+
+.overflow-hide {
+  overflow-x: hidden;
+}
+
+@media only screen and (max-width: 700px) {
+  .project .topper {
+    height: calc(100vh - 63px);
   }
 }
 
