@@ -10,6 +10,12 @@ html{
     overflow-x: hidden;
 
 }
+.topper p{
+    @media only screen and (max-width: 700px) {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+}
 body{
     font-family: 'Open Sans', sans-serif;
     margin: 0px;
@@ -112,6 +118,8 @@ body{
         }
         .links{
             text-align: center;
+            width: 100%;
+            display: block;
             @media only screen and (max-width: 700px) {
                 width:100%;
                 margin:auto;
@@ -148,6 +156,10 @@ body{
     }
 
     #portfolio{
+        h2{
+            text-align: center;
+            padding:30px;
+        }
         ul{
             list-style-type:none;
         }
@@ -224,6 +236,7 @@ body{
         .flex{
             width: fit-content;
             margin:auto;
+            display: flex;
         }
         .icon{
             width: 40px;
@@ -492,21 +505,21 @@ body{
 }
 
 .mobile-only{
-    display: none;
-    height: 0px;
+    display: none!important;
+    height: 0px!important;
     @media only screen and (max-width: 700px) {
-        display: initial;
-        height:auto;
+        display: block!important;
+        height:auto!important;
     }
 }
 
 .desktop-only{
-    display: initial;
-    height:auto;
+    display: block!important;
+    height:auto!important;
 
     @media only screen and (max-width: 700px) {
-        display: none;
-        height: 0px;
+        display: none!important;
+        height: 0px!important;
     }
 }
 
