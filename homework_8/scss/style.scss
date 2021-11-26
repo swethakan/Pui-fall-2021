@@ -360,15 +360,10 @@ body{
         font-size: 15px;
     }
     h3{
-        color:white;
         font-size: 23px;
         @media only screen and (max-width: 700px) {
             margin:5px 0px;
         }
-    }
-    p{
-        color:white;
-        font-size: 15px;
     }
 }
 
@@ -400,7 +395,6 @@ body{
     padding:0px;
     margin-top: -20px;
     h2{
-        color: white;
         padding-top:80px;
     }
 }
@@ -434,6 +428,8 @@ body{
 .awards{
     margin:none;
     padding:30px 0px;
+    margin-top: -1px;
+    
     .all{
         width: fit-content;
         margin: auto;
@@ -489,6 +485,7 @@ body{
         @media only screen and (max-width: 700px) {
             background-size:contain;
             background-repeat: no-repeat;
+            background-image: url('../images/projects/beaches/topper/mobile.jpg');
         }
 
         h1{
@@ -501,6 +498,280 @@ body{
     .darkBG{
         background-color: $ocean;
         color: white;
+    }
+    .the-deets {
+        p{
+            color:white;
+            font-size: 15px;
+        }
+        h3 {
+            color: white;
+            font-size: 23px;
+        }
+    }
+    .goals{
+        h2{
+            color: white;
+        }
+    } 
+}
+.restaurants{
+    background: #f9f8f2;
+
+    .desktop {
+        display: block!important;
+        height: auto!important;
+    }
+    .topper {
+        max-width: 1030px;
+        margin: 50px auto 10px;
+        vertical-align: center;
+        margin-top: 0px;
+        height: calc(100vh - 63px)!important;
+        .flex{
+            padding-top: 10%;
+        }
+        .hedSVGDesktop {
+            flex: 1 1 45%;
+            padding: 20px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 100%;
+            width: 45%;
+            margin: auto;
+            display: block;
+            background-image: url(../images/projects/101_list/topper/bg.gif);
+            max-width: 100%;
+            vertical-align: middle;
+            border: 0;
+        }
+        svg {
+            flex: 1 1 50%;
+            margin-left: 5%;
+            padding-bottom: 20px;
+            height: 100%;
+            width: 100%;
+        }
+        .hedImage {
+            width: 210px;
+            margin: auto;
+            display: block;
+            height: auto;
+        }
+        .spotImage {
+            position: absolute;
+            top: 333px;
+            left: 0;
+            width: 100%;
+            z-index: -2;
+        }
+        .words_container {
+            flex: 1 1 50%;
+        }
+        .hedSVG {
+            width: 300px;
+            margin: auto;
+            display: block;
+        }
+        .words_container_position {
+            padding-bottom: 0;
+            padding-left: 0;
+            position: relative;
+            text-align: center;
+            transform: rotate(-10deg);
+            display: block;
+            margin-top: -88px;
+        }
+        .hedPartTwo span {
+            -webkit-transform: rotate(8deg);
+            float: left;
+            transform: rotate(8deg);
+        }
+        .hed1, .hed2, .hed3, .hed4 {
+            width: fit-content;
+            position: absolute;
+            font-size: 2.8em;
+            top: 0;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+            display: block;
+            font-weight: 900;
+        }
+        @keyframes hedRotate4{
+            from,to{
+                -moz-opacity:0;
+                -khtml-opacity:0;
+                opacity:0
+                }
+            75%{
+                -moz-opacity:0;
+                -khtml-opacity:0;
+                opacity:0;
+                padding-top:10px}
+            80%,95%{
+                -moz-opacity:1;
+                -khtml-opacity:1;
+                opacity:1;
+                padding-top:0px}
+        }
+        @keyframes hedRotate2{
+            25%,from{
+                padding-top:10px;
+                -moz-opacity:0;
+                -khtml-opacity:0;
+                opacity:0}
+            30%,45%{
+                padding-top:0;
+                -moz-opacity:1;
+                -khtml-opacity:1;
+                opacity:1
+            }
+            50%,to{
+                -moz-opacity:0;
+                -khtml-opacity:0;
+                opacity:0
+            }
+        }
+        @keyframes hedRotate3{
+            75%,from,to{
+                -moz-opacity:0;
+                -khtml-opacity:0;
+                opacity:0
+            }
+            50%{
+                -moz-opacity:0;
+                -khtml-opacity:0;
+                opacity:0;
+                padding-top:10px
+            }
+            55%,70%{
+                -moz-opacity:1;
+                -khtml-opacity:1;
+                opacity:1;
+                padding-top:0
+            }
+        }
+        @keyframes hedRotate{
+            from{
+                padding-top:10px;
+                -moz-opacity:0;
+                -khtml-opacity:0;
+                opacity:0
+            }
+            20%,5%{
+                padding-top:0;
+                -moz-opacity:1;
+                -khtml-opacity:1;
+                opacity:1
+            }
+            25%,to{
+                -moz-opacity:0;
+                -khtml-opacity:0;
+                opacity:0
+            }
+        }
+
+        .hed1{
+            -webkit-animation-name: hedRotate;
+            animation-name: hedRotate;
+            -webkit-animation-duration: 5s;
+            animation-duration: 5s;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+        }
+        .hed2{
+            -webkit-animation-name: hedRotate2;
+            animation-name: hedRotate2;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        .hed3{
+            -webkit-animation-name: hedRotate3;
+            animation-name: hedRotate3;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        .hed4{
+            -webkit-animation-name: hedRotate4;
+            animation-name: hedRotate4;
+            -webkit-animation-duration: 5s;
+            animation-duration: 5s;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+        }
+        @media only screen and (max-width: 700px) {
+            .topper_text {
+                z-index: 10;
+                display: block;
+                max-width: 800px;
+                margin: auto;
+                font-weight: 900;
+            }
+            .hedPartThree {
+                font-size: 35px;
+                width: 90%;
+                text-align: center;
+                margin: auto;
+                padding-top: 245px;
+                z-index: 10;
+                transform: none;
+                border-top: none;
+                font-weight: 900;
+                line-height: 40px;
+            }
+        }
+    }
+    .darkBG{
+        background-color: $foods;
+        color: white;
+    }
+}
+
+.sw_women{
+    .topper{
+        background-color: $star_wars;
+        background-image: url('../images/projects/sw_women/topper/desktop-stars.gif');
+        color:#F1F2C9;
+        h1{
+            font-weight: normal;
+        }
+        .flex{
+            max-width: 1200px;
+            margin: auto;
+            padding-top:10%;
+            flex-direction: wrap;
+            justify-content: center;
+            align-items: center;
+            img{
+                width: 100%;
+            }
+            .inner{
+                width: 45%;
+                vertical-align: middle;
+                height: 100%;
+                @media only screen and (max-width: 700px) {
+                    width: 95%;
+                    text-align: center;
+                }
+            }
+            .blue, .yellow{
+                color: $star_wars;
+                font-weight: 700;
+            }
+            .blue{
+                background-color: #7D8DBF;
+            }
+            .yellow{
+                background: #F9D59B;
+            }
+        }
+    }
+    .darkBG{
+        background-color: $star_wars;
+        color: #F1F2C9;
     }
 }
 
@@ -532,4 +803,16 @@ body{
             height: calc(100vh - 63px); //the 63px takes care of the height of the nav menu up top
         }
     }
+}
+.connect-down, .connect-up{
+    height: 90px!important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;  
+}
+.connect-down{
+    background-image: url('../images/connect-down.png');
+}
+.connect-up{
+    background-image: url('../images/connect-up.png');
 }
