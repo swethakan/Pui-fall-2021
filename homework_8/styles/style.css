@@ -17,7 +17,7 @@ body {
   overflow-x: hidden;
 }
 body .topper {
-  height: calc(100vh - 63px);
+  height: 100vh;
 }
 @media only screen and (max-width: 700px) {
   body .topper {
@@ -33,9 +33,10 @@ body .topNav {
   background: black;
   color: white;
   overflow: hidden;
-  position: sticky;
+  position: fixed;
   z-index: 10;
-  top: 0;
+  width: 100%;
+  top: 0px;
 }
 body .topNav a {
   float: right;
@@ -141,7 +142,7 @@ body #about .image img {
     padding: 0px;
     width: 90%;
     margin-top: 20px;
-    height: calc(100vh - 63px);
+    height: 100vh;
   }
 }
 body #about .text {
@@ -156,7 +157,7 @@ body #portfolio ul {
   list-style-type: none;
 }
 body #portfolio .template-Project {
-  width: 400px;
+  width: 330px;
   padding: 5px;
   margin-bottom: 50px;
 }
@@ -178,8 +179,8 @@ body #portfolio .flex {
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   padding: 0;
-  margin: 0;
-  width: 100%;
+  margin: auto;
+  width: 85%;
 }
 body #portfolio .flex .inner {
   flex-direction: row;
@@ -290,7 +291,7 @@ body .image-caption {
 }
 
 .topper {
-  height: calc(100vh - 63px);
+  height: 100vh;
   width: 100%;
 }
 .topper h1 {
@@ -335,7 +336,18 @@ body .image-caption {
     margin-left: 0px;
   }
 }
+.high-level-summary .text {
+  max-width: 360px;
+}
 
+.the-deets {
+  padding: 0px 30px;
+}
+@media only screen and (max-width: 700px) {
+  .the-deets {
+    padding: 0px;
+  }
+}
 .the-deets .flex {
   padding: 50px 0px;
   max-width: 1200px;
@@ -367,6 +379,12 @@ body .image-caption {
 .understand-problem-space, .the-process, .the-results {
   margin-top: 80px;
   margin-bottom: 0px;
+  padding: 0px 30px;
+}
+@media only screen and (max-width: 700px) {
+  .understand-problem-space, .the-process, .the-results {
+    padding: 0px;
+  }
 }
 .understand-problem-space h2, .the-process h2, .the-results h2 {
   font-size: 25px;
@@ -395,6 +413,12 @@ body .image-caption {
 .goals {
   padding: 0px;
   margin-top: -20px;
+  padding: 0px 30px;
+}
+@media only screen and (max-width: 700px) {
+  .goals {
+    padding: 0px;
+  }
 }
 .goals h2 {
   padding-top: 80px;
@@ -403,6 +427,12 @@ body .image-caption {
 .the-process {
   padding: 0px;
   margin-top: -20px;
+  padding: 0px 30px;
+}
+@media only screen and (max-width: 700px) {
+  .the-process {
+    padding: 0px;
+  }
 }
 .the-process h2 {
   padding-top: 80px;
@@ -411,6 +441,12 @@ body .image-caption {
 .the-results {
   padding: 0px;
   margin-top: -20px;
+  padding: 0px 30px;
+}
+@media only screen and (max-width: 700px) {
+  .the-results {
+    padding: 0px;
+  }
 }
 .the-results .contain {
   border: none;
@@ -433,7 +469,6 @@ body .image-caption {
 .awards {
   margin: none;
   padding: 30px 0px;
-  margin-top: -1px;
 }
 .awards .all {
   width: fit-content;
@@ -524,8 +559,8 @@ body .image-caption {
   max-width: 1030px;
   margin: 50px auto 10px;
   vertical-align: center;
-  margin-top: 0px;
-  height: calc(100vh - 63px) !important;
+  margin-top: 7%;
+  height: 100vh !important;
 }
 .restaurants .topper .flex {
   padding-top: 10%;
@@ -725,8 +760,33 @@ body .image-caption {
   }
 }
 .restaurants .darkBG {
-  background-color: #000;
-  color: white;
+  background-color: rgba(12, 12, 11, 0.932);
+  color: #f9f8f2;
+}
+.restaurants .the-process .diff-styles .inner {
+  max-width: 250px;
+}
+.restaurants .the-process .diff-styles h3 {
+  text-align: center;
+}
+.restaurants .the-process .diff-styles p {
+  font-size: 12px;
+  padding: 0px 10px;
+}
+.restaurants .the-process .diff-styles .image {
+  width: 90%;
+  margin: auto;
+}
+.restaurants .the-process .diff-styles img {
+  width: 100%;
+}
+.restaurants .the-process .diff-styles .no {
+  color: red;
+  font-weight: bold;
+}
+.restaurants .the-process .diff-styles .yes {
+  color: green;
+  font-weight: bold;
 }
 
 .sw_women .topper {
@@ -740,7 +800,7 @@ body .image-caption {
 .sw_women .topper .flex {
   max-width: 1200px;
   margin: auto;
-  padding-top: 10%;
+  padding-top: 16%;
   flex-direction: wrap;
   justify-content: center;
   align-items: center;
@@ -773,6 +833,60 @@ body .image-caption {
   background-color: #14151B;
   color: #F1F2C9;
 }
+.sw_women .the-results .image {
+  overflow-x: visible;
+}
+.sw_women .the-results img {
+  border: 1px solid #F1F2C9;
+  border-right: 1px solid #F1F2C9;
+}
+
+.coronavirus .topper {
+  background-color: #08445C;
+}
+.coronavirus .topper .flex {
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 13%;
+  flex-direction: wrap;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 700px) {
+  .coronavirus .topper .flex {
+    margin-top: 15%;
+  }
+}
+.coronavirus .topper .inner {
+  width: 45%;
+}
+@media only screen and (max-width: 700px) {
+  .coronavirus .topper .inner {
+    width: 95%;
+  }
+}
+.coronavirus .topper .inner h1 {
+  width: 400px;
+  padding: 20px 0px;
+  margin: auto;
+  color: white;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+.coronavirus .topper .inner h1 .green {
+  color: #ADC839;
+}
+.coronavirus .topper img {
+  width: 100%;
+}
+.coronavirus .darkBG {
+  background-color: #08445C;
+  color: #feffff;
+}
+
+.main {
+  margin-bottom: 300px;
+}
 
 .mobile-only {
   display: none !important;
@@ -802,7 +916,7 @@ body .image-caption {
 
 @media only screen and (max-width: 700px) {
   .project .topper {
-    height: calc(100vh - 63px);
+    height: 100vh;
   }
 }
 

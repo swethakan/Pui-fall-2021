@@ -1,7 +1,7 @@
 
 $gold: #FFB84D;
 $ocean: #202830;
-$foods: #000;
+$foods: rgba(12, 12, 11, 0.932);
 $coronavirus: #08445C;
 $star_wars: #14151B;
 // These are all styles for my main index page. They fill also form the basis of other page styles
@@ -23,7 +23,7 @@ body{
     overflow-x: hidden;
 
     .topper{
-        height: calc(100vh - 63px); //the 63px takes care of the height of the nav menu up top
+        height: calc(100vh ); 
         @media only screen and (max-width: 700px) {
             height: auto;
         }
@@ -39,9 +39,10 @@ body{
         background: black;
         color: white;
         overflow: hidden;
-        position: sticky;
+        position: fixed;
         z-index: 10;
-        top: 0;
+        width: 100%;
+        top: 0px;
         a {
             float: right;
             color: #f2f2f2;
@@ -146,7 +147,7 @@ body{
                 padding:0px;
                 width:90%;
                 margin-top:20px;
-                height: calc(100vh - 63px); //the 63px takes care of the height of the nav menu up top
+                height: calc(100vh);
             }
         }
         .text{
@@ -164,7 +165,7 @@ body{
             list-style-type:none;
         }
         .template-Project{
-            width:400px;
+            width:330px;
             padding: 5px;
             margin-bottom: 50px;
           
@@ -188,8 +189,10 @@ body{
             flex-wrap: wrap;
             -webkit-flex-wrap: wrap;
             padding: 0;
-            margin: 0;
-            width:100%;
+            // margin: 0;
+            // width:100%;
+            margin: auto;
+            width: 85%;
             .inner{
                 flex-direction: row;
             }
@@ -299,7 +302,7 @@ body{
 }
 
 .topper{
-    height: calc(100vh - 63px); //the 63px takes care of the height of the nav menu up top
+    height: calc(100vh); 
     width:100%;
     h1{
         font-size: 50px;
@@ -319,6 +322,7 @@ body{
     margin: auto;
     margin-top:80px;
     margin-bottom:100px;
+    
 
     h2{
         text-align: center;
@@ -339,13 +343,21 @@ body{
             margin-left:0px;
         }
     }
+    .text{
+        max-width: 360px;
+    }
 }
 .the-deets{
+    padding: 0px 30px;
+    @media only screen and (max-width: 700px) {
+        padding:0px;
+    }
     .flex{
         padding: 50px 0px;
         max-width: 1200px;
         margin: auto;
         justify-content: space-between;
+        
     }
     .inner{
         width:300px;
@@ -370,6 +382,10 @@ body{
 .understand-problem-space, .the-process, .the-results{
     margin-top:80px;
     margin-bottom: 0px;
+    padding: 0px 30px;
+    @media only screen and (max-width: 700px) {
+        padding:0px;
+    }
     h2{
         font-size: 25px;
         text-transform: uppercase;
@@ -394,6 +410,10 @@ body{
 .goals{
     padding:0px;
     margin-top: -20px;
+    padding: 0px 30px;
+    @media only screen and (max-width: 700px) {
+        padding:0px;
+    }
     h2{
         padding-top:80px;
     }
@@ -401,6 +421,10 @@ body{
 .the-process{
     padding:0px;
     margin-top: -20px;
+    padding: 0px 30px;
+    @media only screen and (max-width: 700px) {
+        padding:0px;
+    }
     h2{
         padding-top: 80px;
     }
@@ -408,6 +432,10 @@ body{
 .the-results{
     padding:0px;
     margin-top: -20px;
+    padding: 0px 30px;
+    @media only screen and (max-width: 700px) {
+        padding:0px;
+    }
     .contain{
         border: none;
         margin-top: -20px;
@@ -428,7 +456,8 @@ body{
 .awards{
     margin:none;
     padding:30px 0px;
-    margin-top: -1px;
+
+
     
     .all{
         width: fit-content;
@@ -526,8 +555,8 @@ body{
         max-width: 1030px;
         margin: 50px auto 10px;
         vertical-align: center;
-        margin-top: 0px;
-        height: calc(100vh - 63px)!important;
+        margin-top: 7%;
+        height: calc(100vh)!important;
         .flex{
             padding-top: 10%;
         }
@@ -726,7 +755,36 @@ body{
     }
     .darkBG{
         background-color: $foods;
-        color: white;
+        color: #f9f8f2;
+    }
+    .the-process{
+        .diff-styles{
+            .inner{
+                max-width: 250px;
+            }
+            h3{
+                text-align: center;
+            }
+            p{
+                font-size: 12px;
+                padding:0px 10px;
+            }
+            .image{
+                width:90%;
+                margin: auto;
+            }
+            img{
+                width:100%;
+            }
+            .no{
+                color:red;
+                font-weight: bold;
+            }
+            .yes{
+                color:green;
+                font-weight: bold;
+            }
+        }
     }
 }
 
@@ -741,7 +799,7 @@ body{
         .flex{
             max-width: 1200px;
             margin: auto;
-            padding-top:10%;
+            padding-top:16%;
             flex-direction: wrap;
             justify-content: center;
             align-items: center;
@@ -773,8 +831,60 @@ body{
         background-color: $star_wars;
         color: #F1F2C9;
     }
+    .the-results{
+        .image{
+            overflow-x: visible;
+        }
+        img{
+            border:1px solid #F1F2C9;
+            border-right:1px solid #F1F2C9;
+        }
+    }
 }
 
+.coronavirus{
+    .topper{
+        background-color: $coronavirus;
+        .flex{
+            max-width: 1200px;
+            margin: auto;
+            padding-top:13%;
+            flex-direction: wrap;
+            justify-content: center;
+            align-items: center; 
+            @media only screen and (max-width: 700px) {
+                margin-top: 15%;
+            }
+        }
+        .inner{
+            width: 45%;
+            @media only screen and (max-width: 700px) {
+                width: 95%;
+            }
+            h1{
+                width:400px;
+                padding:20px 0px;
+                margin: auto;
+                color: white;
+                border-top: 1px solid white;
+                border-bottom: 1px solid white;
+                .green{
+                    color:#ADC839;
+                }
+            }
+        }
+        img{
+            width:100%;
+        }
+    }
+    .darkBG{
+        background-color: $coronavirus;
+        color: #feffff;
+    }
+}
+.main{
+    margin-bottom: 300px;
+}
 .mobile-only{
     display: none!important;
     height: 0px!important;
@@ -800,7 +910,7 @@ body{
 .project {
     .topper{
         @media only screen and (max-width: 700px) {
-            height: calc(100vh - 63px); //the 63px takes care of the height of the nav menu up top
+            height: calc(100vh); 
         }
     }
 }

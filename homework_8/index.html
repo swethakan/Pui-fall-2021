@@ -8,6 +8,8 @@
 		<link rel="stylesheet" href="styles/style.css">
 		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+		<link rel="icon" href="/images/favicon.png">
+
 		<!-- Transfering in a google font Open Sans, Free for all use -->
 		<link rel="preconnect" href="https://fonts.googleapis.com"> 
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -19,13 +21,13 @@
 		<meta name="HandheldFriendly" content="true">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	</head>
-	<body>
+	<body class = "main">
 	<!-- Navigation at the top of the page which is reflected in all pages. Tutorial used: https://www.w3schools.com/howto/howto_js_topnav.asp -->
 		<nav class = "topNav">
 			<a class = "left desktop-only">Swetha Kannan<span class = "title">UX/UI Designer</span></a>
-			<a href="#contact">Connect</a>
-			<a href="#portfolio">Projects</a>
-			<a class="active" href="#about">About</a>
+			<a id= "contact-btn" class="" href="#contact">Connect</a>
+			<a id= "projects-btn" class="" href="#portfolio">Projects</a>
+			<a id= "about-btn" class="active" href="#about">About</a>
 		</nav>
 
 		<!-- Here is the top of my page with my picture and where I introduce myself -->
@@ -63,33 +65,33 @@
 		<div id = 'container'>
 
 			<div id="portfolio">
-				<h2>Projects</h2>
+				<h2>Portfolio</h2>
 					<ul class = "flex">
 						<li id= "template-Project" data-aos="fade-up" class = "inner template-Project">
 							<a href = "layout/ocean_game.html">
 							<img class = "image" src="images/projects/beaches/homepage.jpg" alt="Cartoon of the California coast">
-							<h3><a href = "https://www.latimes.com/projects/la-me-climate-change-ocean-game/">Sea Levels are rising. Can you save L.A.'s coastal cities?</a></h3>
+							<h3>Sea Levels are rising. Can you save L.A.'s coastal cities?</h3>
 							<p>UX Design  |  UX Research  |  Game Design</p>
 							</a>
 						</li>
 						<li class = "inner template-Project" data-aos="fade-up">
 							<a href = "layout/101_restaurants.html">
 							<img class = "image" src="images/projects/101_list/homepage.jpg" alt="the numbers 101 are boldly writtin over a bright yellow and cream backdrop">
-							<h3><a href = "https://www.latimes.com/projects/101-best-la-restaurants-2020/">Los Angeles Times’ 101 Restaurants, dishes, people and ideas</a></h3>
+							<h3>Los Angeles Times’ 101 Restaurants, dishes, people and ideas</h3>
 							<p>UX Design  |  Management  |  Development</p>
 							</a>
 						</li>
 						<li class = "inner template-Project" data-aos="fade-up">
-							<a href = "layout/101_restaurants.html">
+							<a href = "layout/coronavirus.html">
 								<img class = "image" src="images/projects/coronavirus/homepage.jpg" alt="Outline of the state of California with a medical logo on top of it">
-								<h3><a href = "https://www.latimes.com/projects/la-me-climate-change-ocean-game/">Tracking the Coronavirus across California</a></h3>
+								<h3>Tracking the Coronavirus across California</h3>
 								<p>UX Design  |  Data Analysis  |  Reporting</p>
 							</a>
 						</li>
 						<li class = "inner template-Project" data-aos="fade-up">
 							<a href = "layout/sw_women.html">
 								<img class = "image" src="images/projects/sw_women/homepage.jpg" alt="Cartoon of Rey from star wars">
-								<h3><a href = "https://www.latimes.com/projects/la-me-climate-change-ocean-game/">Women still speak less in star wars</a></h3>
+								<h3>Women still speak less in star wars</h3>
 								<p>UX Design  |  Data Analysis  |  Reporting</p>
 							</a>
 						</li>

@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="../styles/style.css">
 		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+		<link rel="icon" href="../images/favicon.png">
 
 		<!-- Transfering in a google font Open Sans, Free for all use -->
 		<link rel="preconnect" href="https://fonts.googleapis.com"> 
@@ -158,7 +159,7 @@
 					<h2 data-aos="fade">Overview</h2>
 					<div class = "flex">
 						<div data-aos="fade-right" class = "inner image desktop-only overflow-hide">
-							<img al = "view of the webpage on mobile." src = "../images/projects/101_list/mobile/mobile1.jpg">
+							<img al = "view of the webpage on mobile." src = "../images/projects/101_list/mobile/mobile1.gif">
 						</div>
 						<div data-aos="fade-left" class = "inner text overflow-hide">
 							<ul>
@@ -239,7 +240,29 @@
 						<div data-aos="fade-left" class = "text inner overflow-hide">
 							<p class = "first">I, alongside a print designer, created the style guide that was distributed to the marketing, social, events, and promotion teams at the Times. The design had to go through reporters and editors to make sure it was cohesive with the vision of the year. We wanted to keep the playfulness of previous 101 lists but also incorporate a more serious tone indicitive of the severity of 2020.</p>
 							<p>I presenting 3 design schemes through mid-fidelity mockups. </p>
-
+							<div class = "flex diff-styles">
+								<div class="inner">
+									<h3>
+										Food Truck
+									</h3>
+									<div class = "image"><img alt = "logo shown in a red food truck menu themed style" src = "../images/projects/101_list/style/style1.png"></div>
+									<p><span class = "no">X</span> food truck theme did not connect with test audience. Unnecessarily metaphorical.</p>
+								</div>
+								<div class="inner">
+									<h3>
+										Food Truck
+									</h3>
+									<div class = "image"><img alt = "logo shown in a minimalist style" src = "../images/projects/101_list/style/style2.png"></div>
+									<p><span class = "yes">✓</span> Test audience felt that  style was reminiscent of previous 101 lists.</p>
+								</div>
+								<div class="inner">
+									<h3>
+										Food Truck
+									</h3>
+									<div class = "image"><img alt = "logo shown in a bold futuristic style" src = "../images/projects/101_list/style/style3.png"></div>
+									<p><span class = "no">X</span> Black background was hard for users to read on and colors wouldn’t translate well to print.</p>
+								</div>
+							</div>
 							<p>Ultimately, we choose to proceed with our minimalistic design.</p>
 							<p>I handled the development of a custom webpage on the Los Angeles Times site through our internal framework system using a previous template created by Ryan Murphy. I placed everything from the list into a massive spreadsheet, used a jupyter notebook to refine the list using python to reformat addresses, condense locations, etc. Using this, I was able to automatically generate each entry in our list by interating through this spreadsheet. Each section also featured a map which was automatically generated using the MapBox API.</p>
 						</div>
@@ -297,6 +320,5 @@
 		<script>
 			AOS.init();
 		</script>
-		<script type="text/javascript" src="../scripts/script.js"></script>
 	</footer>
 </html>
