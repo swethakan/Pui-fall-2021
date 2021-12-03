@@ -113,6 +113,10 @@ body #about .links {
   width: 100%;
   display: block;
 }
+body #about .links a:hover {
+  color: dimgray;
+  text-decoration: none;
+}
 @media only screen and (max-width: 700px) {
   body #about .links {
     width: 100%;
@@ -126,7 +130,7 @@ body #about .pronounce {
   font-size: 20px;
   line-height: 27px;
   text-align: center;
-  color: #6c6c6c;
+  color: #7D7D7D;
   margin-top: 0px;
 }
 body #about .image {
@@ -160,18 +164,28 @@ body #portfolio .template-Project {
   width: 330px;
   padding: 5px;
   margin-bottom: 50px;
+  background-color: white;
 }
 body #portfolio .template-Project img {
   width: 100%;
   box-shadow: 2px 3px 15px #d3d1d1;
 }
 body #portfolio .template-Project p {
-  color:#747474;
+  color: grey;
   margin-top: 8px;
 }
 body #portfolio .template-Project a {
   color: black;
   text-decoration: none;
+}
+body #portfolio .template-Project:hover {
+  background-color: #f8efe6;
+}
+body #portfolio .template-Project:hover h3 {
+  color: #693212;
+}
+body #portfolio .template-Project:hover p {
+  color: #554435;
 }
 body #portfolio .flex {
   display: flex;
@@ -232,6 +246,11 @@ body #contact .icon {
   width: 40px;
   height: 40px;
   margin: 10px 20px 5px 20px;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+body #contact .icon:hover {
+  opacity: 0.7;
+  border: 1px solid #bd7707;
 }
 body .contain {
   max-width: 1200px;
@@ -273,7 +292,7 @@ body .contain .text .first {
 }
 body .image-caption {
   font-size: 12px;
-  color: #565656;
+  color: grey;
   margin-top: 0px;
 }
 
@@ -781,7 +800,7 @@ body .image-caption {
   width: 100%;
 }
 .restaurants .the-process .diff-styles .no {
-  color: #d70000;
+  color: red;
   font-weight: bold;
 }
 .restaurants .the-process .diff-styles .yes {
