@@ -126,7 +126,7 @@ body #about .pronounce {
   font-size: 20px;
   line-height: 27px;
   text-align: center;
-  color: #7D7D7D;
+  color: #6c6c6c;
   margin-top: 0px;
 }
 body #about .image {
@@ -163,10 +163,10 @@ body #portfolio .template-Project {
 }
 body #portfolio .template-Project img {
   width: 100%;
-  box-shadow: 0px 0px 10px #e3e3e3;
+  box-shadow: 2px 3px 15px #d3d1d1;
 }
 body #portfolio .template-Project p {
-  color: grey;
+  color:#747474;
   margin-top: 8px;
 }
 body #portfolio .template-Project a {
@@ -273,7 +273,7 @@ body .contain .text .first {
 }
 body .image-caption {
   font-size: 12px;
-  color: grey;
+  color: #565656;
   margin-top: 0px;
 }
 
@@ -781,7 +781,7 @@ body .image-caption {
   width: 100%;
 }
 .restaurants .the-process .diff-styles .no {
-  color: red;
+  color: #d70000;
   font-weight: bold;
 }
 .restaurants .the-process .diff-styles .yes {
